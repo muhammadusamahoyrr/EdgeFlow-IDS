@@ -264,6 +264,11 @@ sudo /opt/edgeflow/bin/python src/make_figures.py
 `results/models/` is not committed (pickles); step 4 rebuilds it. Diagnostic scripts used to
 confirm attackers and find bugs are in `src/diag/`.
 
+## License
+
+Code is released under the [MIT License](LICENSE). The CIC-IoT2023 data is not part of this
+repository and is subject to its own terms.
+
 ## Data and credit
 
 - **Dataset:** E. C. P. Neto et al., "CICIoT2023: A real-time dataset and benchmark for
