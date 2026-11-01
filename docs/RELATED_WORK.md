@@ -1,0 +1,51 @@
+# Related work and what is (not) new (searched 1 Nov 2026)
+
+[V] = abstract or relevant passage read · [A] = abstract or snippet only · [K] = background knowledge, not re-fetched.
+
+## Not new: do not claim
+- **Benign/background traffic inside CIC attack captures.**
+  - Ramkumar et al., arXiv 2412.10738 (2024) [V]: CIC-IoT2023 pcaps mix benign packets with attack packets; they split by device MAC.
+  - Fadel 2026, IoT-DIAD [A].
+  - Engelen et al. 2021, CIC-IDS2017 [K].
+- **Temporal split scoring lower than a random split.**
+  - Arp et al., USENIX Security 2022 [K].
+  - Pendlebury et al., TESSERACT, USENIX Security 2019 [K].
+- **A decision tree being as good as a random forest for an edge IDS, and GA/NSGA-II feature selection.**
+  - Computer Networks 2020 (NSGA2-LR) [A].
+  - arXiv 2406.09180 [A].
+  - Mathematics 2025, CICIoT2023 [A].
+  - Scientific Reports 2025 [A].
+- **Live NFStream + ML IDS, and Mininet/OVS ML IDS.**
+  - Realguard, Sensors 2022 [A].
+  - PDGC 2024, NFStream → Kafka → Spark [A].
+  - About 12 GitHub prototypes.
+- **ARP-spoofing rule:** arpwatch and Snort's ARP preprocessor [K]. FlowIoMT 2025 [A] reports flow features *can* detect ARP spoofing, so we say only that *our* NFStream feature set did not.
+- **OVS/OpenFlow automatic blocking:** many SDN prototypes. SDN-IoT-Sentinel uses a 2-of-3 verdict gate.
+
+## Appears new (to our knowledge)
+1. **Measured** background share (91–98%) in the CIC-IoT2023 web and brute-force pcaps, with per-flow labels from evidence: payloads, attacker/victim IPs, ports, ARP. Contrast: Vitorino et al., FPS 2025, arXiv 2511.08345 [V] still assume each capture contains only its named attack.
+2. A temporal-split evaluation on CIC-IoT2023 with a root cause for the drop: brute force moving from SSH to RTSP.
+3. A controlled offline-vs-live test on identical held-out windows, measuring:
+   - packet capture ratio
+   - NFStream drop counters
+   - cgroup CPU limits (no limit, one core, half a core)
+
+   Contrast: Tang et al., VNICT 2026, arXiv 2609.24393 [V, abstract]: RF F1 0.97 on a benchmark but recall 0.0095 in deployment.
+4. False-block counts for automatic blocking (59 of 77 pairs with block-on-first-alert), and a policy chosen on validation data.
+5. **NFStream 6.6.0 idle-expiry bug.**
+   - **The bug:** in `meter.py`, a flow that a packet updates is not moved to the most-recent end of the LRU cache, so a long-lived flow blocks idle expiry for every flow behind it.
+   - **Status:** still present on master (meter.py unchanged since 2024-05-10).
+   - **Related issues:** probably the cause of open issue #120. It is different from #196/#215 (timer does not advance without packets), and open PR #227 does not fix it.
+
+## Open-source projects closest to ours
+- **netguard-ml:** NFStream, CIC-IDS2017, honest temporal evaluation; no IoT, no blocking.
+- **TrangTuanAnh/tls-anomaly-detection-ids:** NFStream + MLP + iptables blocking; no evaluation.
+- **Sunay20/IDS_IoT:** RT-IoT2022, NFStream, IP blocking; random split only.
+- **chiragbiradar/DDoS-Attack-Detection-and-Mitigation, icesonata/DDoSDN:** Mininet + Ryu + RF on switch statistics.
+
+None combines CIC-IoT2023, live NFStream capture, replay of the dataset's pcaps through Mininet/OVS, OVS blocking, and a live-vs-offline evaluation with CPU limits (search was rate-limited, so this is indicative only).
+
+## To verify before publishing a paper
+- Full text of PDGC 2024 and of Tang et al. 2026.
+- Fadel's paper, beyond the repository README.
+- Whether NFStream issue #120 shares our root cause (needs a reproduction).

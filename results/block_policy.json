@@ -1,0 +1,4 @@
+{
+  "min_attack_verdicts": 10,
+  "ignore_mitm_flow_verdicts": true
+}

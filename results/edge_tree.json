@@ -1,0 +1,6 @@
+{
+  "max_depth": 32,
+  "min_samples_leaf": 1,
+  "class_weight": "balanced",
+  "random_state": 0
+}

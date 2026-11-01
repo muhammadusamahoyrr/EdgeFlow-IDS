@@ -1,0 +1,130 @@
+{
+  "model": "/mnt/d/EdgeFlow-IDS/results/models/decision_tree.pkl",
+  "cpu_quota": null,
+  "speed": 1.0,
+  "windows": [
+    {
+      "window": "SqlInjection",
+      "offered_pps": 59.26,
+      "offered_mbps": 0.09,
+      "offline_flows": 464,
+      "live_flows": 469,
+      "removed_training_connections_off_live": "50/52",
+      "offline_packets": 2397,
+      "live_packets": 2404,
+      "packet_ratio": 1.0029,
+      "attack_flows_offline": 4,
+      "attack_flows_live": 4,
+      "attack_recall_offline": 1.0,
+      "attack_recall_live": 1.0,
+      "benign_fpr_live": 0.0043,
+      "median_verdict_after_flow_end_s": 15.6,
+      "first_verdict_per_attacker_pair_s": 35.1,
+      "arp_alerts": 0,
+      "cpu_percent_mean": 0.9,
+      "cpu_percent_max": 3.0,
+      "rss_mb_max": 401.4
+    },
+    {
+      "window": "XSS",
+      "offered_pps": 33.2,
+      "offered_mbps": 0.065,
+      "offline_flows": 224,
+      "live_flows": 217,
+      "removed_training_connections_off_live": "50/51",
+      "offline_packets": 1186,
+      "live_packets": 1179,
+      "packet_ratio": 0.9941,
+      "attack_flows_offline": 3,
+      "attack_flows_live": 3,
+      "attack_recall_offline": 1.0,
+      "attack_recall_live": 1.0,
+      "benign_fpr_live": 0.0047,
+      "median_verdict_after_flow_end_s": 15.5,
+      "first_verdict_per_attacker_pair_s": 34.8,
+      "arp_alerts": 2,
+      "cpu_percent_mean": 1.1,
+      "cpu_percent_max": 4.0,
+      "rss_mb_max": 401.4
+    }
+  ],
+  "offline": {
+    "flows": 688,
+    "macro_f1": 0.9985272459499264,
+    "macro_f1_ci95": [
+      0.9970412006391235,
+      0.9996439006574142
+    ],
+    "per_class": {
+      "Benign": {
+        "precision": 1.0,
+        "recall": 0.994,
+        "f1": 0.997,
+        "support": 681
+      },
+      "Web": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 7
+      }
+    }
+  },
+  "live": {
+    "flows": 686,
+    "macro_f1": 0.9988929889298893,
+    "macro_f1_ci95": [
+      0.9970409798534798,
+      1.0
+    ],
+    "per_class": {
+      "Benign": {
+        "precision": 1.0,
+        "recall": 0.996,
+        "f1": 0.998,
+        "support": 679
+      },
+      "Web": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 7
+      }
+    },
+    "batch_ms_p50": 0.5315000000000001,
+    "batch_ms_p95": 0.8055399999999997,
+    "batch_size_p50": 6.0,
+    "amortised_ms_per_flow": 0.09295625
+  },
+  "arp_alerts": [
+    {
+      "time_ms": 1793553935986.7068,
+      "kind": "mac_claims_multiple_ips",
+      "severity": "info",
+      "mac": "e8:1b:69:f8:d4:e3",
+      "detail": [
+        "192.168.137.171",
+        "192.168.137.236"
+      ]
+    },
+    {
+      "time_ms": 1793553941966.67,
+      "kind": "mac_claims_multiple_ips",
+      "severity": "info",
+      "mac": "9c:8e:cd:1d:ab:9f",
+      "detail": [
+        "192.168.137.116",
+        "192.168.137.242"
+      ]
+    }
+  ],
+  "nfstream_counters": {
+    "flows_expired": 800,
+    "packets_processed": 84828,
+    "packets_ignored": 404,
+    "packets_dropped_filtered_by_kernel": 0,
+    "meters_packets_processing_balance": [
+      84828
+    ]
+  }
+}

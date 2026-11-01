@@ -1,0 +1,750 @@
+{
+  "model": "/mnt/d/EdgeFlow-IDS/results/models/decision_tree.pkl",
+  "cpu_quota": null,
+  "speed": 1.0,
+  "windows": [
+    {
+      "window": "Benign_Final",
+      "offered_pps": 118.47,
+      "offered_mbps": 0.589,
+      "offline_flows": 253,
+      "live_flows": 261,
+      "removed_training_connections_off_live": "42/43",
+      "offline_packets": 1086,
+      "live_packets": 1093,
+      "packet_ratio": 1.0064,
+      "attack_flows_offline": 0,
+      "attack_flows_live": 0,
+      "attack_recall_offline": null,
+      "attack_recall_live": null,
+      "benign_fpr_live": 0.023,
+      "median_verdict_after_flow_end_s": 15.6,
+      "first_verdict_per_attacker_pair_s": null,
+      "arp_alerts": 0,
+      "cpu_percent_mean": 1.0,
+      "cpu_percent_max": 3.0,
+      "rss_mb_max": 400.3
+    },
+    {
+      "window": "CommandInjection",
+      "offered_pps": 38.13,
+      "offered_mbps": 0.093,
+      "offline_flows": 259,
+      "live_flows": 252,
+      "removed_training_connections_off_live": "49/49",
+      "offline_packets": 1484,
+      "live_packets": 1472,
+      "packet_ratio": 0.9919,
+      "attack_flows_offline": 5,
+      "attack_flows_live": 5,
+      "attack_recall_offline": 1.0,
+      "attack_recall_live": 1.0,
+      "benign_fpr_live": 0.0162,
+      "median_verdict_after_flow_end_s": 15.7,
+      "first_verdict_per_attacker_pair_s": 24.8,
+      "arp_alerts": 1,
+      "cpu_percent_mean": 0.8,
+      "cpu_percent_max": 2.0,
+      "rss_mb_max": 400.3
+    },
+    {
+      "window": "DDoS-SYN_Flood",
+      "offered_pps": 12270.81,
+      "offered_mbps": 5.92,
+      "offline_flows": 142724,
+      "live_flows": 142752,
+      "removed_training_connections_off_live": "66496/66504",
+      "offline_packets": 218344,
+      "live_packets": 218344,
+      "packet_ratio": 1.0,
+      "attack_flows_offline": 142554,
+      "attack_flows_live": 142580,
+      "attack_recall_offline": 1.0,
+      "attack_recall_live": 1.0,
+      "benign_fpr_live": 0.0872,
+      "median_verdict_after_flow_end_s": 17.8,
+      "first_verdict_per_attacker_pair_s": 15.2,
+      "arp_alerts": 2,
+      "cpu_percent_mean": 120.3,
+      "cpu_percent_max": 196.0,
+      "rss_mb_max": 990.5
+    },
+    {
+      "window": "DictionaryBruteForce",
+      "offered_pps": 51.14,
+      "offered_mbps": 0.056,
+      "offline_flows": 300,
+      "live_flows": 300,
+      "removed_training_connections_off_live": "48/48",
+      "offline_packets": 2043,
+      "live_packets": 2043,
+      "packet_ratio": 1.0,
+      "attack_flows_offline": 25,
+      "attack_flows_live": 25,
+      "attack_recall_offline": 0.64,
+      "attack_recall_live": 0.64,
+      "benign_fpr_live": 0.0073,
+      "median_verdict_after_flow_end_s": 15.5,
+      "first_verdict_per_attacker_pair_s": 29.2,
+      "arp_alerts": 6,
+      "cpu_percent_mean": 0.8,
+      "cpu_percent_max": 3.0,
+      "rss_mb_max": 805.2
+    },
+    {
+      "window": "DoS-HTTP_Flood",
+      "offered_pps": 633.67,
+      "offered_mbps": 3.71,
+      "offline_flows": 2398,
+      "live_flows": 2483,
+      "removed_training_connections_off_live": "891/936",
+      "offline_packets": 29361,
+      "live_packets": 29361,
+      "packet_ratio": 1.0,
+      "attack_flows_offline": 1871,
+      "attack_flows_live": 1955,
+      "attack_recall_offline": 0.954,
+      "attack_recall_live": 0.963,
+      "benign_fpr_live": 0.0284,
+      "median_verdict_after_flow_end_s": 15.3,
+      "first_verdict_per_attacker_pair_s": 15.8,
+      "arp_alerts": 9,
+      "cpu_percent_mean": 3.8,
+      "cpu_percent_max": 14.0,
+      "rss_mb_max": 804.2
+    },
+    {
+      "window": "MITM-ArpSpoofing",
+      "offered_pps": 364.75,
+      "offered_mbps": 3.22,
+      "offline_flows": 412,
+      "live_flows": 414,
+      "removed_training_connections_off_live": "58/61",
+      "offline_packets": 4730,
+      "live_packets": 4718,
+      "packet_ratio": 0.9975,
+      "attack_flows_offline": 2,
+      "attack_flows_live": 2,
+      "attack_recall_offline": 0.0,
+      "attack_recall_live": 0.0,
+      "benign_fpr_live": 0.0388,
+      "median_verdict_after_flow_end_s": 15.4,
+      "first_verdict_per_attacker_pair_s": null,
+      "arp_alerts": 9,
+      "cpu_percent_mean": 1.5,
+      "cpu_percent_max": 4.0,
+      "rss_mb_max": 803.2
+    },
+    {
+      "window": "Mirai-udpplain",
+      "offered_pps": 3684.67,
+      "offered_mbps": 16.24,
+      "offline_flows": 173,
+      "live_flows": 171,
+      "removed_training_connections_off_live": "30/32",
+      "offline_packets": 38688,
+      "live_packets": 38683,
+      "packet_ratio": 0.9999,
+      "attack_flows_offline": 4,
+      "attack_flows_live": 4,
+      "attack_recall_offline": 0.75,
+      "attack_recall_live": 0.75,
+      "benign_fpr_live": 0.0,
+      "median_verdict_after_flow_end_s": 15.1,
+      "first_verdict_per_attacker_pair_s": 32.1,
+      "arp_alerts": 8,
+      "cpu_percent_mean": 3.8,
+      "cpu_percent_max": 8.0,
+      "rss_mb_max": 803.2
+    },
+    {
+      "window": "Recon-PortScan",
+      "offered_pps": 94.91,
+      "offered_mbps": 0.098,
+      "offline_flows": 1572,
+      "live_flows": 1572,
+      "removed_training_connections_off_live": "46/47",
+      "offline_packets": 4718,
+      "live_packets": 4718,
+      "packet_ratio": 1.0,
+      "attack_flows_offline": 1081,
+      "attack_flows_live": 1081,
+      "attack_recall_offline": 1.0,
+      "attack_recall_live": 1.0,
+      "benign_fpr_live": 0.0061,
+      "median_verdict_after_flow_end_s": 15.6,
+      "first_verdict_per_attacker_pair_s": 15.3,
+      "arp_alerts": 4,
+      "cpu_percent_mean": 2.0,
+      "cpu_percent_max": 8.0,
+      "rss_mb_max": 803.2
+    },
+    {
+      "window": "SqlInjection",
+      "offered_pps": 59.02,
+      "offered_mbps": 0.089,
+      "offline_flows": 464,
+      "live_flows": 464,
+      "removed_training_connections_off_live": "50/53",
+      "offline_packets": 2397,
+      "live_packets": 2397,
+      "packet_ratio": 1.0,
+      "attack_flows_offline": 4,
+      "attack_flows_live": 4,
+      "attack_recall_offline": 1.0,
+      "attack_recall_live": 1.0,
+      "benign_fpr_live": 0.0043,
+      "median_verdict_after_flow_end_s": 15.5,
+      "first_verdict_per_attacker_pair_s": 35.4,
+      "arp_alerts": 0,
+      "cpu_percent_mean": 1.1,
+      "cpu_percent_max": 4.0,
+      "rss_mb_max": 802.2
+    },
+    {
+      "window": "XSS",
+      "offered_pps": 33.28,
+      "offered_mbps": 0.065,
+      "offline_flows": 224,
+      "live_flows": 215,
+      "removed_training_connections_off_live": "50/51",
+      "offline_packets": 1186,
+      "live_packets": 1177,
+      "packet_ratio": 0.9924,
+      "attack_flows_offline": 3,
+      "attack_flows_live": 3,
+      "attack_recall_offline": 1.0,
+      "attack_recall_live": 1.0,
+      "benign_fpr_live": 0.0047,
+      "median_verdict_after_flow_end_s": 15.5,
+      "first_verdict_per_attacker_pair_s": 34.8,
+      "arp_alerts": 2,
+      "cpu_percent_mean": 0.8,
+      "cpu_percent_max": 3.0,
+      "rss_mb_max": 802.2
+    }
+  ],
+  "offline": {
+    "flows": 148779,
+    "macro_f1": 0.803597626465779,
+    "macro_f1_ci95": [
+      0.7097450002912841,
+      0.8451116250430641
+    ],
+    "per_class": {
+      "Benign": {
+        "precision": 0.97,
+        "recall": 0.982,
+        "f1": 0.976,
+        "support": 3230
+      },
+      "BruteForce": {
+        "precision": 1.0,
+        "recall": 0.64,
+        "f1": 0.78,
+        "support": 25
+      },
+      "DDoS-SYN": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 142554
+      },
+      "DoS-HTTP": {
+        "precision": 0.988,
+        "recall": 0.954,
+        "f1": 0.971,
+        "support": 1871
+      },
+      "MITM-ARP": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2
+      },
+      "Mirai": {
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1": 0.75,
+        "support": 4
+      },
+      "Recon": {
+        "precision": 0.984,
+        "recall": 1.0,
+        "f1": 0.992,
+        "support": 1081
+      },
+      "Web": {
+        "precision": 0.923,
+        "recall": 1.0,
+        "f1": 0.96,
+        "support": 12
+      }
+    }
+  },
+  "live": {
+    "flows": 148884,
+    "macro_f1": 0.8042388156493582,
+    "macro_f1_ci95": [
+      0.7152874137188884,
+      0.8444345003472146
+    ],
+    "per_class": {
+      "Benign": {
+        "precision": 0.974,
+        "recall": 0.98,
+        "f1": 0.977,
+        "support": 3225
+      },
+      "BruteForce": {
+        "precision": 1.0,
+        "recall": 0.64,
+        "f1": 0.78,
+        "support": 25
+      },
+      "DDoS-SYN": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 142580
+      },
+      "DoS-HTTP": {
+        "precision": 0.987,
+        "recall": 0.963,
+        "f1": 0.975,
+        "support": 1955
+      },
+      "MITM-ARP": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2
+      },
+      "Mirai": {
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1": 0.75,
+        "support": 4
+      },
+      "Recon": {
+        "precision": 0.984,
+        "recall": 1.0,
+        "f1": 0.992,
+        "support": 1081
+      },
+      "Web": {
+        "precision": 0.923,
+        "recall": 1.0,
+        "f1": 0.96,
+        "support": 12
+      }
+    },
+    "batch_ms_p50": 0.4415,
+    "batch_ms_p95": 0.9191100000000001,
+    "batch_size_p50": 209.0,
+    "amortised_ms_per_flow": 0.004052358490566037
+  },
+  "arp_alerts": [
+    {
+      "time_ms": 1793547982442.7761,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "9c:8e:cd:1d:ab:9f",
+      "detail": [
+        "192.168.137.16",
+        "192.168.137.242"
+      ]
+    },
+    {
+      "time_ms": 1793548041762.7144,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "a0:d0:dc:c4:08:ff",
+      "detail": [
+        "192.168.137.245",
+        "192.168.137.58"
+      ]
+    },
+    {
+      "time_ms": 1793548052842.6711,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "9c:8e:cd:1d:ab:9f",
+      "detail": [
+        "192.168.137.16",
+        "192.168.137.242",
+        "192.168.137.61"
+      ]
+    },
+    {
+      "time_ms": 1793548103742.7234,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "e8:1b:69:f8:d4:e3",
+      "detail": [
+        "192.168.137.171",
+        "192.168.137.89"
+      ]
+    },
+    {
+      "time_ms": 1793548107946.7512,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "a0:d0:dc:c4:08:ff",
+      "detail": [
+        "192.168.137.210",
+        "192.168.137.245",
+        "192.168.137.58"
+      ]
+    },
+    {
+      "time_ms": 1793548121386.727,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "9c:8e:cd:1d:ab:9f",
+      "detail": [
+        "192.168.137.16",
+        "192.168.137.23",
+        "192.168.137.242",
+        "192.168.137.61"
+      ]
+    },
+    {
+      "time_ms": 1793548132426.688,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "00:17:88:60:d6:4f",
+      "detail": [
+        "192.168.137.100",
+        "192.168.137.172"
+      ]
+    },
+    {
+      "time_ms": 1793548135686.7458,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "7c:78:b2:86:0d:81",
+      "detail": [
+        "192.168.137.227",
+        "192.168.137.242"
+      ]
+    },
+    {
+      "time_ms": 1793548135686.7458,
+      "kind": "ip_rebound_to_new_mac",
+      "mac": "7c:78:b2:86:0d:81",
+      "detail": [
+        "192.168.137.242",
+        "9c:8e:cd:1d:ab:9f"
+      ]
+    },
+    {
+      "time_ms": 1793548190802.6624,
+      "kind": "ip_rebound_to_new_mac",
+      "mac": "dc:a6:32:dc:27:d5",
+      "detail": [
+        "192.168.137.66",
+        "30:23:03:f3:57:cb"
+      ]
+    },
+    {
+      "time_ms": 1793548194962.7634,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "e8:1b:69:f8:d4:e3",
+      "detail": [
+        "192.168.137.171",
+        "192.168.137.214",
+        "192.168.137.89"
+      ]
+    },
+    {
+      "time_ms": 1793548196730.6782,
+      "kind": "ip_rebound_to_new_mac",
+      "mac": "ee:06:3b:b8:d1:df",
+      "detail": [
+        "192.168.137.153",
+        "dc:a6:32:c9:e4:d5"
+      ]
+    },
+    {
+      "time_ms": 1793548202698.681,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "6c:5a:b0:44:1d:90",
+      "detail": [
+        "192.168.137.187",
+        "192.168.137.6"
+      ]
+    },
+    {
+      "time_ms": 1793548210338.7014,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "30:23:03:f3:84:2b",
+      "detail": [
+        "192.168.137.144",
+        "192.168.137.77"
+      ]
+    },
+    {
+      "time_ms": 1793548212002.7256,
+      "kind": "ip_rebound_to_new_mac",
+      "mac": "10:5a:17:97:a5:c6",
+      "detail": [
+        "192.168.137.23",
+        "9c:8e:cd:1d:ab:9f"
+      ]
+    },
+    {
+      "time_ms": 1793548213250.6824,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "30:23:03:f3:57:cb",
+      "detail": [
+        "192.168.137.100",
+        "192.168.137.66"
+      ]
+    },
+    {
+      "time_ms": 1793548213250.6824,
+      "kind": "ip_rebound_to_new_mac",
+      "mac": "30:23:03:f3:57:cb",
+      "detail": [
+        "192.168.137.100",
+        "00:17:88:60:d6:4f"
+      ]
+    },
+    {
+      "time_ms": 1793548218034.7249,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "9c:8e:cd:1d:ab:9f",
+      "detail": [
+        "192.168.137.16",
+        "192.168.137.23",
+        "192.168.137.235",
+        "192.168.137.242",
+        "192.168.137.61"
+      ]
+    },
+    {
+      "time_ms": 1793548289894.7488,
+      "kind": "ip_rebound_to_new_mac",
+      "mac": "d4:a6:51:21:6c:29",
+      "detail": [
+        "192.168.137.214",
+        "e8:1b:69:f8:d4:e3"
+      ]
+    },
+    {
+      "time_ms": 1793548290102.804,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "dc:a6:32:dc:27:d5",
+      "detail": [
+        "192.168.137.1",
+        "192.168.137.66"
+      ]
+    },
+    {
+      "time_ms": 1793548290102.804,
+      "kind": "ip_rebound_to_new_mac",
+      "mac": "dc:a6:32:dc:27:d5",
+      "detail": [
+        "192.168.137.1",
+        "3c:18:a0:41:c3:a0"
+      ]
+    },
+    {
+      "time_ms": 1793548292710.7937,
+      "kind": "ip_rebound_to_new_mac",
+      "mac": "3c:18:a0:41:c3:a0",
+      "detail": [
+        "192.168.137.1",
+        "dc:a6:32:dc:27:d5"
+      ]
+    },
+    {
+      "time_ms": 1793548300406.7197,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "d0:73:d5:35:fb:c8",
+      "detail": [
+        "192.168.137.145",
+        "192.168.137.68"
+      ]
+    },
+    {
+      "time_ms": 1793548307894.6423,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "7c:78:b2:86:0d:81",
+      "detail": [
+        "192.168.137.11",
+        "192.168.137.227",
+        "192.168.137.242"
+      ]
+    },
+    {
+      "time_ms": 1793548311850.7083,
+      "kind": "ip_rebound_to_new_mac",
+      "mac": "84:7a:b6:64:62:58",
+      "detail": [
+        "192.168.137.153",
+        "ee:06:3b:b8:d1:df"
+      ]
+    },
+    {
+      "time_ms": 1793548315386.683,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "10:2c:6b:1b:43:be",
+      "detail": [
+        "192.168.137.143",
+        "192.168.137.179"
+      ]
+    },
+    {
+      "time_ms": 1793548340042.749,
+      "kind": "ip_rebound_to_new_mac",
+      "mac": "e8:1b:69:f8:d6:e6",
+      "detail": [
+        "192.168.137.36",
+        "e4:5f:01:55:90:c4"
+      ]
+    },
+    {
+      "time_ms": 1793548381650.639,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "dc:a6:32:c9:e4:d5",
+      "detail": [
+        "192.168.137.128",
+        "192.168.137.153"
+      ]
+    },
+    {
+      "time_ms": 1793548381858.6782,
+      "kind": "ip_rebound_to_new_mac",
+      "mac": "dc:a6:32:c9:e5:a4",
+      "detail": [
+        "192.168.137.162",
+        "48:a6:b8:f9:1b:88"
+      ]
+    },
+    {
+      "time_ms": 1793548382170.69,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "dc:a6:32:c9:e4:90",
+      "detail": [
+        "192.168.137.238",
+        "192.168.137.99"
+      ]
+    },
+    {
+      "time_ms": 1793548384354.6096,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "e4:5f:01:55:90:c4",
+      "detail": [
+        "192.168.137.247",
+        "192.168.137.36"
+      ]
+    },
+    {
+      "time_ms": 1793548401946.7437,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "b0:c5:54:59:2e:99",
+      "detail": [
+        "192.168.137.132",
+        "192.168.137.191"
+      ]
+    },
+    {
+      "time_ms": 1793548425046.7168,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "dc:a6:32:dc:27:d5",
+      "detail": [
+        "192.168.137.1",
+        "192.168.137.147",
+        "192.168.137.66"
+      ]
+    },
+    {
+      "time_ms": 1793548425046.7168,
+      "kind": "ip_rebound_to_new_mac",
+      "mac": "dc:a6:32:dc:27:d5",
+      "detail": [
+        "192.168.137.147",
+        "d4:a6:51:30:64:b7"
+      ]
+    },
+    {
+      "time_ms": 1793548437318.6567,
+      "kind": "ip_rebound_to_new_mac",
+      "mac": "9c:8e:cd:1d:ab:9f",
+      "detail": [
+        "192.168.137.242",
+        "7c:78:b2:86:0d:81"
+      ]
+    },
+    {
+      "time_ms": 1793548496946.8052,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "a0:d0:dc:c4:08:ff",
+      "detail": [
+        "192.168.137.167",
+        "192.168.137.210",
+        "192.168.137.245",
+        "192.168.137.58"
+      ]
+    },
+    {
+      "time_ms": 1793548505174.7925,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "9c:8e:cd:1d:ab:9f",
+      "detail": [
+        "192.168.137.116",
+        "192.168.137.16",
+        "192.168.137.23",
+        "192.168.137.235",
+        "192.168.137.242",
+        "192.168.137.61"
+      ]
+    },
+    {
+      "time_ms": 1793548520126.7063,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "e8:1b:69:f8:d4:e3",
+      "detail": [
+        "192.168.137.171",
+        "192.168.137.214",
+        "192.168.137.236",
+        "192.168.137.89"
+      ]
+    },
+    {
+      "time_ms": 1793548525790.7104,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "7c:78:b2:86:0d:81",
+      "detail": [
+        "192.168.137.11",
+        "192.168.137.208",
+        "192.168.137.227",
+        "192.168.137.242"
+      ]
+    },
+    {
+      "time_ms": 1793548712306.7883,
+      "kind": "mac_claims_multiple_ips",
+      "mac": "7c:78:b2:86:0d:81",
+      "detail": [
+        "192.168.137.11",
+        "192.168.137.179",
+        "192.168.137.208",
+        "192.168.137.227",
+        "192.168.137.242"
+      ]
+    },
+    {
+      "time_ms": 1793548712306.7883,
+      "kind": "ip_rebound_to_new_mac",
+      "mac": "7c:78:b2:86:0d:81",
+      "detail": [
+        "192.168.137.179",
+        "10:2c:6b:1b:43:be"
+      ]
+    }
+  ],
+  "nfstream_counters": {
+    "flows_expired": 216741,
+    "packets_processed": 1129698,
+    "packets_ignored": 3539,
+    "packets_dropped_filtered_by_kernel": 0,
+    "meters_packets_processing_balance": [
+      1129698
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+,Benign,BruteForce,DDoS-SYN,DoS-HTTP,MITM-ARP,Mirai,Recon,Web
+Benign,47870,0,0,129,300,0,1,23
+BruteForce,1,323,0,0,0,0,0,0
+DDoS-SYN,0,0,153458,0,0,0,0,0
+DoS-HTTP,34,0,0,11803,7,0,0,1
+MITM-ARP,73,0,0,0,17,0,0,0
+Mirai,0,0,0,0,0,12,0,0
+Recon,1,1,0,0,0,0,42941,0
+Web,9,0,0,2,2,0,0,154

@@ -1,0 +1,17 @@
+data/raw/
+data/processed/
+*.pcap
+*.pcapng
+*.csv.gz
+*.parquet
+*.pkl
+# NFStream temporary exports and large live flow logs
+src/nfstream-*.csv
+results/live/*/flows.csv
+results/*.log
+__pycache__/
+.venv/
+.ipynb_checkpoints/
+results/logs/
+results/live/*/arp_watch.log
+results/attackers_large.log

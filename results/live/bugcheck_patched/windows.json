@@ -1,0 +1,36 @@
+{
+  "tag": "bugcheck_patched",
+  "enforce": false,
+  "policy": null,
+  "speed": 1.0,
+  "cpu_quota": null,
+  "model": "/mnt/d/EdgeFlow-IDS/results/models/decision_tree.pkl",
+  "windows": [
+    {
+      "folder": "SqlInjection",
+      "source_file": "SqlInjection/SqlInjection.pcap",
+      "pcap": "SqlInjection__SqlInjection.pcap",
+      "start_epoch": 1664820270.662,
+      "end_epoch": 1664820330.662,
+      "packets": 3571,
+      "replay_start_ms": 1793553827226.9724,
+      "replay_end_ms": 1793553887648.7117,
+      "offered_mbps": 0.09,
+      "offered_pps": 59.26,
+      "tcpreplay": ": Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nActual: 3571 packets (679386 bytes) sent in 60.25 seconds\r\nRated: 11275.1 Bps, 0.090 Mbps, 59.26 pps\r\nFlows: 814 flows, 13.50 fps, 3331 unique flow packets, 231 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        3571\r\n\tFailed packets:            0\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
+    },
+    {
+      "folder": "XSS",
+      "source_file": "XSS/XSS.pcap",
+      "pcap": "XSS__XSS.pcap",
+      "start_epoch": 1676391444.034,
+      "end_epoch": 1676391504.034,
+      "packets": 1993,
+      "replay_start_ms": 1793553917649.2698,
+      "replay_end_ms": 1793553977792.3477,
+      "offered_mbps": 0.065,
+      "offered_pps": 33.2,
+      "tcpreplay": "pe: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nActual: 1993 packets (488912 bytes) sent in 60.02 seconds\r\nRated: 8145.5 Bps, 0.065 Mbps, 33.20 pps\r\nFlows: 377 flows, 6.28 fps, 1824 unique flow packets, 161 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        1993\r\n\tFailed packets:            0\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
+    }
+  ]
+}

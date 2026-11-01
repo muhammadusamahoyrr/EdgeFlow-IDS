@@ -1,0 +1,12 @@
+# Python packages for the analysis venv (/opt/edgeflow), versions used for the reported results.
+# System packages (Ubuntu 24.04, apt): mininet openvswitch-switch openvswitch-testcontroller
+#   tcpreplay tshark tcpdump iptables ethtool python3-venv
+# After installing, apply the NFStream fix: python src/patch_nfstream.py
+nfstream==6.6.0
+scikit-learn==1.9.1
+pymoo==0.6.2
+pandas
+pyarrow
+numpy
+tabulate
+matplotlib

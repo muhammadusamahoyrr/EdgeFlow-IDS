@@ -1,0 +1,6 @@
+{"time_ms": 1793550282706.767, "kind": "ip_rebound_to_new_mac", "severity": "info", "mac": "ee:06:3b:b8:d1:df", "detail": ["192.168.137.153", "dc:a6:32:c9:e4:d5"]}
+{"time_ms": 1793550304694.719, "kind": "mac_claims_multiple_ips", "severity": "info", "mac": "9c:8e:cd:1d:ab:9f", "detail": ["192.168.137.235", "192.168.137.61"]}
+{"time_ms": 1793550371778.8228, "kind": "mac_claims_multiple_ips", "severity": "info", "mac": "dc:a6:32:c9:e4:d5", "detail": ["192.168.137.128", "192.168.137.153"]}
+{"time_ms": 1793550372510.7712, "kind": "mac_claims_multiple_ips", "severity": "info", "mac": "dc:a6:32:c9:e4:90", "detail": ["192.168.137.238", "192.168.137.99"]}
+{"time_ms": 1793550375222.789, "kind": "mac_claims_multiple_ips", "severity": "info", "mac": "e4:5f:01:55:90:c4", "detail": ["192.168.137.247", "192.168.137.36"]}
+{"time_ms": 1793550420938.8162, "kind": "mac_claims_multiple_ips", "severity": "info", "mac": "dc:a6:32:dc:27:d5", "detail": ["192.168.137.147", "192.168.137.66"]}

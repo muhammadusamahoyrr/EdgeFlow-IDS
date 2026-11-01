@@ -1,0 +1,2 @@
+{"time_ms": 1793553602558.6797, "kind": "mac_claims_multiple_ips", "severity": "info", "mac": "e8:1b:69:f8:d4:e3", "detail": ["192.168.137.171", "192.168.137.236"]}
+{"time_ms": 1793553608610.674, "kind": "mac_claims_multiple_ips", "severity": "info", "mac": "9c:8e:cd:1d:ab:9f", "detail": ["192.168.137.116", "192.168.137.242"]}

@@ -1,0 +1,427 @@
+{
+  "features": [
+    "bidirectional_duration_ms",
+    "bidirectional_packets",
+    "bidirectional_bytes",
+    "src2dst_duration_ms",
+    "src2dst_packets",
+    "src2dst_bytes",
+    "dst2src_duration_ms",
+    "dst2src_packets",
+    "dst2src_bytes",
+    "bidirectional_min_ps",
+    "bidirectional_mean_ps",
+    "bidirectional_stddev_ps",
+    "bidirectional_max_ps",
+    "src2dst_min_ps",
+    "src2dst_mean_ps",
+    "src2dst_stddev_ps",
+    "src2dst_max_ps",
+    "dst2src_min_ps",
+    "dst2src_mean_ps",
+    "dst2src_stddev_ps",
+    "dst2src_max_ps",
+    "bidirectional_min_piat_ms",
+    "bidirectional_mean_piat_ms",
+    "bidirectional_stddev_piat_ms",
+    "bidirectional_max_piat_ms",
+    "src2dst_min_piat_ms",
+    "src2dst_mean_piat_ms",
+    "src2dst_stddev_piat_ms",
+    "src2dst_max_piat_ms",
+    "dst2src_min_piat_ms",
+    "dst2src_mean_piat_ms",
+    "dst2src_stddev_piat_ms",
+    "dst2src_max_piat_ms",
+    "bidirectional_syn_packets",
+    "bidirectional_cwr_packets",
+    "bidirectional_ece_packets",
+    "bidirectional_ack_packets",
+    "bidirectional_psh_packets",
+    "bidirectional_rst_packets",
+    "bidirectional_fin_packets",
+    "src2dst_syn_packets",
+    "src2dst_cwr_packets",
+    "src2dst_ece_packets",
+    "src2dst_ack_packets",
+    "src2dst_psh_packets",
+    "src2dst_rst_packets",
+    "src2dst_fin_packets",
+    "dst2src_syn_packets",
+    "dst2src_cwr_packets",
+    "dst2src_ece_packets",
+    "dst2src_ack_packets",
+    "dst2src_psh_packets",
+    "dst2src_rst_packets",
+    "dst2src_fin_packets"
+  ],
+  "n_train": 600044,
+  "n_test": 257162,
+  "train_classes": {
+    "DDoS-SYN": 358069,
+    "Benign": 112753,
+    "Recon": 100201,
+    "DoS-HTTP": 27639,
+    "BruteForce": 756,
+    "Web": 389,
+    "MITM-ARP": 208,
+    "Mirai": 29
+  },
+  "test_classes": {
+    "DDoS-SYN": 153458,
+    "Benign": 48323,
+    "Recon": 42943,
+    "DoS-HTTP": 11845,
+    "BruteForce": 324,
+    "Web": 167,
+    "MITM-ARP": 90,
+    "Mirai": 12
+  },
+  "models": {
+    "majority": {
+      "macro_f1": 0.09343066582241488,
+      "macro_f1_ci95": [
+        0.09325506163781751,
+        0.09361511178225289
+      ],
+      "macro_f1_classes_ge_50": 0.10677790379704558,
+      "benign_false_positive_rate": 1.0,
+      "attack_detection_rate": 1.0,
+      "per_class": {
+        "Benign": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 48323.0
+        },
+        "BruteForce": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 324.0
+        },
+        "DDoS-SYN": {
+          "precision": 0.5967366873799395,
+          "recall": 1.0,
+          "f1-score": 0.7474453265793191,
+          "support": 153458.0
+        },
+        "DoS-HTTP": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 11845.0
+        },
+        "MITM-ARP": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 90.0
+        },
+        "Mirai": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 12.0
+        },
+        "Recon": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 42943.0
+        },
+        "Web": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 167.0
+        }
+      },
+      "fit_seconds": 0.508167707001121,
+      "model_bytes": 589,
+      "tree_nodes": null,
+      "single_ms_median": 0.015400000847876072,
+      "single_ms_iqr": [
+        0.015099998563528061,
+        0.01599999814061448
+      ],
+      "batch_ms_per_flow": 2.6199999410891905e-05
+    },
+    "decision_tree": {
+      "macro_f1": 0.8687117580049233,
+      "macro_f1_ci95": [
+        0.8612909456980402,
+        0.8745661346039639
+      ],
+      "macro_f1_classes_ge_50": 0.8499562948627694,
+      "benign_false_positive_rate": 0.011050638412350227,
+      "attack_detection_rate": 0.9991955525548389,
+      "per_class": {
+        "Benign": {
+          "precision": 0.9964968617720041,
+          "recall": 0.9889493615876498,
+          "f1-score": 0.9927087660988783,
+          "support": 48323.0
+        },
+        "BruteForce": {
+          "precision": 0.9818181818181818,
+          "recall": 1.0,
+          "f1-score": 0.9908256880733946,
+          "support": 324.0
+        },
+        "DDoS-SYN": {
+          "precision": 0.9999934836014831,
+          "recall": 1.0,
+          "f1-score": 0.9999967417901257,
+          "support": 153458.0
+        },
+        "DoS-HTTP": {
+          "precision": 0.9853212548230162,
+          "recall": 0.9917264668636555,
+          "f1-score": 0.9885134850843607,
+          "support": 11845.0
+        },
+        "MITM-ARP": {
+          "precision": 0.06830601092896176,
+          "recall": 0.2777777777777778,
+          "f1-score": 0.10964912280701754,
+          "support": 90.0
+        },
+        "Mirai": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 12.0
+        },
+        "Recon": {
+          "precision": 0.9999767127753715,
+          "recall": 0.9999534266353073,
+          "f1-score": 0.9999650695697735,
+          "support": 42943.0
+        },
+        "Web": {
+          "precision": 0.8505747126436781,
+          "recall": 0.8862275449101796,
+          "f1-score": 0.8680351906158358,
+          "support": 167.0
+        }
+      },
+      "fit_seconds": 13.37640294099765,
+      "model_bytes": 303991,
+      "tree_nodes": 2365,
+      "single_ms_median": 0.20430000040505547,
+      "single_ms_iqr": [
+        0.17210000078193843,
+        0.3467499991529621
+      ],
+      "batch_ms_per_flow": 0.00031120000130613334
+    },
+    "decision_tree_edge": {
+      "macro_f1": 0.866912372989346,
+      "macro_f1_ci95": [
+        0.8602970095070617,
+        0.8728770948853817
+      ],
+      "macro_f1_classes_ge_50": 0.8478998548449669,
+      "benign_false_positive_rate": 0.01148521408025164,
+      "attack_detection_rate": 0.9991668222889403,
+      "per_class": {
+        "Benign": {
+          "precision": 0.9963706144925117,
+          "recall": 0.9885147859197484,
+          "f1-score": 0.9924271542097336,
+          "support": 48323.0
+        },
+        "BruteForce": {
+          "precision": 0.9759036144578314,
+          "recall": 1.0,
+          "f1-score": 0.9878048780487805,
+          "support": 324.0
+        },
+        "DDoS-SYN": {
+          "precision": 0.9999934836014831,
+          "recall": 1.0,
+          "f1-score": 0.9999967417901257,
+          "support": 153458.0
+        },
+        "DoS-HTTP": {
+          "precision": 0.9853977844914401,
+          "recall": 0.991304347826087,
+          "f1-score": 0.9883422414881529,
+          "support": 11845.0
+        },
+        "MITM-ARP": {
+          "precision": 0.0625,
+          "recall": 0.26666666666666666,
+          "f1-score": 0.10126582278481013,
+          "support": 90.0
+        },
+        "Mirai": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 12.0
+        },
+        "Recon": {
+          "precision": 0.9999767127753715,
+          "recall": 0.9999534266353073,
+          "f1-score": 0.9999650695697735,
+          "support": 42943.0
+        },
+        "Web": {
+          "precision": 0.8457142857142858,
+          "recall": 0.8862275449101796,
+          "f1-score": 0.8654970760233918,
+          "support": 167.0
+        }
+      },
+      "fit_seconds": 14.296303134000482,
+      "model_bytes": 301176,
+      "tree_nodes": 2343,
+      "single_ms_median": 0.12509999942267314,
+      "single_ms_iqr": [
+        0.1201999984914437,
+        0.12910000077681616
+      ],
+      "batch_ms_per_flow": 0.0002569999996921979
+    },
+    "random_forest": {
+      "macro_f1": 0.8697698756438127,
+      "macro_f1_ci95": [
+        0.8643606686996048,
+        0.8763479754940754
+      ],
+      "macro_f1_classes_ge_50": 0.8511655721643574,
+      "benign_false_positive_rate": 0.009374417979016203,
+      "attack_detection_rate": 0.9994349714373273,
+      "per_class": {
+        "Benign": {
+          "precision": 0.997541051929649,
+          "recall": 0.9906255820209838,
+          "f1-score": 0.9940712898838139,
+          "support": 48323.0
+        },
+        "BruteForce": {
+          "precision": 0.9969135802469136,
+          "recall": 0.9969135802469136,
+          "f1-score": 0.9969135802469136,
+          "support": 324.0
+        },
+        "DDoS-SYN": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 153458.0
+        },
+        "DoS-HTTP": {
+          "precision": 0.9890229596111949,
+          "recall": 0.9964542000844238,
+          "f1-score": 0.9927246730308256,
+          "support": 11845.0
+        },
+        "MITM-ARP": {
+          "precision": 0.05214723926380368,
+          "recall": 0.18888888888888888,
+          "f1-score": 0.08173076923076923,
+          "support": 90.0
+        },
+        "Mirai": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 12.0
+        },
+        "Recon": {
+          "precision": 0.9999767127753715,
+          "recall": 0.9999534266353073,
+          "f1-score": 0.9999650695697735,
+          "support": 42943.0
+        },
+        "Web": {
+          "precision": 0.8651685393258427,
+          "recall": 0.9221556886227545,
+          "f1-score": 0.8927536231884058,
+          "support": 167.0
+        }
+      },
+      "fit_seconds": 34.89934988699679,
+      "model_bytes": 29268097,
+      "tree_nodes": null,
+      "single_ms_median": 9.788349500013283,
+      "single_ms_iqr": [
+        8.617374749519513,
+        10.909274748883035
+      ],
+      "batch_ms_per_flow": 0.018515899999329122
+    },
+    "hist_gboost": {
+      "macro_f1": 0.8383520555243149,
+      "macro_f1_ci95": [
+        0.8169482511883558,
+        0.8528062155240033
+      ],
+      "macro_f1_classes_ge_50": 0.8398900338997096,
+      "benign_false_positive_rate": 0.0384082114107154,
+      "attack_detection_rate": 0.9997749462504609,
+      "per_class": {
+        "Benign": {
+          "precision": 0.9989895515328718,
+          "recall": 0.9615917885892846,
+          "f1-score": 0.9799339920073389,
+          "support": 48323.0
+        },
+        "BruteForce": {
+          "precision": 0.9726443768996961,
+          "recall": 0.9876543209876543,
+          "f1-score": 0.9800918836140888,
+          "support": 324.0
+        },
+        "DDoS-SYN": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 153458.0
+        },
+        "DoS-HTTP": {
+          "precision": 0.9711467324290999,
+          "recall": 0.9973828619670747,
+          "f1-score": 0.9840899625156185,
+          "support": 11845.0
+        },
+        "MITM-ARP": {
+          "precision": 0.043733681462140996,
+          "recall": 0.7444444444444445,
+          "f1-score": 0.08261405672009864,
+          "support": 90.0
+        },
+        "Mirai": {
+          "precision": 0.7058823529411765,
+          "recall": 1.0,
+          "f1-score": 0.8275862068965517,
+          "support": 12.0
+        },
+        "Recon": {
+          "precision": 0.999976712233064,
+          "recall": 0.9999301399529609,
+          "f1-score": 0.9999534255507428,
+          "support": 42943.0
+        },
+        "Web": {
+          "precision": 0.7718446601941747,
+          "recall": 0.9520958083832335,
+          "f1-score": 0.8525469168900804,
+          "support": 167.0
+        }
+      },
+      "fit_seconds": 33.27523835500324,
+      "model_bytes": 1123735,
+      "tree_nodes": null,
+      "single_ms_median": 4.790700002558879,
+      "single_ms_iqr": [
+        4.2642500011425,
+        6.430624750464631
+      ],
+      "batch_ms_per_flow": 0.009857900000497466
+    }
+  }
+}

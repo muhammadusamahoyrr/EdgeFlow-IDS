@@ -1,0 +1,41 @@
+{"time_ms": 1793549120006.7302, "kind": "mac_claims_multiple_ips", "mac": "9c:8e:cd:1d:ab:9f", "detail": ["192.168.137.16", "192.168.137.242"]}
+{"time_ms": 1793549178994.6746, "kind": "mac_claims_multiple_ips", "mac": "a0:d0:dc:c4:08:ff", "detail": ["192.168.137.245", "192.168.137.58"]}
+{"time_ms": 1793549189086.7554, "kind": "mac_claims_multiple_ips", "mac": "9c:8e:cd:1d:ab:9f", "detail": ["192.168.137.16", "192.168.137.242", "192.168.137.61"]}
+{"time_ms": 1793549238742.685, "kind": "mac_claims_multiple_ips", "mac": "e8:1b:69:f8:d4:e3", "detail": ["192.168.137.171", "192.168.137.89"]}
+{"time_ms": 1793549242914.9038, "kind": "mac_claims_multiple_ips", "mac": "a0:d0:dc:c4:08:ff", "detail": ["192.168.137.210", "192.168.137.245", "192.168.137.58"]}
+{"time_ms": 1793549256482.8003, "kind": "mac_claims_multiple_ips", "mac": "9c:8e:cd:1d:ab:9f", "detail": ["192.168.137.16", "192.168.137.23", "192.168.137.242", "192.168.137.61"]}
+{"time_ms": 1793549267510.75, "kind": "mac_claims_multiple_ips", "mac": "00:17:88:60:d6:4f", "detail": ["192.168.137.100", "192.168.137.172"]}
+{"time_ms": 1793549270630.7786, "kind": "mac_claims_multiple_ips", "mac": "7c:78:b2:86:0d:81", "detail": ["192.168.137.227", "192.168.137.242"]}
+{"time_ms": 1793549270630.7786, "kind": "ip_rebound_to_new_mac", "mac": "7c:78:b2:86:0d:81", "detail": ["192.168.137.242", "9c:8e:cd:1d:ab:9f"]}
+{"time_ms": 1793549325878.7222, "kind": "ip_rebound_to_new_mac", "mac": "dc:a6:32:dc:27:d5", "detail": ["192.168.137.66", "30:23:03:f3:57:cb"]}
+{"time_ms": 1793549330046.7166, "kind": "mac_claims_multiple_ips", "mac": "e8:1b:69:f8:d4:e3", "detail": ["192.168.137.171", "192.168.137.214", "192.168.137.89"]}
+{"time_ms": 1793549331814.733, "kind": "ip_rebound_to_new_mac", "mac": "ee:06:3b:b8:d1:df", "detail": ["192.168.137.153", "dc:a6:32:c9:e4:d5"]}
+{"time_ms": 1793549337638.69, "kind": "mac_claims_multiple_ips", "mac": "6c:5a:b0:44:1d:90", "detail": ["192.168.137.187", "192.168.137.6"]}
+{"time_ms": 1793549345334.6902, "kind": "mac_claims_multiple_ips", "mac": "30:23:03:f3:84:2b", "detail": ["192.168.137.144", "192.168.137.77"]}
+{"time_ms": 1793549346998.6948, "kind": "ip_rebound_to_new_mac", "mac": "10:5a:17:97:a5:c6", "detail": ["192.168.137.23", "9c:8e:cd:1d:ab:9f"]}
+{"time_ms": 1793549348246.75, "kind": "mac_claims_multiple_ips", "mac": "30:23:03:f3:57:cb", "detail": ["192.168.137.100", "192.168.137.66"]}
+{"time_ms": 1793549348246.75, "kind": "ip_rebound_to_new_mac", "mac": "30:23:03:f3:57:cb", "detail": ["192.168.137.100", "00:17:88:60:d6:4f"]}
+{"time_ms": 1793549353030.6677, "kind": "mac_claims_multiple_ips", "mac": "9c:8e:cd:1d:ab:9f", "detail": ["192.168.137.16", "192.168.137.23", "192.168.137.235", "192.168.137.242", "192.168.137.61"]}
+{"time_ms": 1793549419730.7754, "kind": "ip_rebound_to_new_mac", "mac": "d4:a6:51:21:6c:29", "detail": ["192.168.137.214", "e8:1b:69:f8:d4:e3"]}
+{"time_ms": 1793549420042.8162, "kind": "mac_claims_multiple_ips", "mac": "dc:a6:32:dc:27:d5", "detail": ["192.168.137.1", "192.168.137.66"]}
+{"time_ms": 1793549420042.8162, "kind": "ip_rebound_to_new_mac", "mac": "dc:a6:32:dc:27:d5", "detail": ["192.168.137.1", "3c:18:a0:41:c3:a0"]}
+{"time_ms": 1793549422970.84, "kind": "ip_rebound_to_new_mac", "mac": "3c:18:a0:41:c3:a0", "detail": ["192.168.137.1", "dc:a6:32:dc:27:d5"]}
+{"time_ms": 1793549430894.77, "kind": "mac_claims_multiple_ips", "mac": "d0:73:d5:35:fb:c8", "detail": ["192.168.137.145", "192.168.137.68"]}
+{"time_ms": 1793549438390.7231, "kind": "mac_claims_multiple_ips", "mac": "7c:78:b2:86:0d:81", "detail": ["192.168.137.11", "192.168.137.227", "192.168.137.242"]}
+{"time_ms": 1793549442555.12, "kind": "ip_rebound_to_new_mac", "mac": "84:7a:b6:64:62:58", "detail": ["192.168.137.153", "ee:06:3b:b8:d1:df"]}
+{"time_ms": 1793549446198.9607, "kind": "mac_claims_multiple_ips", "mac": "10:2c:6b:1b:43:be", "detail": ["192.168.137.143", "192.168.137.179"]}
+{"time_ms": 1793549471266.8508, "kind": "ip_rebound_to_new_mac", "mac": "e8:1b:69:f8:d6:e6", "detail": ["192.168.137.36", "e4:5f:01:55:90:c4"]}
+{"time_ms": 1793549513443.033, "kind": "mac_claims_multiple_ips", "mac": "dc:a6:32:c9:e4:d5", "detail": ["192.168.137.128", "192.168.137.153"]}
+{"time_ms": 1793549513858.888, "kind": "ip_rebound_to_new_mac", "mac": "dc:a6:32:c9:e5:a4", "detail": ["192.168.137.162", "48:a6:b8:f9:1b:88"]}
+{"time_ms": 1793549514383.782, "kind": "mac_claims_multiple_ips", "mac": "dc:a6:32:c9:e4:90", "detail": ["192.168.137.238", "192.168.137.99"]}
+{"time_ms": 1793549517514.8333, "kind": "mac_claims_multiple_ips", "mac": "e4:5f:01:55:90:c4", "detail": ["192.168.137.247", "192.168.137.36"]}
+{"time_ms": 1793549539938.938, "kind": "mac_claims_multiple_ips", "mac": "b0:c5:54:59:2e:99", "detail": ["192.168.137.132", "192.168.137.191"]}
+{"time_ms": 1793549569058.8298, "kind": "mac_claims_multiple_ips", "mac": "dc:a6:32:dc:27:d5", "detail": ["192.168.137.1", "192.168.137.147", "192.168.137.66"]}
+{"time_ms": 1793549569058.8298, "kind": "ip_rebound_to_new_mac", "mac": "dc:a6:32:dc:27:d5", "detail": ["192.168.137.147", "d4:a6:51:30:64:b7"]}
+{"time_ms": 1793549583862.9343, "kind": "ip_rebound_to_new_mac", "mac": "9c:8e:cd:1d:ab:9f", "detail": ["192.168.137.242", "7c:78:b2:86:0d:81"]}
+{"time_ms": 1793549658230.8896, "kind": "mac_claims_multiple_ips", "mac": "a0:d0:dc:c4:08:ff", "detail": ["192.168.137.167", "192.168.137.210", "192.168.137.245", "192.168.137.58"]}
+{"time_ms": 1793549666278.9558, "kind": "mac_claims_multiple_ips", "mac": "9c:8e:cd:1d:ab:9f", "detail": ["192.168.137.116", "192.168.137.16", "192.168.137.23", "192.168.137.235", "192.168.137.242", "192.168.137.61"]}
+{"time_ms": 1793549681286.838, "kind": "mac_claims_multiple_ips", "mac": "e8:1b:69:f8:d4:e3", "detail": ["192.168.137.171", "192.168.137.214", "192.168.137.236", "192.168.137.89"]}
+{"time_ms": 1793549686930.84, "kind": "mac_claims_multiple_ips", "mac": "7c:78:b2:86:0d:81", "detail": ["192.168.137.11", "192.168.137.208", "192.168.137.227", "192.168.137.242"]}
+{"time_ms": 1793549873462.8147, "kind": "mac_claims_multiple_ips", "mac": "7c:78:b2:86:0d:81", "detail": ["192.168.137.11", "192.168.137.179", "192.168.137.208", "192.168.137.227", "192.168.137.242"]}
+{"time_ms": 1793549873462.8147, "kind": "ip_rebound_to_new_mac", "mac": "7c:78:b2:86:0d:81", "detail": ["192.168.137.179", "10:2c:6b:1b:43:be"]}
