@@ -22,6 +22,14 @@
 - **ARP-spoofing rule:** arpwatch and Snort's ARP preprocessor [K]. FlowIoMT 2025 [A] reports flow features *can* detect ARP spoofing, so we say only that *our* NFStream feature set did not.
 - **OVS/OpenFlow automatic blocking:** many SDN prototypes. SDN-IoT-Sentinel uses a 2-of-3 verdict gate.
 
+## Deep search (1 Nov 2026, ~45 queries, GitHub issues read in full): every item below is PARTLY NEW
+Method precedents to cite: Engelen et al. SPW 2021 and Liu et al. CNS 2022 (CIC-IDS2017/2018 relabelling);
+Flood et al. EuroS&P 2024 (dataset design smells); Pinto/Vitorino et al. ICISSP 2025 and "Flow timeout
+matters" (FGCS 166, 2025) on exporters and timeouts (offline only); Wu et al. arXiv 2609.12605 (eBPF/XDP
+on Raspberry Pi 5, CIC-DDoS2019 replay); ML Defender arXiv 2604.04952 (replay of one CTU scenario);
+arXiv 2004.06432 (zero false-positive IPS trade-off); nfstream issues #120 (same symptom, 2022, no root
+cause) and #193 (closed as expected).
+
 ## Appears new (to our knowledge)
 1. **Measured** background share (91–98%) in the CIC-IoT2023 web and brute-force pcaps, with per-flow labels from evidence: payloads, attacker/victim IPs, ports, ARP. Contrast: Vitorino et al., FPS 2025, arXiv 2511.08345 [V] still assume each capture contains only its named attack.
 2. A temporal-split evaluation on CIC-IoT2023 with a root cause for the drop: brute force moving from SSH to RTSP.
@@ -35,7 +43,7 @@
 5. **NFStream 6.6.0 idle-expiry bug.**
    - **The bug:** in `meter.py`, a flow that a packet updates is not moved to the most-recent end of the LRU cache, so a long-lived flow blocks idle expiry for every flow behind it.
    - **Status:** still present on master (meter.py unchanged since 2024-05-10).
-   - **Related issues:** probably the cause of open issue #120. It is different from #196/#215 (timer does not advance without packets), and open PR #227 does not fix it.
+   - **Related issues:** the likely root cause of the symptom in open issue #120 (2022, never diagnosed; cite #120 and #193). It is different from #196/#215 (timer does not advance without packets), and open PR #227 does not fix it.
 
 ## Open-source projects closest to ours
 - **netguard-ml:** NFStream, CIC-IDS2017, honest temporal evaluation; no IoT, no blocking.

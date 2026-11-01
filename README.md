@@ -174,24 +174,32 @@ Not new, and not claimed as new:
 - temporal splits scoring lower than random splits
 - ARP-spoofing rules (arpwatch does the same)
 
-Mixing of benign traffic into attack captures was also reported before: qualitatively for
-CIC-IoT2023 (Ramkumar et al. 2024, arXiv 2412.10738), and for the related CIC IoT-DIAD 2024
-dataset (Fadel 2026).
+Several related things were reported before:
+- Mixing of benign traffic into attack captures: qualitatively for CIC-IoT2023 (Ramkumar et al.
+  2024, arXiv 2412.10738), and for the related CIC IoT-DIAD 2024 dataset (Fadel 2026).
+- Evidence-based relabelling, which is established for CIC-IDS2017/2018 (Engelen et al. 2021;
+  Liu et al. 2022).
+- Replay-based testing of live NIDS.
 
-To our knowledge, the following are new. Sources and caveats are in
-[`docs/RELATED_WORK.md`](docs/RELATED_WORK.md).
-- **Labels:** we measure the share of background traffic in each CIC-IoT2023 attack pcap
-  ([`results/label_shares.md`](results/label_shares.md)) and label each flow from evidence. Some
-  recent work still labels these pcaps by file name (Vitorino et al., FPS 2025, arXiv 2511.08345).
-- **Temporal split on CIC-IoT2023:** we run one and explain the drop (brute force moves from SSH
-  to RTSP).
-- **Offline vs live:** we compare them on identical held-out windows, with capture ratio,
-  NFStream drop counters and CPU limits. A recent paper saw benchmark performance collapse in
-  deployment (Tang et al., VNICT 2026, arXiv 2609.24393); here live matches offline, and the
-  measurements show where it breaks.
-- **Blocking:** we report false blocks for automatic blocking.
-- **NFStream:** we identify and patch a bug in NFStream 6.6.0 that delays idle-flow export. It is
-  still present on master and possibly related to open issue #120 (not reproduced there).
+Our contribution is the measurements and their causes, not new methods. To our knowledge, they
+are not reported elsewhere. Sources and caveats are in [`docs/RELATED_WORK.md`](docs/RELATED_WORK.md).
+- **Labels:** we measure how much of each CIC-IoT2023 attack capture is background traffic: 91–98%
+  of flows in the web, brute-force and MITM captures
+  ([`results/label_shares.md`](results/label_shares.md)). Each flow is then labelled from evidence
+  (attacker addresses, ports, MACs, HTTP payloads, ARP). Some recent work still labels these pcaps
+  by file name (Vitorino et al., FPS 2025, arXiv 2511.08345).
+- **Temporal split on CIC-IoT2023:** a per-capture time-ordered split drops macro-F1 from 0.869
+  to 0.731. We trace the drop to the brute-force target changing from SSH to RTSP.
+- **Offline vs live:** we replay the same held-out windows through a live gateway and get the same
+  macro-F1, with full packet accounting and CPU limits. This holds for this one setup and these
+  rates, not for live NIDS in general. In contrast, a recent paper saw benchmark performance
+  collapse in deployment (Tang et al., VNICT 2026, arXiv 2609.24393).
+- **Blocking:** we measure false blocks for block-on-first-alert, and the miss cost of a
+  validation-chosen k-verdict policy. k-of-n gating itself is a known idea.
+- **NFStream:** we diagnose and patch a previously undiagnosed flow-cache ordering defect in
+  NFStream 6.6.0 that delays idle-flow export (median 82 s vs 15.6 s). The bug is still present
+  on master. The symptom was reported before without a root cause (nfstream issue #120; see also
+  #193).
 
 ## Method
 
