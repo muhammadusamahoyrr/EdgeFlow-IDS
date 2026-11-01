@@ -19,6 +19,8 @@ import argparse
 import json
 import os
 import re
+import shlex
+import signal
 import subprocess
 import sys
 import threading
@@ -70,6 +72,38 @@ def sample_resources(path, stop_event):
             stop_event.wait(1.0)
 
 
+def wait_caught_up(log_path, quiet_s=5, timeout=600):
+    """Wait until the gateway has caught up: neither NFStream's expired-flow counter nor the
+    gateway's classified-flow counter has changed for quiet_s seconds. Returns seconds waited."""
+    t0, last, still = time.time(), None, 0
+    while time.time() - t0 < timeout:
+        with open(log_path, "rb") as fh:
+            fh.seek(0, 2)
+            fh.seek(max(0, fh.tell() - 8192))
+            tail = fh.read().decode(errors="ignore")
+        exp = re.findall(r'"flows_expired": (\d+)', tail)
+        cls = re.findall(r"gateway: classified (\d+)", tail)
+        now = (exp[-1] if exp else None, cls[-1] if cls else None)
+        still = still + 1 if now == last else 0
+        last = now
+        if still >= quiet_s:
+            return time.time() - t0
+        time.sleep(1)
+    raise RuntimeError(f"gateway did not catch up within {timeout} s, see {log_path}")
+
+
+def wait_ready(log_path, proc, timeout=180):
+    """Wait until the gateway has started capturing (it prints "gateway: ready")."""
+    t0 = time.time()
+    while time.time() - t0 < timeout:
+        if proc.poll() is not None:
+            raise RuntimeError(f"gateway exited early, see {log_path}")
+        if log_path.exists() and "gateway: ready" in log_path.read_text(errors="ignore"):
+            return
+        time.sleep(0.5)
+    raise RuntimeError(f"gateway not ready after {timeout} s, see {log_path}")
+
+
 def parse_rate(tcpreplay_out):
     m = re.search(r"Rated:\s*([\d.]+) Bps,\s*([\d.]+) Mbps,\s*([\d.]+) pps", tcpreplay_out)
     return {"offered_mbps": float(m.group(2)), "offered_pps": float(m.group(3))} if m else {}
@@ -117,20 +151,36 @@ def main(tag, enforce, speed, gap, cpu_quota, only, model, policy):
                               cwd=str(ROOT / "src"), stdout=arp_log, stderr=arp_log))
         threading.Thread(target=sample_resources, args=(out_dir / "resources.csv", stop_event),
                          daemon=True).start()
-        time.sleep(5)
+        wait_ready(out_dir / "gateway.log", procs[0])
         h1.cmd("ping -i 0.005 -q 10.0.2.10 > /dev/null 2>&1 &")
 
         record = []
         for wdw in windows:
             pcap = live / wdw["pcap"]
             t0 = time.time()
-            res = h1.cmd(f"tcpreplay -i h1-eth0 -x {speed} {pcap} 2>&1")
+            res = h1.cmd(f"tcpreplay -i h1-eth0 -x {speed} {shlex.quote(str(pcap))} 2>&1")
             t1 = time.time()
             rate = parse_rate(res)
+            if not rate:
+                raise RuntimeError(f"tcpreplay failed for {pcap.name}: {res.strip()[-300:]}")
             print(f"{wdw['folder']}: replayed in {t1 - t0:.1f} s {rate}")
-            record.append({**wdw, "replay_start_ms": t0 * 1000, "replay_end_ms": t1 * 1000,
-                           **rate, "tcpreplay": res.strip()[-600:]})
             time.sleep(gap)
+            # Wait until the gateway has classified everything from this window (under load it
+            # can lag behind), so no verdict or block of this window spills into the next one.
+            caught_up = wait_caught_up(out_dir / "gateway.log")
+            record.append({**wdw, "replay_start_ms": t0 * 1000, "replay_end_ms": t1 * 1000,
+                           "caught_up_after_gap_s": round(caught_up, 1),
+                           **rate, "tcpreplay": res.strip()[-600:]})
+            # Each window is a different capture session reusing the same IPs: save this window's
+            # drop-rule counters, then clear blocks, votes and ARP state before the next window.
+            dump = subprocess.run(["ovs-ofctl", "dump-flows", "s1"], capture_output=True, text=True)
+            (out_dir / f"ovs_flows_{wdw['folder']}.txt").write_text(dump.stdout)
+            if enforce:
+                # Non-strict match "ip" removes only the IP drop rules; the h1->gw forwarding rule
+                # (in_port only) and the NORMAL rule have no IP match and stay.
+                subprocess.run(["ovs-ofctl", "del-flows", "s1", "ip"], check=True)
+            for p in procs:
+                p.send_signal(signal.SIGUSR1)
         time.sleep(IDLE_FLUSH_S)
 
         meta = {"tag": tag, "enforce": enforce, "policy": policy if enforce else None,
@@ -139,7 +189,7 @@ def main(tag, enforce, speed, gap, cpu_quota, only, model, policy):
         dump = subprocess.run(["ovs-ofctl", "dump-flows", "s1"], capture_output=True, text=True)
         (out_dir / "ovs_flows.txt").write_text(dump.stdout)
     finally:
-        h1.cmd("pkill -f 'ping -i 0.005'")
+        h1.cmd("pkill -f 'ping -i 0.005 -q 10.0.2.10'")
         for p in procs:
             p.terminate()
         for p in procs:

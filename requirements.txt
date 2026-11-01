@@ -1,12 +1,14 @@
-# Python packages for the analysis venv (/opt/edgeflow), versions used for the reported results.
+# Python packages for the analysis venv (/opt/edgeflow): the exact versions used for the reported
+# results (the pickled models depend on the scikit-learn / numpy versions).
 # System packages (Ubuntu 24.04, apt): mininet openvswitch-switch openvswitch-testcontroller
 #   tcpreplay tshark tcpdump iptables ethtool python3-venv
-# After installing, apply the NFStream fix: python src/patch_nfstream.py
+# Live CPU-quota runs use systemd-run: WSL needs systemd=true in /etc/wsl.conf.
+# After installing, apply the NFStream fix: python src/patch_nfstream.py (setup_venv.sh does this).
 nfstream==6.6.0
 scikit-learn==1.9.1
 pymoo==0.6.2
-pandas
-pyarrow
-numpy
-tabulate
-matplotlib
+pandas==3.1.0
+pyarrow==26.0.0
+numpy==2.5.4
+tabulate==0.10.0
+matplotlib==3.11.2

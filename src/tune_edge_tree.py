@@ -7,7 +7,7 @@ macro-F1 is within 0.01 of the best and whose Benign FPR is within 0.5 percentag
 lowest, take the one with the fewest nodes.
 
 Usage: python src/tune_edge_tree.py
-Output: results/edge_tree_tuning.md, results/edge_tree.json (read by config.edge_tree())
+Output: results/edge_tree_tuning.md, results/edge_tree.json (read by config.py into EDGE_TREE)
 """
 import json
 import pickle

@@ -1,6 +1,6 @@
 """List top talkers in each attack pcap, to identify attacker/victim IPs for labelling.
 
-Usage: python src/find_attackers.py [pcap ...]   (default: every pcap under data/raw/cic-iot2023)
+Usage: python src/diag/find_attackers.py [pcap ...]   (default: every pcap under data/raw/cic-iot2023)
 Prints candidates; the confirmed IPs are written by hand into data/attackers.json.
 """
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # EdgeFlow-IDS: import from src

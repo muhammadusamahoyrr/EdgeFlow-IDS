@@ -41,7 +41,8 @@ def write_pcap(path):
 
 
 def main():
-    path = tempfile.mktemp(suffix=".pcap")
+    with tempfile.NamedTemporaryFile(suffix=".pcap", delete=False) as t:
+        path = t.name
     write_pcap(path)
     order = []
     for flow in NFStreamer(source=path, idle_timeout=15, active_timeout=120, n_meters=1):

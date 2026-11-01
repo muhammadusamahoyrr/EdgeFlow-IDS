@@ -3,7 +3,7 @@
 cd "$(dirname "$0")"
 D=../../data/raw/cic-iot2023
 for f in DoS-HTTP_Flood/DoS-HTTP_Flood1.pcap Mirai-udpplain/Mirai-udpplain24.pcap MITM-ArpSpoofing/MITM-ArpSpoofing1.pcap; do
-  bash "$(dirname "$0")/quick_talkers.sh" "$D/$f" 300000
+  bash ./quick_talkers.sh "$D/$f" 300000
 done
 M="$D/MITM-ArpSpoofing/MITM-ArpSpoofing1.pcap"
 echo "=== MITM: ARP replies (count, sender MAC, claimed IP), first 300000 packets"

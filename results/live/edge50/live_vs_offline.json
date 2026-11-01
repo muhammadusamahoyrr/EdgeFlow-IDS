@@ -5,54 +5,54 @@
   "windows": [
     {
       "window": "DDoS-SYN_Flood",
-      "offered_pps": 12236.1,
-      "offered_mbps": 5.9,
+      "offered_pps": 12087.66,
+      "offered_mbps": 5.83,
       "offline_flows": 142724,
-      "live_flows": 125380,
-      "removed_training_connections_off_live": "66496/66248",
+      "live_flows": 142730,
+      "removed_training_connections_off_live": "66496/66504",
       "offline_packets": 218344,
-      "live_packets": 200583,
-      "packet_ratio": 0.9187,
+      "live_packets": 218348,
+      "packet_ratio": 1.0,
       "attack_flows_offline": 142554,
-      "attack_flows_live": 125214,
+      "attack_flows_live": 142554,
       "attack_recall_offline": 1.0,
       "attack_recall_live": 1.0,
-      "benign_fpr_live": 0.0723,
-      "median_verdict_after_flow_end_s": 70.1,
-      "first_verdict_per_attacker_pair_s": 23.3,
+      "benign_fpr_live": 0.0852,
+      "median_verdict_after_flow_end_s": 75.9,
+      "first_verdict_per_attacker_pair_s": 20.2,
       "arp_alerts": 0,
-      "cpu_percent_mean": 49.9,
+      "cpu_percent_mean": 50.2,
       "cpu_percent_max": 55.0,
-      "rss_mb_max": 986.1
+      "rss_mb_max": 981.2
     },
     {
       "window": "DoS-HTTP_Flood",
-      "offered_pps": 658.99,
-      "offered_mbps": 3.86,
+      "offered_pps": 657.69,
+      "offered_mbps": 3.85,
       "offline_flows": 2398,
-      "live_flows": 2444,
+      "live_flows": 2445,
       "removed_training_connections_off_live": "891/953",
       "offline_packets": 29361,
-      "live_packets": 29364,
-      "packet_ratio": 1.0001,
+      "live_packets": 29362,
+      "packet_ratio": 1.0,
       "attack_flows_offline": 1871,
-      "attack_flows_live": 1914,
+      "attack_flows_live": 1917,
       "attack_recall_offline": 0.954,
       "attack_recall_live": 0.964,
-      "benign_fpr_live": 0.0283,
-      "median_verdict_after_flow_end_s": 83.8,
-      "first_verdict_per_attacker_pair_s": 122.5,
-      "arp_alerts": 2,
-      "cpu_percent_mean": 50.9,
-      "cpu_percent_max": 55.0,
-      "rss_mb_max": 986.6
+      "benign_fpr_live": 0.0284,
+      "median_verdict_after_flow_end_s": 15.4,
+      "first_verdict_per_attacker_pair_s": 16.1,
+      "arp_alerts": 0,
+      "cpu_percent_mean": 4.2,
+      "cpu_percent_max": 9.0,
+      "rss_mb_max": 800.6
     },
     {
       "window": "Mirai-udpplain",
-      "offered_pps": 3262.14,
-      "offered_mbps": 14.37,
+      "offered_pps": 3206.32,
+      "offered_mbps": 14.13,
       "offline_flows": 173,
-      "live_flows": 172,
+      "live_flows": 171,
       "removed_training_connections_off_live": "30/33",
       "offline_packets": 38688,
       "live_packets": 38683,
@@ -62,20 +62,20 @@
       "attack_recall_offline": 0.75,
       "attack_recall_live": 0.75,
       "benign_fpr_live": 0.0,
-      "median_verdict_after_flow_end_s": 15.2,
-      "first_verdict_per_attacker_pair_s": 33.6,
-      "arp_alerts": 4,
-      "cpu_percent_mean": 20.0,
-      "cpu_percent_max": 56.0,
-      "rss_mb_max": 927.3
+      "median_verdict_after_flow_end_s": 15.1,
+      "first_verdict_per_attacker_pair_s": 34.1,
+      "arp_alerts": 0,
+      "cpu_percent_mean": 5.4,
+      "cpu_percent_max": 9.0,
+      "rss_mb_max": 798.6
     }
   ],
   "offline": {
     "flows": 145295,
     "macro_f1": 0.9144817485195883,
     "macro_f1_ci95": [
-      0.7269355693827535,
-      0.978779750975445
+      0.7272266089723093,
+      0.9791115961101051
     ],
     "per_class": {
       "Benign": {
@@ -105,30 +105,30 @@
     }
   },
   "live": {
-    "flows": 127996,
-    "macro_f1": 0.9177647031550644,
+    "flows": 145346,
+    "macro_f1": 0.9175040481420824,
     "macro_f1_ci95": [
-      0.7304276749153116,
-      0.9817230851816764
+      0.7312781104726636,
+      0.9823068993327945
     ],
     "per_class": {
       "Benign": {
         "precision": 0.923,
-        "recall": 0.969,
-        "f1": 0.945,
-        "support": 864
+        "recall": 0.966,
+        "f1": 0.944,
+        "support": 871
       },
       "DDoS-SYN": {
         "precision": 1.0,
-        "recall": 0.998,
-        "f1": 0.999,
-        "support": 125214
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 142554
       },
       "DoS-HTTP": {
-        "precision": 0.991,
+        "precision": 0.99,
         "recall": 0.963,
-        "f1": 0.977,
-        "support": 1914
+        "f1": 0.976,
+        "support": 1917
       },
       "Mirai": {
         "precision": 0.75,
@@ -137,80 +137,19 @@
         "support": 4
       }
     },
-    "batch_ms_p50": 0.7421,
-    "batch_ms_p95": 24.162799999999997,
-    "batch_size_p50": 108.0,
-    "amortised_ms_per_flow": 0.00742962962962963
+    "batch_ms_p50": 0.7162,
+    "batch_ms_p95": 23.84234,
+    "batch_size_p50": 105.0,
+    "amortised_ms_per_flow": 0.0073724770642201835
   },
-  "arp_alerts": [
-    {
-      "time_ms": 1793550282706.767,
-      "kind": "ip_rebound_to_new_mac",
-      "severity": "info",
-      "mac": "ee:06:3b:b8:d1:df",
-      "detail": [
-        "192.168.137.153",
-        "dc:a6:32:c9:e4:d5"
-      ]
-    },
-    {
-      "time_ms": 1793550304694.719,
-      "kind": "mac_claims_multiple_ips",
-      "severity": "info",
-      "mac": "9c:8e:cd:1d:ab:9f",
-      "detail": [
-        "192.168.137.235",
-        "192.168.137.61"
-      ]
-    },
-    {
-      "time_ms": 1793550371778.8228,
-      "kind": "mac_claims_multiple_ips",
-      "severity": "info",
-      "mac": "dc:a6:32:c9:e4:d5",
-      "detail": [
-        "192.168.137.128",
-        "192.168.137.153"
-      ]
-    },
-    {
-      "time_ms": 1793550372510.7712,
-      "kind": "mac_claims_multiple_ips",
-      "severity": "info",
-      "mac": "dc:a6:32:c9:e4:90",
-      "detail": [
-        "192.168.137.238",
-        "192.168.137.99"
-      ]
-    },
-    {
-      "time_ms": 1793550375222.789,
-      "kind": "mac_claims_multiple_ips",
-      "severity": "info",
-      "mac": "e4:5f:01:55:90:c4",
-      "detail": [
-        "192.168.137.247",
-        "192.168.137.36"
-      ]
-    },
-    {
-      "time_ms": 1793550420938.8162,
-      "kind": "mac_claims_multiple_ips",
-      "severity": "info",
-      "mac": "dc:a6:32:dc:27:d5",
-      "detail": [
-        "192.168.137.147",
-        "192.168.137.66"
-      ]
-    }
-  ],
+  "arp_alerts": [],
   "nfstream_counters": {
-    "flows_expired": 195240,
-    "packets_processed": 799195,
-    "packets_ignored": 1978,
+    "flows_expired": 212849,
+    "packets_processed": 894563,
+    "packets_ignored": 2035,
     "packets_dropped_filtered_by_kernel": 0,
     "meters_packets_processing_balance": [
-      799195
+      894563
     ]
   }
 }

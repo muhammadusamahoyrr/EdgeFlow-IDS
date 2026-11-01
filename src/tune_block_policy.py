@@ -30,7 +30,8 @@ KS = [1, 2, 3, 5, 10]
 
 
 def simulate(df, k, ignore_mitm):
-    df = df.sort_values("bidirectional_last_seen_ms")
+    # Each pcap is a separate capture session that reuses the same IP addresses: keep them apart.
+    df = df.sort_values(["source_file", "bidirectional_last_seen_ms"])
     counts, blocked_at = {}, {}
     for pair, pred, t in zip(df.pair, df.pred, df.bidirectional_last_seen_ms):
         if pred == "Benign" or (ignore_mitm and pred == "MITM-ARP") or pair in blocked_at:
@@ -56,10 +57,13 @@ def main():
     fit, val = inner_split(train)
     model = DecisionTreeClassifier(**EDGE_TREE).fit(fit[feats].to_numpy(np.float32), fit["label"])
     val = val.assign(pred=model.predict(val[feats].to_numpy(np.float32)),
-                     pair=[tuple(sorted(p)) for p in zip(val.src_ip, val.dst_ip)])
+                     pair=[(f,) + tuple(sorted(p)) for f, p in
+                           zip(val.source_file, zip(val.src_ip, val.dst_ip))])
     rows = [simulate(val, k, ig) for ig in (False, True) for k in KS]
     t = pd.DataFrame(rows)
     ok = t[t.attack_flows_after_block >= t.attack_flows_after_block.max() - 0.005]
+    if ok.empty:  # no attack flows in validation: fall back to fewest false blocks overall
+        ok = t
     best = ok.sort_values(["false_blocks", "k"]).iloc[0]
     policy = {"min_attack_verdicts": int(best.k),
               "ignore_mitm_flow_verdicts": bool(best.ignore_mitm_flow_verdicts)}

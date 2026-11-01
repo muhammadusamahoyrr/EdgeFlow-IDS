@@ -1,6 +1,7 @@
 {
   "tag": "enforce_policy",
   "enforce": true,
+  "policy": "/mnt/d/EdgeFlow-IDS/results/block_policy.json",
   "speed": 1.0,
   "cpu_quota": null,
   "model": "/mnt/d/EdgeFlow-IDS/results/models/decision_tree.pkl",
@@ -12,11 +13,12 @@
       "start_epoch": 1665257807.386,
       "end_epoch": 1665257867.386,
       "packets": 7215,
-      "replay_start_ms": 1793552087320.628,
-      "replay_end_ms": 1793552150260.7676,
-      "offered_mbps": 0.57,
-      "offered_pps": 114.71,
-      "tcpreplay": "acket: Error with PF_PACKET send() [6715]: Message too long (errno = 90)\r\nWarning in send_packets.c:send_packets() line 503:\r\nUnable to send packet: Error with PF_PACKET send() [7190]: Message too long (errno = 90)\r\nActual: 7201 packets (4478042 bytes) sent in 62.77 seconds\r\nRated: 71336.0 Bps, 0.570 Mbps, 114.71 pps\r\nFlows: 406 flows, 6.46 fps, 7034 unique flow packets, 175 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        7201\r\n\tFailed packets:            14\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
+      "replay_start_ms": 1793558953877.1846,
+      "replay_end_ms": 1793559015865.2542,
+      "caught_up_after_gap_s": 5.0,
+      "offered_mbps": 0.579,
+      "offered_pps": 116.51,
+      "tcpreplay": "acket: Error with PF_PACKET send() [6715]: Message too long (errno = 90)\r\nWarning in send_packets.c:send_packets() line 503:\r\nUnable to send packet: Error with PF_PACKET send() [7190]: Message too long (errno = 90)\r\nActual: 7201 packets (4478042 bytes) sent in 61.80 seconds\r\nRated: 72457.6 Bps, 0.579 Mbps, 116.51 pps\r\nFlows: 406 flows, 6.56 fps, 7034 unique flow packets, 175 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        7201\r\n\tFailed packets:            14\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
     },
     {
       "folder": "CommandInjection",
@@ -25,11 +27,12 @@
       "start_epoch": 1676388136.069,
       "end_epoch": 1676388196.069,
       "packets": 2295,
-      "replay_start_ms": 1793552180261.265,
-      "replay_end_ms": 1793552240528.4724,
+      "replay_start_ms": 1793559050916.2578,
+      "replay_end_ms": 1793559111209.0076,
+      "caught_up_after_gap_s": 5.0,
       "offered_mbps": 0.093,
-      "offered_pps": 38.1,
-      "tcpreplay": "long (errno = 90)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nActual: 2290 packets (701311 bytes) sent in 60.10 seconds\r\nRated: 11668.2 Bps, 0.093 Mbps, 38.10 pps\r\nFlows: 450 flows, 7.48 fps, 2107 unique flow packets, 181 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        2290\r\n\tFailed packets:            5\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
+      "offered_pps": 38.09,
+      "tcpreplay": "long (errno = 90)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nActual: 2290 packets (701311 bytes) sent in 60.11 seconds\r\nRated: 11665.5 Bps, 0.093 Mbps, 38.09 pps\r\nFlows: 450 flows, 7.48 fps, 2107 unique flow packets, 181 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        2290\r\n\tFailed packets:            5\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
     },
     {
       "folder": "DDoS-SYN_Flood",
@@ -38,11 +41,12 @@
       "start_epoch": 1669749530.878,
       "end_epoch": 1669749590.878,
       "packets": 388686,
-      "replay_start_ms": 1793552270528.734,
-      "replay_end_ms": 1793552303565.353,
-      "offered_mbps": 5.71,
-      "offered_pps": 11845.43,
-      "tcpreplay": "\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nActual: 388686 packets (23443300 bytes) sent in 32.81 seconds\r\nRated: 714448.5 Bps, 5.71 Mbps, 11845.43 pps\r\nFlows: 216470 flows, 6597.05 fps, 388187 unique flow packets, 492 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        388686\r\n\tFailed packets:            0\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
+      "replay_start_ms": 1793559146289.5942,
+      "replay_end_ms": 1793559178691.32,
+      "caught_up_after_gap_s": 5.0,
+      "offered_mbps": 5.82,
+      "offered_pps": 12067.98,
+      "tcpreplay": "\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nActual: 388686 packets (23443300 bytes) sent in 32.20 seconds\r\nRated: 727871.3 Bps, 5.82 Mbps, 12067.98 pps\r\nFlows: 216470 flows, 6720.99 fps, 388187 unique flow packets, 492 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        388686\r\n\tFailed packets:            0\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
     },
     {
       "folder": "DictionaryBruteForce",
@@ -51,11 +55,12 @@
       "start_epoch": 1666014194.022,
       "end_epoch": 1666014254.022,
       "packets": 3070,
-      "replay_start_ms": 1793552333565.6116,
-      "replay_end_ms": 1793552393960.44,
+      "replay_start_ms": 1793559213738.0254,
+      "replay_end_ms": 1793559274104.6619,
+      "caught_up_after_gap_s": 5.0,
       "offered_mbps": 0.056,
-      "offered_pps": 50.95,
-      "tcpreplay": "pe: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nActual: 3070 packets (422878 bytes) sent in 60.24 seconds\r\nRated: 7019.2 Bps, 0.056 Mbps, 50.95 pps\r\nFlows: 491 flows, 8.14 fps, 2861 unique flow packets, 202 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        3070\r\n\tFailed packets:            0\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
+      "offered_pps": 51.0,
+      "tcpreplay": "pe: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nActual: 3070 packets (422878 bytes) sent in 60.19 seconds\r\nRated: 7025.5 Bps, 0.056 Mbps, 51.00 pps\r\nFlows: 491 flows, 8.15 fps, 2861 unique flow packets, 202 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        3070\r\n\tFailed packets:            0\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
     },
     {
       "folder": "DoS-HTTP_Flood",
@@ -64,11 +69,12 @@
       "start_epoch": 1660053853.089,
       "end_epoch": 1660053913.089,
       "packets": 43353,
-      "replay_start_ms": 1793552423960.7004,
-      "replay_end_ms": 1793552487584.809,
-      "offered_mbps": 4.0,
-      "offered_pps": 682.68,
-      "tcpreplay": "net (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nActual: 43353 packets (31763229 bytes) sent in 63.50 seconds\r\nRated: 500177.5 Bps, 4.00 Mbps, 682.68 pps\r\nFlows: 4989 flows, 78.56 fps, 42918 unique flow packets, 420 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        43353\r\n\tFailed packets:            0\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
+      "replay_start_ms": 1793559309157.0017,
+      "replay_end_ms": 1793559374485.7783,
+      "caught_up_after_gap_s": 5.0,
+      "offered_mbps": 3.89,
+      "offered_pps": 665.18,
+      "tcpreplay": "net (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nActual: 43353 packets (31763229 bytes) sent in 65.17 seconds\r\nRated: 487356.6 Bps, 3.89 Mbps, 665.18 pps\r\nFlows: 4989 flows, 76.54 fps, 42918 unique flow packets, 420 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        43353\r\n\tFailed packets:            0\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
     },
     {
       "folder": "MITM-ArpSpoofing",
@@ -77,11 +83,12 @@
       "start_epoch": 1666125572.636,
       "end_epoch": 1666125632.636,
       "packets": 22978,
-      "replay_start_ms": 1793552517585.0393,
-      "replay_end_ms": 1793552580980.1873,
-      "offered_mbps": 3.21,
-      "offered_pps": 362.76,
-      "tcpreplay": "Error with PF_PACKET send() [21288]: Message too long (errno = 90)\r\nWarning in send_packets.c:send_packets() line 503:\r\nUnable to send packet: Error with PF_PACKET send() [21522]: Message too long (errno = 90)\r\nActual: 22949 packets (25386549 bytes) sent in 63.26 seconds\r\nRated: 401293.1 Bps, 3.21 Mbps, 362.76 pps\r\nFlows: 728 flows, 11.50 fps, 22696 unique flow packets, 274 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        22949\r\n\tFailed packets:            29\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
+      "replay_start_ms": 1793559409551.2507,
+      "replay_end_ms": 1793559474057.072,
+      "caught_up_after_gap_s": 5.0,
+      "offered_mbps": 3.15,
+      "offered_pps": 356.54,
+      "tcpreplay": "Error with PF_PACKET send() [21288]: Message too long (errno = 90)\r\nWarning in send_packets.c:send_packets() line 503:\r\nUnable to send packet: Error with PF_PACKET send() [21522]: Message too long (errno = 90)\r\nActual: 22949 packets (25386549 bytes) sent in 64.36 seconds\r\nRated: 394415.3 Bps, 3.15 Mbps, 356.54 pps\r\nFlows: 728 flows, 11.31 fps, 22696 unique flow packets, 274 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        22949\r\n\tFailed packets:            29\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
     },
     {
       "folder": "Mirai-udpplain",
@@ -90,11 +97,12 @@
       "start_epoch": 1675787181.665,
       "end_epoch": 1675787241.665,
       "packets": 286937,
-      "replay_start_ms": 1793552610980.4497,
-      "replay_end_ms": 1793552688544.5405,
-      "offered_mbps": 16.34,
-      "offered_pps": 3707.58,
-      "tcpreplay": "0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nActual: 286937 packets (158093887 bytes) sent in 77.39 seconds\r\nRated: 2042769.7 Bps, 16.34 Mbps, 3707.58 pps\r\nFlows: 280 flows, 3.61 fps, 285818 unique flow packets, 990 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        286937\r\n\tFailed packets:            0\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
+      "replay_start_ms": 1793559509109.9917,
+      "replay_end_ms": 1793559594873.1724,
+      "caught_up_after_gap_s": 5.0,
+      "offered_mbps": 14.77,
+      "offered_pps": 3352.15,
+      "tcpreplay": "0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nActual: 286937 packets (158093887 bytes) sent in 85.59 seconds\r\nRated: 1846937.1 Bps, 14.77 Mbps, 3352.15 pps\r\nFlows: 280 flows, 3.27 fps, 285818 unique flow packets, 990 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        286937\r\n\tFailed packets:            0\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
     },
     {
       "folder": "Recon-PortScan",
@@ -103,11 +111,12 @@
       "start_epoch": 1664288969.441,
       "end_epoch": 1664289029.441,
       "packets": 5738,
-      "replay_start_ms": 1793552718544.824,
-      "replay_end_ms": 1793552778916.2708,
+      "replay_start_ms": 1793559629928.9602,
+      "replay_end_ms": 1793559690416.9922,
+      "caught_up_after_gap_s": 5.0,
       "offered_mbps": 0.098,
-      "offered_pps": 95.26,
-      "tcpreplay": " Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nActual: 5738 packets (742522 bytes) sent in 60.23 seconds\r\nRated: 12327.7 Bps, 0.098 Mbps, 95.26 pps\r\nFlows: 2938 flows, 48.77 fps, 5525 unique flow packets, 205 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        5738\r\n\tFailed packets:            0\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
+      "offered_pps": 95.11,
+      "tcpreplay": " Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nActual: 5738 packets (742522 bytes) sent in 60.32 seconds\r\nRated: 12308.1 Bps, 0.098 Mbps, 95.11 pps\r\nFlows: 2938 flows, 48.70 fps, 5525 unique flow packets, 205 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        5738\r\n\tFailed packets:            0\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
     },
     {
       "folder": "SqlInjection",
@@ -116,11 +125,12 @@
       "start_epoch": 1664820270.662,
       "end_epoch": 1664820330.662,
       "packets": 3571,
-      "replay_start_ms": 1793552808916.5332,
-      "replay_end_ms": 1793552869204.3184,
+      "replay_start_ms": 1793559725474.9268,
+      "replay_end_ms": 1793559785889.0027,
+      "caught_up_after_gap_s": 5.0,
       "offered_mbps": 0.09,
-      "offered_pps": 59.37,
-      "tcpreplay": ": Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nActual: 3571 packets (679386 bytes) sent in 60.14 seconds\r\nRated: 11295.6 Bps, 0.090 Mbps, 59.37 pps\r\nFlows: 814 flows, 13.53 fps, 3331 unique flow packets, 231 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        3571\r\n\tFailed packets:            0\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
+      "offered_pps": 59.29,
+      "tcpreplay": ": Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nActual: 3571 packets (679386 bytes) sent in 60.22 seconds\r\nRated: 11281.2 Bps, 0.090 Mbps, 59.29 pps\r\nFlows: 814 flows, 13.51 fps, 3331 unique flow packets, 231 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        3571\r\n\tFailed packets:            0\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
     },
     {
       "folder": "XSS",
@@ -129,11 +139,12 @@
       "start_epoch": 1676391444.034,
       "end_epoch": 1676391504.034,
       "packets": 1993,
-      "replay_start_ms": 1793552899204.5688,
-      "replay_end_ms": 1793552959204.215,
-      "offered_mbps": 0.065,
-      "offered_pps": 33.28,
-      "tcpreplay": "pe: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nActual: 1993 packets (488912 bytes) sent in 59.88 seconds\r\nRated: 8164.5 Bps, 0.065 Mbps, 33.28 pps\r\nFlows: 377 flows, 6.29 fps, 1824 unique flow packets, 161 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        1993\r\n\tFailed packets:            0\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
+      "replay_start_ms": 1793559820953.1597,
+      "replay_end_ms": 1793559881401.081,
+      "caught_up_after_gap_s": 9.1,
+      "offered_mbps": 0.064,
+      "offered_pps": 33.05,
+      "tcpreplay": "pe: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nActual: 1993 packets (488912 bytes) sent in 60.29 seconds\r\nRated: 8108.6 Bps, 0.064 Mbps, 33.05 pps\r\nFlows: 377 flows, 6.25 fps, 1824 unique flow packets, 161 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        1993\r\n\tFailed packets:            0\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
     }
   ]
 }

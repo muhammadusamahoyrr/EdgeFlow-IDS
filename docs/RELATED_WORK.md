@@ -18,7 +18,7 @@
 - **Live NFStream + ML IDS, and Mininet/OVS ML IDS.**
   - Realguard, Sensors 2022 [A].
   - PDGC 2024, NFStream → Kafka → Spark [A].
-  - About 12 GitHub prototypes.
+  - About 15 GitHub prototypes (see the deep GitHub search below).
 - **ARP-spoofing rule:** arpwatch and Snort's ARP preprocessor [K]. FlowIoMT 2025 [A] reports flow features *can* detect ARP spoofing, so we say only that *our* NFStream feature set did not.
 - **OVS/OpenFlow automatic blocking:** many SDN prototypes. SDN-IoT-Sentinel uses a 2-of-3 verdict gate.
 
@@ -31,7 +31,7 @@ arXiv 2004.06432 (zero false-positive IPS trade-off); nfstream issues #120 (same
 cause) and #193 (closed as expected).
 
 ## Appears new (to our knowledge)
-1. **Measured** background share (91–98%) in the CIC-IoT2023 web and brute-force pcaps, with per-flow labels from evidence: payloads, attacker/victim IPs, ports, ARP. Contrast: Vitorino et al., FPS 2025, arXiv 2511.08345 [V] still assume each capture contains only its named attack.
+1. **Measured** background share (91–98%) in the CIC-IoT2023 web, brute-force and MITM pcaps, with per-flow labels from evidence: payloads, attacker/victim IPs, ports, ARP. Contrast: Vitorino et al., FPS 2025, arXiv 2511.08345 [V] still assume each capture contains only its named attack.
 2. A temporal-split evaluation on CIC-IoT2023 with a root cause for the drop: brute force moving from SSH to RTSP.
 3. A controlled offline-vs-live test on identical held-out windows, measuring:
    - packet capture ratio
@@ -39,11 +39,11 @@ cause) and #193 (closed as expected).
    - cgroup CPU limits (no limit, one core, half a core)
 
    Contrast: Tang et al., VNICT 2026, arXiv 2609.24393 [V, abstract]: RF F1 0.97 on a benchmark but recall 0.0095 in deployment.
-4. False-block counts for automatic blocking (59 of 77 pairs with block-on-first-alert), and a policy chosen on validation data.
+4. False-block counts for automatic blocking (60 of 79 pairs with block-on-first-alert), and a policy chosen on validation data.
 5. **NFStream 6.6.0 idle-expiry bug.**
    - **The bug:** in `meter.py`, a flow that a packet updates is not moved to the most-recent end of the LRU cache, so a long-lived flow blocks idle expiry for every flow behind it.
    - **Status:** still present on master (meter.py unchanged since 2024-05-10).
-   - **Related issues:** the likely root cause of the symptom in open issue #120 (2022, never diagnosed; cite #120 and #193). It is different from #196/#215 (timer does not advance without packets), and open PR #227 does not fix it.
+   - **Related issues:** possibly the root cause of the symptom in open issue #120 (not yet reproduced on their setup) (2022, never diagnosed; cite #120 and #193). It is different from #196/#215 (timer does not advance without packets), and open PR #227 does not fix it.
 
 ## Deep GitHub search (1 Nov 2026: 80 repository-search queries + 9 web searches, ~600 repos, ~45 READMEs read)
 No repo matches this project in substance (no similarity score >= 4/5). Closest (3/5), each covering only part of it:

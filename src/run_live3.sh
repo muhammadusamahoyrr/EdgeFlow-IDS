@@ -5,6 +5,7 @@
 #  edge50   the three heaviest windows, half a core (quota 50%)
 #  enforce_k1  all windows, block on the first attack verdict (scored by eval_enforce.py)
 cd "$(dirname "$0")"
+filt() { grep -vE "$1" || true; }  # drop noisy lines; never fail on empty output
 exec > >(tee ../results/run_live3.log) 2>&1
 PY=/opt/edgeflow/bin/python
 echo "start $(date)"
@@ -13,11 +14,11 @@ run() {  # tag, extra args...
   local tag=$1; shift
   bash stop_live.sh > /dev/null 2>&1 || true
   rm -rf "../results/live/$tag"
-  python3 ../topology/live_experiment.py --tag "$tag" "$@" 2>&1 | grep -v bogus
+  python3 ../topology/live_experiment.py --tag "$tag" "$@" 2>&1 | filt "bogus"
   if [[ " $* " == *" --enforce "* ]]; then
-    $PY eval_enforce.py --tag "$tag" 2>&1 | grep -v Warning
+    $PY eval_enforce.py --tag "$tag" 2>&1 | filt "Warning"
   else
-    $PY eval_live.py --tag "$tag" 2>&1 | grep -v Warning
+    $PY eval_live.py --tag "$tag" 2>&1 | filt "Warning"
   fi
   echo "DONE $tag $(date)"
 }

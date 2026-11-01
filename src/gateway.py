@@ -60,6 +60,7 @@ class Classifier:
         self.ids, self.rows, self.recv = [], [], []
         self.t_first = None
         self.blocked, self.votes = set(), {}
+        self.n_classified = 0
 
     def add(self, flow):
         with self.lock:
@@ -71,7 +72,25 @@ class Classifier:
             if len(self.rows) >= self.batch_size:
                 self.flush()
 
+    def reset(self):
+        """Forget blocks and votes (the experiment harness sends SIGUSR1 between windows, because
+        each window comes from a different capture session that reuses the same IP addresses)."""
+        with self.lock:
+            self.blocked.clear()
+            self.votes.clear()
+
     def flush(self):
+        # A SIGTERM arriving mid-batch would lose the rest of the batch: defer it until done.
+        main = threading.current_thread() is threading.main_thread()
+        if main:
+            signal.pthread_sigmask(signal.SIG_BLOCK, {signal.SIGTERM})
+        try:
+            self._flush()
+        finally:
+            if main:
+                signal.pthread_sigmask(signal.SIG_UNBLOCK, {signal.SIGTERM})
+
+    def _flush(self):
         with self.lock:
             if not self.rows:
                 return
@@ -95,6 +114,14 @@ class Classifier:
                         blocked_now = 1
                 self.w.writerow(idv + [pred, f"{r_ms:.1f}", f"{verdict_ms:.1f}",
                                        f"{batch_ms:.4f}", len(rows), blocked_now])
+            self.n_classified += len(rows)
+
+    def heartbeat(self):
+        """Print the number of classified flows every second, so the experiment harness can wait
+        until the gateway has caught up before it closes a window."""
+        while True:
+            time.sleep(1)
+            print(f"gateway: classified {self.n_classified}", flush=True)
 
     def timer(self):
         while True:
@@ -116,17 +143,22 @@ def main(iface, out, enforce, bridge, model_path, batch_size, max_wait_ms, socke
     w = csv.writer(fh)
     w.writerow(ID_FIELDS + ["pred", "recv_ms", "verdict_ms", "batch_ms", "batch_size",
                             "blocked_now"])
-    policy = json.loads(open(policy_path).read()) if policy_path != "none" else {}
-    print(f"gateway: blocking policy {policy or 'block on first attack verdict'}", flush=True)
+    policy = (json.loads(open(policy_path).read())
+              if enforce and policy_path != "none" else {})
+    if enforce:
+        print(f"gateway: blocking policy {policy or 'block on first attack verdict'}", flush=True)
     clf = Classifier(bundle["model"], bundle["features"], w, enforce, bridge, batch_size,
                      max_wait_ms, policy)
     threading.Thread(target=clf.timer, daemon=True).start()
+    threading.Thread(target=clf.heartbeat, daemon=True).start()
+    signal.signal(signal.SIGUSR1, lambda *_: clf.reset())
 
     # One meter: NFStream checks a meter's timeouts only when that meter receives a packet, so
     # with several meters idle flows can stay stuck in quiet meters. One core also suits an edge box.
     # performance_report prints NFStream's packet/drop counters every second (to gateway.log).
     streamer = NFStreamer(source=iface, n_meters=1, socket_buffer_size=socket_buffer,
                           performance_report=1, **STREAMER_KW)
+    print("gateway: ready", flush=True)
     try:
         for flow in streamer:
             if flow.src_ip.startswith(MGMT_PREFIX) or flow.dst_ip.startswith(MGMT_PREFIX):

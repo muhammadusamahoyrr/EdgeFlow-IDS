@@ -10,16 +10,18 @@ evaluated on labelled CIC-IoT2023 traffic: offline, and live, by replaying held-
 through a Mininet gateway.
 
 **Headline results.**
-- On a time-ordered split, macro-F1 is 0.731, against 0.869 on a random split.
-- Live macro-F1 equals offline: 0.804 vs 0.804, with 0 kernel drops at 12k packets/s. Small
+- On a time-ordered split, decision-tree macro-F1 is 0.731, against 0.869 on a random split (the
+  deployed edge tree, tuned on validation, scores 0.725).
+- Live macro-F1 matches offline (0.804 vs 0.804, overlapping CIs), with 0 kernel drops at 12k packets/s. Small
   classes make this noisy; see the CIs.
-- One CPU core keeps up; half a core does not.
+- One CPU core keeps up with a 12k packets/s flood; half a core falls about a minute behind but
+  loses no flows.
 - The ARP watcher catches the MITM attack 1.7 s into its window, with no false high alerts in the
-  other windows. This was measured by running the watcher on the same window pcaps; the live run
-  also raised exactly this one high alert.
-- A blocking policy chosen on validation data gives 0 false blocks, against 59 for
-  block-on-first-alert. The trade-off: it blocks 9 attacker pairs instead of 18 and misses the
-  7 Mirai bots.
+  other windows. This was measured by running the watcher on the same window pcaps; the two live enforcement runs (`enforce_k1`, `enforce_policy`) each raised
+  exactly this one high alert.
+- A blocking policy chosen on validation data gives 0 false blocks, against 60 for
+  block-on-first-alert. The trade-off: it blocks 9 attacker pairs instead of 19, missing the
+  7 Mirai bots and the 3 web attackers (CommandInjection, SQLi, XSS).
 
 > **Scope, stated up front.** One dataset (CIC-IoT2023, 10 pcaps, large files trimmed to their
 > first 1M packets), 8 classes, one emulated gateway on a laptop (WSL2). "Edge" results come from
@@ -70,7 +72,7 @@ through a Mininet gateway.
 4. **A small tree is enough.**
    - On the temporal split, the decision tree (222 KB) is within the confidence interval of a
      random forest: 0.731 vs 0.737.
-   - The forest is about 94 times larger (21.3 MB).
+   - The forest is about 94 times larger (21.3 MB vs 227 KB).
    - The forest is about 58 times slower per single-flow call: 7.8 ms vs 0.14 ms.
 
 5. **NSGA-II reduces the inputs, not the model size.** The edge subset was chosen on validation data only.
@@ -116,7 +118,7 @@ macro-F1 0.725. Full tables are in
 
 ![Verdict delay per window and CPU budget](docs/figures/live_delay.png)
 
-**Live equals offline when the pipeline is correct (run `run1`, no CPU limit).**
+**Live matches offline when the pipeline is correct (run `run1`, no CPU limit).**
 - Macro-F1: offline 0.804 [95% CI 0.710, 0.845], live 0.804 [0.715, 0.844].
 - Packet ratio (live/offline) is 0.99–1.01 in every window, and NFStream reported 0 kernel drops,
   including the DDoS window at 12,271 packets/s.
@@ -129,21 +131,23 @@ core on the three heaviest windows):
 
 | DDoS-SYN window (~12–13k packets/s) | No limit | 1 core | 1/2 core |
 |---|---|---|---|
-| Packet ratio live/offline | 1.00 | 1.00 | 0.92 (flows still queued at the end) |
-| Median verdict after flow end | 17.8 s | 21.5 s | 70.1 s |
+| Packet ratio live/offline | 1.00 | 1.00 | 1.00 |
+| Median verdict after flow end | 17.8 s | 21.5 s | 75.9 s |
+| Extra time after the window to classify its backlog | – | – | 138 s |
 | Gateway CPU, mean / max | 120% / 196% | 69% / 104% | 50% / 55% |
-| Gateway memory, max RSS | 990 MB | 1,025 MB | 986 MB |
+| Gateway memory, max RSS | 990 MB | 1,025 MB | 981 MB |
 | Attack recall | 1.00 | 1.00 | 1.00 |
 
-One core keeps up with a 12–13k packets/s SYN flood. Half a core falls about a minute behind: the
-DoS-HTTP window that follows waits 84 s for verdicts, and the gateway only catches up in the
-Mirai window. Memory (about 1 GB at peak, NFStream plus Python) is the larger obstacle for a real
-small device.
+One core keeps up with a 12–13k packets/s SYN flood. Half a core falls about a minute behind
+during the flood. It loses no flows (0 kernel drops, packet ratio 1.00) but needs about 2 more
+minutes to classify its backlog. The experiment waits for that before starting the next window,
+so the following DoS-HTTP window is unaffected (15.4 s). Memory (about 1 GB at peak, NFStream plus
+Python) is the larger obstacle for a real small device.
 
 **ARP spoofing.** These numbers come from `src/eval_arp.py`, which runs the watcher offline on
 the same window pcaps, with fresh state per window because each window comes from a different
-capture session. The live run with a single watcher (`enforce_policy`) raised exactly one high
-alert, for the same attacker MAC.
+capture session. In the live blocking runs (`enforce_k1`, `enforce_policy`) the watcher's state is
+also reset between windows, and each run raised exactly one high alert, for the same attacker MAC.
 - The router-IP rule raised one high alert in the MITM window, 1.7 s into it, naming the
   attacker's MAC.
 - It raised no high alert in the other nine windows.
@@ -155,15 +159,21 @@ alert, for the same attacker MAC.
 
 | Policy | Host pairs blocked | Correct | False blocks | Packets dropped |
 |---|---|---|---|---|
-| Block on the first attack verdict (`enforce_k1`) | 77 | 18 | 59 | 267,393 |
-| 10 verdicts per pair, MITM-ARP flow verdicts ignored (`enforce_policy`, chosen on validation by `src/tune_block_policy.py`) | 9 | 9 | 0 | 179,757 |
+| Block on the first attack verdict (`enforce_k1`) | 79 | 19 | 60 | 326,268 |
+| 10 verdicts per pair, MITM-ARP flow verdicts ignored (`enforce_policy`, chosen on validation by `src/tune_block_policy.py`) | 9 | 9 | 0 | 163,546 |
 
-- **What the validation-chosen policy blocks:** all six DDoS attackers (149k packets dropped),
+**How the blocking runs are scored.** Blocks, verdict counts and ARP state are cleared after
+every window, because each window comes from a different capture session that reuses the same IP
+addresses. Each window waits until the gateway has caught up. Dropped packets are counted from
+that window's own OVS rule counters.
+
+- **What the validation-chosen policy blocks:** all six DDoS attackers (133k packets dropped),
   the DoS-HTTP attacker (30k), the brute-force attacker, and the port scanner (the scan had already
   ended, so 0 packets were dropped).
-- **What it no longer blocks: the Mirai bots.** Each bot's UDP flood forms only a few long flows,
-  so no pair reaches 10 verdicts. Block-on-first-verdict stopped them (99k packets) but also
-  blocked 59 innocent pairs.
+- **What it no longer blocks: the 7 Mirai bots and the 3 web attackers (CommandInjection, SQLi,
+  XSS).** Each Mirai bot's UDP flood forms only a few long flows, and web attacks produce few flows
+  per pair, so no such pair reaches 10 verdicts. Block-on-first-verdict stopped them (Mirai: 100k
+  packets) but also blocked 60 innocent pairs.
 - **What would fix it:** a packet-rate trigger or early classification, both future work.
 
 ## What is and is not new
@@ -198,8 +208,8 @@ are not reported elsewhere. Sources and caveats are in [`docs/RELATED_WORK.md`](
   collapse in deployment (Tang et al., VNICT 2026, arXiv 2609.24393).
 - **Blocking:** we measure false blocks for block-on-first-alert, and the miss cost of a
   validation-chosen k-verdict policy. k-of-n gating itself is a known idea.
-- **NFStream:** we diagnose and patch a previously undiagnosed flow-cache ordering defect in
-  NFStream 6.6.0 that delays idle-flow export (median 82 s vs 15.6 s). The bug is still present
+- **NFStream:** we diagnose and patch a (to our knowledge) previously undiagnosed flow-cache ordering defect in
+  NFStream 6.6.0 that delays idle-flow export (median 82.5 s vs 15.6 s). The bug is still present
   on master. The symptom was reported before without a root cause (nfstream issue #120; see also
   #193). Reported upstream as [nfstream#262](https://github.com/nfstream/nfstream/issues/262).
 
@@ -233,13 +243,21 @@ are not reported elsewhere. Sources and caveats are in [`docs/RELATED_WORK.md`](
 - **Small test classes.** Mirai has only 10 test flows and MITM-ARP 25, so their per-class
   numbers and macro-F1 are noisy. Use the CIs and the macro-F1 over classes with at least 50 test
   flows.
+- **Connections spanning the train/test boundary.** A long connection is cut into several flows
+  (idle 15 s, active 120 s), so 36% of the temporal test flows continue a connection whose earlier
+  flows are in training ([`results/split_overlap.md`](results/split_overlap.md)).
+  - Removing them barely changes macro-F1 over the classes that keep test flows (0.700 vs 0.690).
+  - **All 10 Mirai test flows** are such continuations, so the Mirai test score is not evidence of
+    generalisation.
+  - The live evaluation already removes these connections from both sides.
 - **Within-session generalisation only.** Each attack class comes from one capture session, so
   the temporal split tests generalisation within that session.
 - **Trimmed pcaps.** Large pcaps are trimmed to 1M packets, so DDoS-SYN dominates the flow count.
 - **Slow verdicts.** A verdict needs the flow to end (idle timeout 15 s), so this is not per-packet
   real-time detection. Early classification after N packets is future work.
 - **Coarse blocking.** Blocking acts on whole host pairs. With the validation-chosen policy (10
-  verdicts), floods that form few long flows, such as Mirai's UDP flood, are not blocked.
+  verdicts), floods that form few long flows, such as Mirai's UDP flood, and low-volume web attacks are not
+  blocked.
 - **Memory.** The gateway needs about 1 GB at peak, which is too much for the smallest edge
   devices.
 - **One run per setting.** Each live setting was run once, so the timing figures carry run-to-run
@@ -248,7 +266,8 @@ are not reported elsewhere. Sources and caveats are in [`docs/RELATED_WORK.md`](
 
 ## Reproduce
 
-Tested on Windows 11, WSL2 Ubuntu 24.04 (kernel 6.6), Python 3.12, CPU only.
+Tested on Windows 11, WSL2 Ubuntu 24.04 (kernel 6.6), Python 3.12, CPU only. The CPU-quota runs use
+`systemd-run`, so WSL needs `systemd=true` in `/etc/wsl.conf`.
 
 ```bash
 # 1. system packages + venv (/opt/edgeflow) + NFStream patch
@@ -267,11 +286,14 @@ sudo bash src/run_enforce2.sh
 sudo bash src/run_bug_check.sh
 # 7. label shares, ARP watcher per window, figures
 sudo /opt/edgeflow/bin/python src/label_shares.py
+sudo /opt/edgeflow/bin/python src/diag/check_split_overlap.py
 sudo /opt/edgeflow/bin/python src/eval_arp.py
 sudo /opt/edgeflow/bin/python src/make_figures.py
 ```
 
-`results/models/` is not committed (pickles); step 4 rebuilds it. Diagnostic scripts used to
+`results/models/` is not committed (pickles); step 4 rebuilds it. The committed `enforce_k1`,
+`enforce_policy` and `edge50` results come from `src/run_final_live.sh`, which runs the same
+commands as steps 5–6 with the final per-window reset and catch-up wait. Diagnostic scripts used to
 confirm attackers and find bugs are in `src/diag/`.
 
 ## License
@@ -282,7 +304,7 @@ repository and is subject to its own terms.
 ## Data and credit
 
 - **Dataset:** E. C. P. Neto et al., "CICIoT2023: A real-time dataset and benchmark for
-  large-scale attacks in IoT environment", *Sensors* 23(13), 2023. Raw pcaps are not
+  large-scale attacks in IoT environment", *Sensors* 23(13), 5941, 2023, doi:10.3390/s23135941. Raw pcaps are not
   redistributed here.
 - **Software:** NFStream (Aouini and Pekar), Mininet, Open vSwitch, scikit-learn and pymoo.
 - **Related work:** see [`docs/RELATED_WORK.md`](docs/RELATED_WORK.md) for sources and how
@@ -291,4 +313,5 @@ repository and is subject to its own terms.
   - Vitorino et al., arXiv 2511.08345.
   - Tang et al., arXiv 2609.24393.
   - Arp et al., USENIX Security 2022.
-  - Engelen et al. 2021, on labelling errors in CIC-IDS2017.
+  - Engelen et al. 2021 and Liu et al. 2022, on labelling errors in CIC-IDS2017/2018.
+  - Fadel 2026, on folder labels and splits in CIC IoT-DIAD 2024.

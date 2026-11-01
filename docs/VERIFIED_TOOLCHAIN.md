@@ -1,6 +1,8 @@
 # Toolchain notes (researched 1 Nov 2026)
 
-Sources were checked online. Nothing below has been run on this laptop yet. Items marked UNVERIFIED still need a local test.
+> **Pre-implementation notes, kept for history; superseded by `README.md`.** In the final setup: venv at `/opt/edgeflow` (`src/setup_venv.sh`), blocking with OVS drop rules (not iptables), a 200 packet/s ping ticker instead of packet-count early expiry, and the NFStream patch in `src/patch_nfstream.py`.
+
+Sources were checked online before implementation. Items marked UNVERIFIED were later tested in the project.
 
 ## Mininet (WSL2, Ubuntu 24.04)
 - Use the apt package: `mininet 2.3.0-1.1` (noble/universe). The Debian fix replaced distutils with `packaging`, so it works with Python 3.12.
@@ -58,7 +60,7 @@ tcpreplay -i h1-eth0 -x 1.0 out.pcap      # real-time; keeps inter-arrival featu
 
 ## NSGA-II (pymoo 0.6.2)
 - Classes: `ElementwiseProblem`, `NSGA2(sampling=BinaryRandomSampling(), crossover=TwoPointCrossover(), mutation=BitflipMutation(), eliminate_duplicates=True)`.
-- Objectives: `[1 - F1, latency, size]`.
+- Objectives used in the end: `[1 - validation macro-F1, number of features, node count]` (see `results/nsga/summary.md`).
 - Source: https://pymoo.org/customization/binary.html
 
 ## Related work to cite
@@ -66,4 +68,4 @@ tcpreplay -i h1-eth0 -x 1.0 out.pcap      # real-time; keeps inter-arrival featu
 - **arXiv 2401.16843**, "Evaluating ML-Based Anomaly Detection Across Datasets of Varied Integrity". Maps NFStream features to CICFlowMeter and reports value discrepancies.
 - **Rosay et al. 2022**, LycoSTand / LYCOS-IDS2017.
 - **"Why are My Flows Different? A Tutorial on Flow Exporters"**, IEEE COMST: https://ieeexplore.ieee.org/document/9076310
-- **NFStream + Mininet + live ML IDS:** searches found no open-source project doing this. That is not proof none exists.
+- **NFStream + Mininet + live ML IDS:** a first quick search found none; the later deep search found about 15 NFStream + ML repos, none combining all parts of this project (see `docs/RELATED_WORK.md`).

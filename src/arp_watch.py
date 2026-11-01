@@ -54,19 +54,24 @@ class ArpState:
 
 def run(cmd, out, live):
     state = ArpState()
+    # SIGUSR1 = a new capture session (the live harness sends it between windows): forget bindings.
+    signal.signal(signal.SIGUSR1, lambda *_: state.__init__())
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
-    with open(out, "a") as fh:
-        for line in proc.stdout:
-            m = REPLY.search(line)
-            if not m:
-                continue
-            ts, ip, mac = float(m.group(1)), m.group(2), m.group(3).lower()
-            when = time.time() * 1000 if live else ts * 1000
-            for kind, sev, amac, detail in state.check(ip, mac):
-                fh.write(json.dumps({"time_ms": when, "kind": kind, "severity": sev,
-                                     "mac": amac, "detail": detail}) + "\n")
-                fh.flush()
-    proc.wait()
+    try:
+        with open(out, "a") as fh:
+            for line in proc.stdout:
+                m = REPLY.search(line)
+                if not m:
+                    continue
+                ts, ip, mac = float(m.group(1)), m.group(2), m.group(3).lower()
+                when = time.time() * 1000 if live else ts * 1000
+                for kind, sev, amac, detail in state.check(ip, mac):
+                    fh.write(json.dumps({"time_ms": when, "kind": kind, "severity": sev,
+                                         "mac": amac, "detail": detail}) + "\n")
+                    fh.flush()
+        proc.wait()
+    finally:
+        proc.terminate()
 
 
 if __name__ == "__main__":

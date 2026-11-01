@@ -125,6 +125,8 @@ def main(pop, gen, per_class, seed):
 
     pareto = table[table.subset != "all_features"]
     best_val = pareto.val_macro_f1_capped_fit.max()
+    if pareto.empty:
+        raise SystemExit("NSGA-II returned no non-empty feature subset")
     pick = (pareto[pareto.val_macro_f1_capped_fit >= best_val - 0.01]
             .sort_values(["n_features", "nodes"]).iloc[0])
     (out / "edge_pick.txt").write_text(pick.features + "\n")

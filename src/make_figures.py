@@ -52,7 +52,7 @@ def nsga_pareto():
     fig, ax = plt.subplots(figsize=(7, 3.8))
     ax.scatter(sub.n_features, sub.val_macro_f1_capped_fit, s=18, color=GREY, label="Pareto subsets: validation F1")
     ax.scatter(sub.n_features, sub.test_macro_f1, s=18, color=BLUE, marker="x", label="same subsets: test F1")
-    ax.scatter([full.n_features], [full.test_macro_f1], s=70, color=ORANGE, label="all 54 features: test F1")
+    ax.scatter([full.n_features], [full.test_macro_f1], s=70, color=ORANGE, label=f"all {full.n_features} features: test F1")
     ax.scatter([chosen.n_features], [chosen.test_macro_f1], s=110, facecolors="none", edgecolors=GREEN,
                linewidths=2, label=f"edge pick ({chosen.n_features} features, chosen on validation)")
     ax.set_xlabel("number of features")

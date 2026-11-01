@@ -2,7 +2,9 @@
 
 For every host pair the gateway blocked: was the flow that triggered the block an attack flow
 (by the attackers.json rules) or a false block? How many packets did the pair's two OVS drop
-rules stop (n_packets from ovs-ofctl dump-flows)? How many packets did the window offer in total?
+rules stop in that window (n_packets from that window's ovs-ofctl dump; blocks are cleared between
+windows, because each window is a different capture session reusing the same IP addresses)? How
+many packets did the window offer in total?
 
 Usage: python src/eval_enforce.py --tag enforce
 Output: results/live/<tag>/enforcement.md
@@ -36,14 +38,20 @@ def main(tag):
         return
     trig = pd.concat(parts)
 
-    drops = {}
-    for line in (run / "ovs_flows.txt").read_text().splitlines():
-        m = re.search(r"n_packets=(\d+).*priority=100,ip,nw_src=([\d.]+),nw_dst=([\d.]+)", line)
-        if m:
-            pair = tuple(sorted((m.group(2), m.group(3))))
-            drops[pair] = drops.get(pair, 0) + int(m.group(1))
+    def drops_in(path):
+        """Packets stopped per host pair (both directions), from one OVS flow dump."""
+        drops = {}
+        for line in path.read_text().splitlines():
+            m = re.search(r"n_packets=(\d+).*priority=100,ip,nw_src=([\d.]+),nw_dst=([\d.]+)", line)
+            if m:
+                pair = tuple(sorted((m.group(2), m.group(3))))
+                drops[pair] = drops.get(pair, 0) + int(m.group(1))
+        return drops
+
+    # Blocks are cleared after every window, so each window's dump holds only its own drops.
+    per_window = {w["folder"]: drops_in(run / f"ovs_flows_{w['folder']}.txt") for w in meta["windows"]}
     trig["pair"] = [tuple(sorted(p)) for p in zip(trig.src_ip, trig.dst_ip)]
-    trig["dropped_packets"] = [drops.get(p, 0) for p in trig.pair]
+    trig["dropped_packets"] = [per_window[w].get(p, 0) for w, p in zip(trig.window, trig.pair)]
     trig["correct_block"] = trig.label != "Benign"
     trig["block_after_flow_start_s"] = (trig.verdict_ms - trig.bidirectional_first_seen_ms) / 1000
 

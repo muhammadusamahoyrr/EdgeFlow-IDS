@@ -5,7 +5,7 @@ D=../../data/raw/cic-iot2023
 OUT=../../results/attackers_large.log
 : > "$OUT"
 for f in DDoS-SYN_Flood/DDoS-SYN_Flood15.pcap DoS-HTTP_Flood/DoS-HTTP_Flood1.pcap Mirai-udpplain/Mirai-udpplain24.pcap MITM-ArpSpoofing/MITM-ArpSpoofing1.pcap; do
-  /opt/edgeflow/bin/python "$(dirname "$0")/find_attackers.py" "$D/$f" 2>&1 | grep -v Warning >> "$OUT"
+  /opt/edgeflow/bin/python ./find_attackers.py "$D/$f" 2>&1 | grep -v Warning >> "$OUT"
 done
 echo -e "\n=== MITM ARP replies: sender MAC -> claimed IPs" >> "$OUT"
 tshark -r "$D/MITM-ArpSpoofing/MITM-ArpSpoofing1.pcap" -Y "arp.opcode==2" -T fields -e eth.src -e arp.src.proto_ipv4 2>/dev/null \

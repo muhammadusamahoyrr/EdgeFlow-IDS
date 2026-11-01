@@ -19,6 +19,7 @@ Output: results/live/<tag>/{live_vs_offline.json, live_vs_offline.md}
 import argparse
 import json
 import pickle
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -78,7 +79,10 @@ def main(tag):
     if meta.get("enforce"):
         raise SystemExit("enforce run: use eval_enforce.py (blocking removes traffic)")
     # Trusted input: the model file is produced locally by train_edge_model.py.
-    with open(meta["model"], "rb") as f:
+    model_path = Path(meta["model"])
+    if not model_path.exists():  # results copied from another machine: use the local models folder
+        model_path = RESULTS / "models" / model_path.name
+    with open(model_path, "rb") as f:
         bundle = pickle.load(f)
     model, feats = bundle["model"], bundle["features"]
     attackers = json.loads(ATTACKERS_FILE.read_text())

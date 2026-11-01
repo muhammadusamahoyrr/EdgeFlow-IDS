@@ -1,5 +1,7 @@
 # Datasets (researched 1 Nov 2026)
 
+> **Pre-implementation research notes, kept for history.** Written before the experiments; the labelling rule, tools and results actually used are in `README.md`, `data/attackers.json` and `results/`.
+
 ## Primary: CIC-IoT2023 pcaps, ~5.1 GB subset
 - Official page: https://www.unb.ca/cic/datasets/iotdataset-2023.html
 - Download mirror (unofficial, checked on 1 Nov 2026): https://huggingface.co/datasets/bencorn/CIC-IoT-2023
@@ -28,8 +30,8 @@ The label comes from the file, but **not every flow in an attack file is an atta
 4. Merge the classes into 8: Benign, DDoS-SYN, DoS-HTTP, Mirai, Recon, MITM-ARP, BruteForce, Web.
 
 ### Known issues to cite
-- arXiv 2412.10738 (Ramkumar et al., 2024): not every attack was run against every device as the paper claims. Seen only in a search snippet; read it before citing.
-- The attack pcaps may contain background benign traffic (unverified). This is why step 3 is needed.
+- arXiv 2412.10738 (Ramkumar et al., 2024): the pcaps mix benign packets with attack packets, and not every attack was run against every device (relevant section read; see docs/RELATED_WORK.md).
+- Measured later: 91–98% of flows in the web, brute-force and MITM pcaps are background traffic (`results/label_shares.md`). The rule finally used: a flow is an attack only between a confirmed attacker and victim (on the attack's port where known), or relayed via the attacker's MAC for ARP spoofing; everything else is Benign.
 
 ## Second (generalisation): IoT-23, ~265 MB
 - Source: https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/
@@ -55,4 +57,4 @@ The label comes from the file, but **not every flow in an attack file is an atta
 - Sarhan et al., arXiv 2104.07183. Standard NIDS feature sets.
 - Realguard, Sensors 2022 (PMC8778231). Lightweight IDS for IoT gateways; does not use NFStream.
 - Engelen et al., IEEE SPW 2021 and CNS 2022. Labelling errors.
-- **Our difference:** live extraction on an emulated gateway with replayed pcaps, a measured offline-vs-live gap, edge cost (latency, CPU, RAM), and NSGA-II feature selection.
+- **Our difference:** live extraction on an emulated gateway with replayed pcaps, a measured offline-vs-live gap, and edge cost (latency, CPU, RAM).

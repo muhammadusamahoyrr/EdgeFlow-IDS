@@ -1,15 +1,12 @@
 #!/usr/bin/env bash
-# Full offline pipeline: trim large pcaps -> extract + label flows -> baselines (both splits).
+# Offline data pipeline: trim large pcaps -> extract + label flows (models: run_offline2.sh).
 # Run in WSL as root. Log: results/run_all.log
-set -e
+set -eo pipefail
 cd "$(dirname "$0")"
+filt() { grep -vE "$1" || true; }  # drop noisy lines; never fail on empty output
 LOG=../results/run_all.log
 exec > >(tee "$LOG") 2>&1
 echo "start $(date)"
 bash trim_pcaps.sh 1000000
-/opt/edgeflow/bin/python extract_flows.py 2>&1 | grep -v Warning
-for s in temporal stratified; do
-  echo "########## split: $s"
-  /opt/edgeflow/bin/python train_baseline.py --split "$s"
-done
+/opt/edgeflow/bin/python extract_flows.py 2>&1 | filt "Warning"
 echo "ALL_DONE $(date)"

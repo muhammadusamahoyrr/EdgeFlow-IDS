@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Download the CIC-IoT2023 pcap subset (~5.1 GB) and IoT-23 scenarios into data/raw/.
+# Download the CIC-IoT2023 pcap subset (~5.1 GB) into data/raw/cic-iot2023/.
 # Resumable: re-run after a broken connection.
 # Usage: bash src/download_data.sh [small|all]
 #   small = files under 250 MB only (~290 MB, for the first smoke test)
