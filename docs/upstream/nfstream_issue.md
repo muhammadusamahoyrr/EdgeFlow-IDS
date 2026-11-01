@@ -1,3 +1,5 @@
+> Posted as https://github.com/nfstream/nfstream/issues/262 on 1 Nov 2026 (shortened version of this draft).
+
 # Idle flows are exported late: `consume()` does not refresh the LRU position of updated flows
 
 **NFStream version:** 6.6.0 (also current `master`; `nfstream/meter.py` last changed in 5481132, 2024-05-10)

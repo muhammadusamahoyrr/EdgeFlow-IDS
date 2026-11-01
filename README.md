@@ -101,8 +101,10 @@ through a Mininet gateway.
        ended. In the XSS window only 65% of the packets were in flows exported before the run
        stopped.
      - **Patched code:** 15.6 s and 15.5 s, with a packet ratio of 1.00 and 0.99.
-   - **Status upstream:** the bug is still in NFStream master and is possibly related to open
-     issue #120 (not yet reproduced there).
+   - **Status upstream:** reported as
+     [nfstream/nfstream#262](https://github.com/nfstream/nfstream/issues/262), with a minimal
+     reproduction (`src/diag/nfstream_lru_repro.py`) and the one-line fix. The bug is still in
+     NFStream master and is possibly the cause of the older issue #120.
 
 ## Live results
 
@@ -199,7 +201,7 @@ are not reported elsewhere. Sources and caveats are in [`docs/RELATED_WORK.md`](
 - **NFStream:** we diagnose and patch a previously undiagnosed flow-cache ordering defect in
   NFStream 6.6.0 that delays idle-flow export (median 82 s vs 15.6 s). The bug is still present
   on master. The symptom was reported before without a root cause (nfstream issue #120; see also
-  #193).
+  #193). Reported upstream as [nfstream#262](https://github.com/nfstream/nfstream/issues/262).
 
 ## Method
 
