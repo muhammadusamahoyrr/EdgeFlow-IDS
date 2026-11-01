@@ -45,7 +45,17 @@ cause) and #193 (closed as expected).
    - **Status:** still present on master (meter.py unchanged since 2024-05-10).
    - **Related issues:** the likely root cause of the symptom in open issue #120 (2022, never diagnosed; cite #120 and #193). It is different from #196/#215 (timer does not advance without packets), and open PR #227 does not fix it.
 
-## Open-source projects closest to ours
+## Deep GitHub search (1 Nov 2026: 80 repository-search queries + 9 web searches, ~600 repos, ~45 READMEs read)
+No repo matches this project in substance (no similarity score >= 4/5). Closest (3/5), each covering only part of it:
+- maremethembalethu-hue/reaf-5g-prototype: replays labelled CICIoT2023 pcaps through a simulated 5G UPF, XGBoost / decision tree "Lite", notes live-vs-training divergence; no blocking, no NFStream, no evidence-based relabelling.
+- MiltonTwi/iot-sdn-ai: Mininet + OVS IoT network, Ryu DROP/meter rules, IP-MAC anti-spoofing, "0 false alarms, 0 collateral rules"; self-generated attacks, CIC-IoT-2023 only as an external CSV test.
+- shivangtanwar/xai-sdn-ids: confidence- and persistence-gated DROP (close to our k-verdict policy); self-generated data, controller statistics.
+Also related: harsh-pandhe/netguard-ml (NFStream, temporal split, CIC-IDS2017), anacletu/ml-intrusion-detection-cicids2017 (tcpreplay on a Raspberry Pi 5).
+Commonplace on GitHub: NFStream + ML live detection (~15 repos), Ryu/Mininet/OVS ML IDS with DROP rules (dozens), CICIoT2023 notebooks (100+), ARP-spoof watchers, GA/NSGA feature selection.
+Not found anywhere: evidence-based per-flow relabelling of CICIoT2023 pcaps; tcpreplay of held-out windows through a blocking Mininet/OVS gateway; cgroup CPU-limited gateway evaluation; validation-chosen k-verdict policy with false-block analysis on replayed real data; an NFStream idle-expiry patch.
+README matching only (GitHub code search unavailable), so treat as indicative.
+
+## Open-source projects closest to ours (first, quick search)
 - **netguard-ml:** NFStream, CIC-IDS2017, honest temporal evaluation; no IoT, no blocking.
 - **TrangTuanAnh/tls-anomaly-detection-ids:** NFStream + MLP + iptables blocking; no evaluation.
 - **Sunay20/IDS_IoT:** RT-IoT2022, NFStream, IP blocking; random split only.
