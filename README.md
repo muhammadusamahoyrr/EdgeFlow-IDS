@@ -14,8 +14,8 @@ through a Mininet gateway.
   deployed edge tree, tuned on validation, scores 0.725).
 - Live macro-F1 matches offline (0.804 vs 0.804, overlapping CIs), with 0 kernel drops at 12k packets/s. Small
   classes make this noisy; see the CIs.
-- One CPU core keeps up with a 12k packets/s flood; half a core falls about a minute behind but
-  loses no flows.
+- One CPU core handles a 12–13k packets/s replayed flood without loss, with a backlog of under a
+  minute. Half a core falls about a minute behind but loses no flows.
 - The ARP watcher catches the MITM attack 1.7 s into its window, with no false high alerts in the
   other windows. This was measured by running the watcher on the same window pcaps; the two live enforcement runs (`enforce_k1`, `enforce_policy`) each raised
   exactly this one high alert.
@@ -110,8 +110,13 @@ through a Mininet gateway.
 
 ## Live results
 
-Ten unseen 60 s windows (one per pcap, after the train/test boundary) were replayed at original
-speed through the Mininet gateway, about 149k flows in total. The live model is
+Ten unseen 60 s windows (one per pcap, after the train/test boundary) were replayed with
+tcpreplay at ×1.0 timing through the Mininet gateway, about 149k flows in total. On this laptop
+tcpreplay could not sustain the original rate of the two heaviest windows: DDoS-SYN is about
+17,400 packets/s originally, Mirai about 4,800. The loads reported below are the achieved replay
+rates, 69–77% of the original. The no-limit and one-core runs used a fixed 30 s gap between
+windows. The per-window reset and catch-up wait (see "How the blocking runs are scored") were
+added for the half-core and blocking runs. The live model is
 `results/models/decision_tree.pkl`: the validation-tuned tree on all 54 features, with test
 macro-F1 0.725. Full tables are in
 `results/live/<run>/live_vs_offline.md`; the figure shows the verdict delay per window.
@@ -138,8 +143,10 @@ core on the three heaviest windows):
 | Gateway memory, max RSS | 990 MB | 1,025 MB | 981 MB |
 | Attack recall | 1.00 | 1.00 | 1.00 |
 
-One core keeps up with a 12–13k packets/s SYN flood. Half a core falls about a minute behind
-during the flood. It loses no flows (0 kernel drops, packet ratio 1.00) but needs about 2 more
+With one core, the gateway loses no packets during a 12–13k packets/s replayed SYN flood, and
+its median verdict delay rises only from 17.8 s to 21.5 s. A backlog still forms: gateway CPU
+stays near 100% for 45–60 s after the replay ends, into the next window. Half a core falls about
+a minute behind during the flood. It loses no flows (0 kernel drops, packet ratio 1.00) but needs about 2 more
 minutes to classify its backlog. The experiment waits for that before starting the next window,
 so the following DoS-HTTP window is unaffected (15.4 s). Memory (about 1 GB at peak, NFStream plus
 Python) is the larger obstacle for a real small device.
@@ -234,7 +241,8 @@ are not reported elsewhere. Sources and caveats are in [`docs/RELATED_WORK.md`](
   - One 60 s window per pcap, starting just after the train/test boundary.
   - Connections that a training flow was still part of are removed from both the offline and the
     live side.
-  - h1 replays each window at original speed (tcpreplay). The gateway captures on `gw-eth0`.
+  - h1 replays each window with tcpreplay at ×1.0 timing (the achieved rate is 69–77% of the
+    original for the two heaviest windows). The gateway captures on `gw-eth0`.
   - A 200 packet/s ping keeps NFStream's timers moving between windows. Management traffic is
     never scored or blocked.
 
