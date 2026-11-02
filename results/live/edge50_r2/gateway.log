@@ -1,0 +1,1150 @@
+gateway: ready
+gateway: classified 0
+{"flows_expired": 0, "packets_processed": 1, "packets_ignored": 2, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [1]}
+gateway: classified 0
+{"flows_expired": 0, "packets_processed": 11237, "packets_ignored": 18, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [11237]}
+gateway: classified 0
+{"flows_expired": 0, "packets_processed": 11237, "packets_ignored": 18, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [11237]}
+gateway: classified 0
+{"flows_expired": 0, "packets_processed": 24767, "packets_ignored": 30, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [24767]}
+gateway: classified 0
+{"flows_expired": 0, "packets_processed": 39178, "packets_ignored": 44, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [39178]}
+gateway: classified 0
+{"flows_expired": 0, "packets_processed": 39178, "packets_ignored": 44, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [39178]}
+gateway: classified 0
+{"flows_expired": 0, "packets_processed": 53014, "packets_ignored": 62, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [53014]}
+gateway: classified 0
+{"flows_expired": 0, "packets_processed": 66061, "packets_ignored": 78, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [66061]}
+gateway: classified 0
+{"flows_expired": 0, "packets_processed": 77956, "packets_ignored": 93, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [77956]}
+gateway: classified 0
+{"flows_expired": 0, "packets_processed": 77956, "packets_ignored": 93, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [77956]}
+gateway: classified 0
+{"flows_expired": 0, "packets_processed": 91339, "packets_ignored": 104, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [91339]}
+gateway: classified 0
+{"flows_expired": 0, "packets_processed": 106002, "packets_ignored": 115, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [106002]}
+gateway: classified 0
+{"flows_expired": 0, "packets_processed": 120820, "packets_ignored": 128, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [120820]}
+gateway: classified 0
+{"flows_expired": 0, "packets_processed": 120820, "packets_ignored": 128, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [120820]}
+gateway: classified 0
+{"flows_expired": 0, "packets_processed": 133126, "packets_ignored": 143, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [133126]}
+gateway: classified 0
+{"flows_expired": 0, "packets_processed": 144891, "packets_ignored": 160, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [144891]}
+gateway: classified 0
+{"flows_expired": 0, "packets_processed": 144891, "packets_ignored": 160, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [144891]}
+gateway: classified 0
+{"flows_expired": 0, "packets_processed": 157227, "packets_ignored": 177, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [157227]}
+gateway: classified 0
+{"flows_expired": 0, "packets_processed": 166154, "packets_ignored": 194, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [166154]}
+gateway: classified 0
+{"flows_expired": 0, "packets_processed": 179824, "packets_ignored": 214, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [179824]}
+gateway: classified 0
+{"flows_expired": 0, "packets_processed": 179824, "packets_ignored": 214, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [179824]}
+gateway: classified 442{"flows_expired": 453, "packets_processed": 193983, "packets_ignored": 225, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [193983]}
+
+{"flows_expired": 1166, "packets_processed": 193983, "packets_ignored": 225, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [193983]}
+gateway: classified 1243
+{"flows_expired": 2016, "packets_processed": 193983, "packets_ignored": 225, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [193983]}
+gateway: classified 2104
+{"flows_expired": 2886, "packets_processed": 193983, "packets_ignored": 225, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [193983]}
+gateway: classified 2933
+{"flows_expired": 3546, "packets_processed": 193983, "packets_ignored": 225, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [193983]}
+gateway: classified 3580
+{"flows_expired": 4383, "packets_processed": 193983, "packets_ignored": 225, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [193983]}
+gateway: classified 4419
+{"flows_expired": 5203, "packets_processed": 207839, "packets_ignored": 253, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [207839]}
+gateway: classified 5272
+{"flows_expired": 6126, "packets_processed": 207839, "packets_ignored": 253, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [207839]}
+gateway: classified 6238
+{"flows_expired": 7043, "packets_processed": 207839, "packets_ignored": 253, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [207839]}
+gateway: classified 7133
+{"flows_expired": 7685, "packets_processed": 207839, "packets_ignored": 253, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [207839]}
+gateway: classified 7821
+{"flows_expired": 8666, "packets_processed": 207839, "packets_ignored": 253, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [207839]}
+gateway: classified 8815
+{"flows_expired": 9627, "packets_processed": 207839, "packets_ignored": 253, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [207839]}
+gateway: classified 9732
+{"flows_expired": 10631, "packets_processed": 218436, "packets_ignored": 267, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [218436]}
+gateway: classified 10700
+{"flows_expired": 11828, "packets_processed": 218436, "packets_ignored": 267, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [218436]}
+gateway: classified 12064
+{"flows_expired": 12991, "packets_processed": 218436, "packets_ignored": 267, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [218436]}
+gateway: classified 13182
+{"flows_expired": 14371, "packets_processed": 218436, "packets_ignored": 267, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [218436]}
+gateway: classified 14528
+{"flows_expired": 15513, "packets_processed": 218436, "packets_ignored": 267, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [218436]}
+gateway: classified 15735
+{"flows_expired": 16898, "packets_processed": 218436, "packets_ignored": 267, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [218436]}
+gateway: classified 17009
+{"flows_expired": 17941, "packets_processed": 222948, "packets_ignored": 274, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [222948]}
+gateway: classified 17952
+{"flows_expired": 18897, "packets_processed": 222948, "packets_ignored": 274, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [222948]}
+gateway: classified 19110
+{"flows_expired": 20187, "packets_processed": 222948, "packets_ignored": 274, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [222948]}
+gateway: classified 20396
+{"flows_expired": 21410, "packets_processed": 233589, "packets_ignored": 284, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [233589]}
+gateway: classified 21567
+{"flows_expired": 22352, "packets_processed": 233589, "packets_ignored": 284, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [233589]}
+gateway: classified 22609
+{"flows_expired": 23548, "packets_processed": 233589, "packets_ignored": 284, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [233589]}
+gateway: classified 23829
+{"flows_expired": 23883, "packets_processed": 233589, "packets_ignored": 284, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [233589]}
+gateway: classified 23883
+{"flows_expired": 24667, "packets_processed": 233589, "packets_ignored": 284, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [233589]}
+gateway: classified 24966
+{"flows_expired": 25731, "packets_processed": 233589, "packets_ignored": 284, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [233589]}
+gateway: classified 26056
+{"flows_expired": 26756, "packets_processed": 233589, "packets_ignored": 284, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [233589]}
+gateway: classified 27147
+{"flows_expired": 27887, "packets_processed": 245255, "packets_ignored": 296, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [245255]}
+gateway: classified 28366
+{"flows_expired": 28922, "packets_processed": 245255, "packets_ignored": 296, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [245255]}
+gateway: classified 29453
+{"flows_expired": 30249, "packets_processed": 245255, "packets_ignored": 296, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [245255]}
+gateway: classified 30555
+{"flows_expired": 31113, "packets_processed": 245255, "packets_ignored": 296, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [245255]}
+gateway: classified 31575
+{"flows_expired": 32091, "packets_processed": 256212, "packets_ignored": 314, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [256212]}
+gateway: classified 32494
+{"flows_expired": 33201, "packets_processed": 256212, "packets_ignored": 314, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [256212]}
+gateway: classified 33596
+{"flows_expired": 34436, "packets_processed": 256212, "packets_ignored": 314, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [256212]}
+gateway: classified 35453
+{"flows_expired": 36600, "packets_processed": 267012, "packets_ignored": 331, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [267012]}
+gateway: classified 37349
+{"flows_expired": 38344, "packets_processed": 267012, "packets_ignored": 331, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [267012]}
+gateway: classified 38914
+{"flows_expired": 39517, "packets_processed": 267012, "packets_ignored": 331, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [267012]}
+gateway: classified 40266
+{"flows_expired": 41467, "packets_processed": 267012, "packets_ignored": 331, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [267012]}
+gateway: classified 42379
+{"flows_expired": 43285, "packets_processed": 267012, "packets_ignored": 331, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [267012]}
+gateway: classified 44017
+{"flows_expired": 45090, "packets_processed": 277340, "packets_ignored": 349, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [277340]}
+gateway: classified 46113
+{"flows_expired": 47026, "packets_processed": 277340, "packets_ignored": 349, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [277340]}
+gateway: classified 47469
+{"flows_expired": 48014, "packets_processed": 277340, "packets_ignored": 349, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [277340]}
+gateway: classified 48426
+{"flows_expired": 48911, "packets_processed": 277340, "packets_ignored": 349, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [277340]}
+gateway: classified 49558
+{"flows_expired": 50148, "packets_processed": 277340, "packets_ignored": 349, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [277340]}
+gateway: classified 50745
+{"flows_expired": 51428, "packets_processed": 277340, "packets_ignored": 349, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [277340]}
+gateway: classified 51880
+{"flows_expired": 52337, "packets_processed": 277340, "packets_ignored": 349, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [277340]}
+gateway: classified 52986
+{"flows_expired": 53473, "packets_processed": 277340, "packets_ignored": 349, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [277340]}
+gateway: classified 54022
+{"flows_expired": 54641, "packets_processed": 277340, "packets_ignored": 349, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [277340]}
+gateway: classified 55326
+{"flows_expired": 55888, "packets_processed": 277340, "packets_ignored": 349, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [277340]}
+gateway: classified 56489
+{"flows_expired": 57030, "packets_processed": 288241, "packets_ignored": 361, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [288241]}
+gateway: classified 57533
+{"flows_expired": 58201, "packets_processed": 288241, "packets_ignored": 361, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [288241]}
+gateway: classified 58872
+{"flows_expired": 59275, "packets_processed": 288241, "packets_ignored": 361, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [288241]}
+gateway: classified 59934
+{"flows_expired": 60389, "packets_processed": 288241, "packets_ignored": 361, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [288241]}
+gateway: classified 60992
+{"flows_expired": 61408, "packets_processed": 288241, "packets_ignored": 361, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [288241]}
+gateway: classified 61906
+{"flows_expired": 62425, "packets_processed": 288241, "packets_ignored": 361, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [288241]}
+gateway: classified 63021
+{"flows_expired": 63474, "packets_processed": 299081, "packets_ignored": 374, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [299081]}
+gateway: classified 64075
+{"flows_expired": 64523, "packets_processed": 299081, "packets_ignored": 374, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [299081]}
+gateway: classified 65163
+{"flows_expired": 65611, "packets_processed": 299081, "packets_ignored": 374, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [299081]}
+gateway: classified 65956
+{"flows_expired": 66261, "packets_processed": 299081, "packets_ignored": 374, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [299081]}
+gateway: classified 66841
+{"flows_expired": 67228, "packets_processed": 311762, "packets_ignored": 384, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [311762]}
+gateway: classified 67916
+{"flows_expired": 68238, "packets_processed": 311762, "packets_ignored": 384, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [311762]}
+gateway: classified 68862
+{"flows_expired": 69281, "packets_processed": 323391, "packets_ignored": 414, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [323391]}
+gateway: classified 69947
+{"flows_expired": 70405, "packets_processed": 323391, "packets_ignored": 414, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [323391]}
+gateway: classified 71166
+{"flows_expired": 71614, "packets_processed": 323391, "packets_ignored": 414, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [323391]}
+gateway: classified 72146
+{"flows_expired": 72589, "packets_processed": 323391, "packets_ignored": 414, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [323391]}
+gateway: classified 73124
+{"flows_expired": 73465, "packets_processed": 323391, "packets_ignored": 414, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [323391]}
+gateway: classified 73996
+{"flows_expired": 74310, "packets_processed": 336108, "packets_ignored": 428, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [336108]}
+gateway: classified 74903
+{"flows_expired": 75278, "packets_processed": 336108, "packets_ignored": 428, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [336108]}
+gateway: classified 75949
+{"flows_expired": 76355, "packets_processed": 336108, "packets_ignored": 428, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [336108]}
+gateway: classified 77010
+{"flows_expired": 77419, "packets_processed": 336108, "packets_ignored": 428, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [336108]}
+gateway: classified 77916
+{"flows_expired": 78141, "packets_processed": 336108, "packets_ignored": 428, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [336108]}
+gateway: classified 78829
+{"flows_expired": 79259, "packets_processed": 336108, "packets_ignored": 428, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [336108]}
+gateway: classified 79928
+{"flows_expired": 80244, "packets_processed": 336108, "packets_ignored": 428, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [336108]}
+gateway: classified 80875
+{"flows_expired": 81249, "packets_processed": 349466, "packets_ignored": 445, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [349466]}
+gateway: classified 81938
+{"flows_expired": 82385, "packets_processed": 349466, "packets_ignored": 445, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [349466]}
+gateway: classified 82959
+{"flows_expired": 83318, "packets_processed": 349466, "packets_ignored": 445, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [349466]}
+gateway: classified 83827
+{"flows_expired": 84161, "packets_processed": 349466, "packets_ignored": 445, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [349466]}
+gateway: classified 84622
+{"flows_expired": 84863, "packets_processed": 349466, "packets_ignored": 445, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [349466]}
+gateway: classified 85421
+{"flows_expired": 85731, "packets_processed": 349466, "packets_ignored": 445, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [349466]}
+gateway: classified 86379
+{"flows_expired": 86682, "packets_processed": 349466, "packets_ignored": 445, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [349466]}
+gateway: classified 87352
+{"flows_expired": 87680, "packets_processed": 349466, "packets_ignored": 445, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [349466]}
+gateway: classified 88336
+{"flows_expired": 88682, "packets_processed": 349466, "packets_ignored": 445, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [349466]}
+gateway: classified 89446
+{"flows_expired": 89791, "packets_processed": 362749, "packets_ignored": 457, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [362749]}
+gateway: classified 90443
+{"flows_expired": 90830, "packets_processed": 362749, "packets_ignored": 457, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [362749]}
+gateway: classified 91557
+{"flows_expired": 91796, "packets_processed": 362749, "packets_ignored": 457, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [362749]}
+gateway: classified 92523
+{"flows_expired": 92758, "packets_processed": 362749, "packets_ignored": 457, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [362749]}
+gateway: classified 93402
+{"flows_expired": 93690, "packets_processed": 362749, "packets_ignored": 457, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [362749]}
+gateway: classified 94349
+{"flows_expired": 94601, "packets_processed": 362749, "packets_ignored": 457, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [362749]}
+gateway: classified 95407
+{"flows_expired": 95757, "packets_processed": 376220, "packets_ignored": 470, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [376220]}
+gateway: classified 96490
+{"flows_expired": 96707, "packets_processed": 376220, "packets_ignored": 470, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [376220]}
+gateway: classified 97408
+{"flows_expired": 97672, "packets_processed": 388766, "packets_ignored": 485, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [388766]}
+gateway: classified 98547
+{"flows_expired": 98734, "packets_processed": 401507, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [401507]}
+gateway: classified 99843
+{"flows_expired": 99996, "packets_processed": 401507, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [401507]}
+gateway: classified 101088
+{"flows_expired": 101255, "packets_processed": 401907, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [401907]}
+gateway: classified 102269
+{"flows_expired": 102443, "packets_processed": 401907, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [401907]}
+gateway: classified 103630
+{"flows_expired": 103798, "packets_processed": 401907, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [401907]}
+gateway: classified 104539
+{"flows_expired": 104686, "packets_processed": 401907, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [401907]}
+gateway: classified 105658
+{"flows_expired": 105808, "packets_processed": 402307, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [402307]}
+gateway: classified 106736
+{"flows_expired": 106913, "packets_processed": 402307, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [402307]}
+gateway: classified 107828
+{"flows_expired": 108116, "packets_processed": 402307, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [402307]}
+gateway: classified 108931
+{"flows_expired": 109225, "packets_processed": 402707, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [402707]}
+gateway: classified 110072
+{"flows_expired": 110269, "packets_processed": 402707, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [402707]}
+gateway: classified 111179
+{"flows_expired": 111299, "packets_processed": 402707, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [402707]}
+gateway: classified 112308
+{"flows_expired": 112439, "packets_processed": 402707, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [402707]}
+gateway: classified 113509
+{"flows_expired": 113554, "packets_processed": 403107, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [403107]}
+gateway: classified 114659
+{"flows_expired": 114707, "packets_processed": 403107, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [403107]}
+gateway: classified 115698
+{"flows_expired": 115798, "packets_processed": 403107, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [403107]}
+gateway: classified 116900
+{"flows_expired": 117019, "packets_processed": 403107, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [403107]}
+gateway: classified 118586
+{"flows_expired": 118903, "packets_processed": 403507, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [403507]}
+gateway: classified 120834
+{"flows_expired": 121078, "packets_processed": 403507, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [403507]}
+gateway: classified 123266{"flows_expired": 123300, "packets_processed": 403896, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [403896]}
+
+{"flows_expired": 124939, "packets_processed": 403896, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [403896]}
+gateway: classified 124917
+{"flows_expired": 126508, "packets_processed": 403896, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [403896]}
+gateway: classified 126391
+{"flows_expired": 128905, "packets_processed": 403896, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [403896]}
+gateway: classified 128778
+{"flows_expired": 130847, "packets_processed": 404295, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [404295]}
+gateway: classified 130926
+{"flows_expired": 132974, "packets_processed": 404295, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [404295]}
+gateway: classified 133095
+{"flows_expired": 134568, "packets_processed": 404295, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [404295]}
+gateway: classified 134578
+{"flows_expired": 135821, "packets_processed": 404295, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [404295]}
+gateway: classified 135847
+{"flows_expired": 137198, "packets_processed": 404295, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [404295]}
+gateway: classified 137236
+{"flows_expired": 138423, "packets_processed": 404295, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [404295]}
+gateway: classified 138423
+{"flows_expired": 139683, "packets_processed": 404295, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [404295]}
+gateway: classified 139683
+{"flows_expired": 140961, "packets_processed": 404695, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [404695]}
+gateway: classified 141067
+{"flows_expired": 142162, "packets_processed": 404695, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [404695]}
+gateway: classified 142212
+{"flows_expired": 143532, "packets_processed": 404695, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [404695]}
+gateway: classified 143597
+{"flows_expired": 144796, "packets_processed": 404695, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [404695]}
+gateway: classified 144823
+{"flows_expired": 146026, "packets_processed": 404695, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [404695]}
+gateway: classified 146063
+{"flows_expired": 147211, "packets_processed": 404695, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [404695]}
+gateway: classified 147354
+{"flows_expired": 148486, "packets_processed": 404695, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [404695]}
+gateway: classified 148622
+{"flows_expired": 149829, "packets_processed": 404695, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [404695]}
+gateway: classified 149957
+{"flows_expired": 151116, "packets_processed": 404695, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [404695]}
+gateway: classified 151132
+{"flows_expired": 152311, "packets_processed": 405089, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405089]}
+gateway: classified 152356
+{"flows_expired": 153615, "packets_processed": 405089, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405089]}
+gateway: classified 153615
+{"flows_expired": 155024, "packets_processed": 405089, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405089]}
+gateway: classified 155066
+{"flows_expired": 156807, "packets_processed": 405089, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405089]}
+gateway: classified 157067
+{"flows_expired": 158596, "packets_processed": 405089, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405089]}
+gateway: classified 158831
+{"flows_expired": 160107, "packets_processed": 405089, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405089]}
+gateway: classified 160336
+{"flows_expired": 161915, "packets_processed": 405089, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405089]}
+gateway: classified 162011
+{"flows_expired": 163594, "packets_processed": 405089, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405089]}
+gateway: classified 163702
+{"flows_expired": 165233, "packets_processed": 405487, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405487]}
+gateway: classified 165370
+{"flows_expired": 167245, "packets_processed": 405487, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405487]}
+gateway: classified 167348
+{"flows_expired": 168833, "packets_processed": 405487, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405487]}
+gateway: classified 168906
+{"flows_expired": 170806, "packets_processed": 405487, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405487]}
+gateway: classified 171070
+{"flows_expired": 172462, "packets_processed": 405487, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405487]}
+gateway: classified 172462
+{"flows_expired": 173388, "packets_processed": 405487, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405487]}
+gateway: classified 173455
+{"flows_expired": 174880, "packets_processed": 405487, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405487]}
+gateway: classified 175049
+{"flows_expired": 176271, "packets_processed": 405487, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405487]}
+gateway: classified 176466
+{"flows_expired": 177763, "packets_processed": 405887, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405887]}
+gateway: classified 178064
+{"flows_expired": 179318, "packets_processed": 405887, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405887]}
+gateway: classified 179591
+{"flows_expired": 180951, "packets_processed": 405887, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405887]}
+gateway: classified 181354
+{"flows_expired": 182482, "packets_processed": 405887, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405887]}
+gateway: classified 182760
+{"flows_expired": 183968, "packets_processed": 405887, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405887]}
+gateway: classified 184476
+{"flows_expired": 185514, "packets_processed": 405887, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405887]}
+gateway: classified 185882
+{"flows_expired": 187447, "packets_processed": 405887, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405887]}
+gateway: classified 187744
+{"flows_expired": 189236, "packets_processed": 405887, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [405887]}
+gateway: classified 189603
+{"flows_expired": 190568, "packets_processed": 406285, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [406285]}
+gateway: classified 190944
+{"flows_expired": 191808, "packets_processed": 406285, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [406285]}
+gateway: classified 192202
+{"flows_expired": 193048, "packets_processed": 406285, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [406285]}
+gateway: classified 193335
+{"flows_expired": 194190, "packets_processed": 406285, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [406285]}
+gateway: classified 194690
+{"flows_expired": 195555, "packets_processed": 406285, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [406285]}
+gateway: classified 195876
+{"flows_expired": 196924, "packets_processed": 406285, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [406285]}
+gateway: classified 197215
+{"flows_expired": 198080, "packets_processed": 406285, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [406285]}
+gateway: classified 198410
+{"flows_expired": 199466, "packets_processed": 406285, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [406285]}
+gateway: classified 199726
+{"flows_expired": 200795, "packets_processed": 406285, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [406285]}
+gateway: classified 201177
+{"flows_expired": 201996, "packets_processed": 406683, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [406683]}
+gateway: classified 202523
+{"flows_expired": 203302, "packets_processed": 406683, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [406683]}
+gateway: classified 203712
+{"flows_expired": 204655, "packets_processed": 406683, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [406683]}
+gateway: classified 205011
+{"flows_expired": 205919, "packets_processed": 406683, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [406683]}
+gateway: classified 206410
+{"flows_expired": 207104, "packets_processed": 406683, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [406683]}
+gateway: classified 207574
+{"flows_expired": 208451, "packets_processed": 406683, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [406683]}
+gateway: classified 208828
+{"flows_expired": 209724, "packets_processed": 406683, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [406683]}
+gateway: classified 210220
+{"flows_expired": 210937, "packets_processed": 406683, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [406683]}
+gateway: classified 211475
+{"flows_expired": 212222, "packets_processed": 406683, "packets_ignored": 500, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [406683]}
+gateway: classified 212771
+{"flows_expired": 213551, "packets_processed": 407479, "packets_ignored": 502, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [407479]}
+gateway: classified 214058
+{"flows_expired": 214648, "packets_processed": 413042, "packets_ignored": 502, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [413042]}
+gateway: classified 215206
+{"flows_expired": 215860, "packets_processed": 417837, "packets_ignored": 504, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [417837]}
+gateway: classified 216373
+{"flows_expired": 217207, "packets_processed": 423839, "packets_ignored": 504, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [423839]}
+gateway: classified 217756
+{"flows_expired": 218331, "packets_processed": 428131, "packets_ignored": 508, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [428131]}
+gateway: classified 218669
+{"flows_expired": 218988, "packets_processed": 432529, "packets_ignored": 508, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [432529]}
+gateway: classified 219526
+{"flows_expired": 220115, "packets_processed": 435329, "packets_ignored": 508, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [435329]}
+gateway: classified 220594
+{"flows_expired": 220920, "packets_processed": 440130, "packets_ignored": 510, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [440130]}
+gateway: classified 221561
+{"flows_expired": 222213, "packets_processed": 443309, "packets_ignored": 512, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [443309]}
+gateway: classified 222708
+{"flows_expired": 223484, "packets_processed": 446503, "packets_ignored": 512, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [446503]}
+gateway: classified 224091
+{"flows_expired": 224539, "packets_processed": 449705, "packets_ignored": 512, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [449705]}
+gateway: classified 225388
+{"flows_expired": 225813, "packets_processed": 456021, "packets_ignored": 514, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [456021]}
+gateway: classified 226581
+{"flows_expired": 226949, "packets_processed": 460009, "packets_ignored": 516, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [460009]}
+gateway: classified 227606
+{"flows_expired": 228046, "packets_processed": 463607, "packets_ignored": 516, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [463607]}
+gateway: classified 228904
+{"flows_expired": 229347, "packets_processed": 468743, "packets_ignored": 518, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [468743]}
+gateway: classified 230053
+{"flows_expired": 230609, "packets_processed": 471531, "packets_ignored": 518, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [471531]}
+gateway: classified 231744
+{"flows_expired": 232627, "packets_processed": 471933, "packets_ignored": 518, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [471933]}
+gateway: classified 234150
+{"flows_expired": 234836, "packets_processed": 472333, "packets_ignored": 518, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [472333]}
+gateway: classified 236286
+{"flows_expired": 237014, "packets_processed": 473135, "packets_ignored": 518, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [473135]}
+gateway: classified 238253
+{"flows_expired": 239125, "packets_processed": 473535, "packets_ignored": 518, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [473535]}
+gateway: classified 240578
+{"flows_expired": 241155, "packets_processed": 473937, "packets_ignored": 518, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [473937]}
+gateway: classified 242745
+{"flows_expired": 243372, "packets_processed": 474337, "packets_ignored": 518, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [474337]}
+gateway: classified 244650
+{"flows_expired": 245604, "packets_processed": 474737, "packets_ignored": 518, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [474737]}
+gateway: classified 245625
+{"flows_expired": 245626, "packets_processed": 475139, "packets_ignored": 518, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [475139]}
+gateway: classified 245625
+{"flows_expired": 245626, "packets_processed": 475539, "packets_ignored": 520, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [475539]}
+gateway: classified 245625
+{"flows_expired": 245626, "packets_processed": 475939, "packets_ignored": 520, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [475939]}
+gateway: classified 245625
+{"flows_expired": 245626, "packets_processed": 476339, "packets_ignored": 520, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [476339]}
+gateway: classified 245625
+{"flows_expired": 245626, "packets_processed": 476739, "packets_ignored": 520, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [476739]}
+gateway: classified 245625
+{"flows_expired": 245626, "packets_processed": 477139, "packets_ignored": 520, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [477139]}
+gateway: classified 245625
+{"flows_expired": 245626, "packets_processed": 477541, "packets_ignored": 520, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [477541]}
+gateway: classified 245625
+{"flows_expired": 245626, "packets_processed": 478209, "packets_ignored": 524, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [478209]}
+gateway: classified 245625
+{"flows_expired": 245626, "packets_processed": 479496, "packets_ignored": 534, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [479496]}
+gateway: classified 245625
+{"flows_expired": 245626, "packets_processed": 480490, "packets_ignored": 548, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [480490]}
+gateway: classified 245625
+{"flows_expired": 245626, "packets_processed": 481589, "packets_ignored": 552, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [481589]}
+gateway: classified 245625
+{"flows_expired": 245626, "packets_processed": 482664, "packets_ignored": 556, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [482664]}
+gateway: classified 245625
+{"flows_expired": 245626, "packets_processed": 483581, "packets_ignored": 563, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [483581]}
+gateway: classified 245625
+{"flows_expired": 245626, "packets_processed": 484656, "packets_ignored": 572, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [484656]}
+gateway: classified 245625
+{"flows_expired": 245626, "packets_processed": 485653, "packets_ignored": 582, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [485653]}
+gateway: classified 245625
+{"flows_expired": 245626, "packets_processed": 486736, "packets_ignored": 590, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [486736]}
+gateway: classified 245625
+{"flows_expired": 245626, "packets_processed": 487943, "packets_ignored": 594, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [487943]}
+gateway: classified 245625
+{"flows_expired": 245626, "packets_processed": 488717, "packets_ignored": 600, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [488717]}
+gateway: classified 245625
+{"flows_expired": 245626, "packets_processed": 489732, "packets_ignored": 608, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [489732]}
+gateway: classified 245625
+{"flows_expired": 245626, "packets_processed": 490698, "packets_ignored": 617, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [490698]}
+gateway: classified 245625
+{"flows_expired": 245626, "packets_processed": 491510, "packets_ignored": 629, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [491510]}
+gateway: classified 245625
+{"flows_expired": 245627, "packets_processed": 492398, "packets_ignored": 638, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [492398]}
+gateway: classified 245636
+{"flows_expired": 245638, "packets_processed": 493126, "packets_ignored": 644, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [493126]}
+gateway: classified 245687
+{"flows_expired": 245689, "packets_processed": 494079, "packets_ignored": 646, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [494079]}
+gateway: classified 245712
+{"flows_expired": 245720, "packets_processed": 495098, "packets_ignored": 649, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [495098]}
+gateway: classified 245735
+{"flows_expired": 245831, "packets_processed": 495938, "packets_ignored": 657, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [495938]}
+gateway: classified 245829
+{"flows_expired": 245869, "packets_processed": 496797, "packets_ignored": 667, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [496797]}
+gateway: classified 245877
+{"flows_expired": 245879, "packets_processed": 496797, "packets_ignored": 667, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [496797]}
+gateway: classified 245925
+{"flows_expired": 245927, "packets_processed": 497628, "packets_ignored": 669, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [497628]}
+gateway: classified 245962
+{"flows_expired": 246000, "packets_processed": 498882, "packets_ignored": 684, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [498882]}
+gateway: classified 246015
+{"flows_expired": 246025, "packets_processed": 500124, "packets_ignored": 695, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [500124]}
+gateway: classified 246052
+{"flows_expired": 246059, "packets_processed": 501542, "packets_ignored": 706, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [501542]}
+gateway: classified 246065
+{"flows_expired": 246120, "packets_processed": 502603, "packets_ignored": 706, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [502603]}
+gateway: classified 246129
+{"flows_expired": 246154, "packets_processed": 504025, "packets_ignored": 711, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [504025]}
+gateway: classified 246172
+{"flows_expired": 246174, "packets_processed": 505450, "packets_ignored": 719, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [505450]}
+gateway: classified 246195
+{"flows_expired": 246238, "packets_processed": 506540, "packets_ignored": 725, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [506540]}
+gateway: classified 246250
+{"flows_expired": 246261, "packets_processed": 507776, "packets_ignored": 732, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [507776]}
+gateway: classified 246275
+{"flows_expired": 246279, "packets_processed": 508985, "packets_ignored": 741, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [508985]}
+gateway: classified 246349
+{"flows_expired": 246415, "packets_processed": 510657, "packets_ignored": 753, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [510657]}
+gateway: classified 246417
+{"flows_expired": 246419, "packets_processed": 510657, "packets_ignored": 753, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [510657]}
+gateway: classified 246484
+{"flows_expired": 246491, "packets_processed": 512738, "packets_ignored": 767, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [512738]}
+gateway: classified 246527
+{"flows_expired": 246533, "packets_processed": 514123, "packets_ignored": 774, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [514123]}
+gateway: classified 246544
+{"flows_expired": 246547, "packets_processed": 515194, "packets_ignored": 777, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [515194]}
+gateway: classified 246553
+{"flows_expired": 246556, "packets_processed": 516935, "packets_ignored": 781, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [516935]}
+gateway: classified 246554
+{"flows_expired": 246588, "packets_processed": 517841, "packets_ignored": 786, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [517841]}
+gateway: classified 246615
+{"flows_expired": 246663, "packets_processed": 518999, "packets_ignored": 789, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [518999]}
+gateway: classified 246697
+{"flows_expired": 246700, "packets_processed": 520284, "packets_ignored": 791, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [520284]}
+gateway: classified 246759
+{"flows_expired": 246776, "packets_processed": 521843, "packets_ignored": 791, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [521843]}
+gateway: classified 246814
+{"flows_expired": 246816, "packets_processed": 521843, "packets_ignored": 791, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [521843]}
+gateway: classified 246866
+{"flows_expired": 246875, "packets_processed": 523718, "packets_ignored": 795, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [523718]}
+gateway: classified 246886
+{"flows_expired": 246898, "packets_processed": 525348, "packets_ignored": 798, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [525348]}
+gateway: classified 246951
+{"flows_expired": 246993, "packets_processed": 526925, "packets_ignored": 801, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [526925]}
+gateway: classified 247039
+{"flows_expired": 247042, "packets_processed": 528285, "packets_ignored": 811, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [528285]}
+gateway: classified 247069
+{"flows_expired": 247107, "packets_processed": 529571, "packets_ignored": 816, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [529571]}
+gateway: classified 247105
+{"flows_expired": 247158, "packets_processed": 529571, "packets_ignored": 816, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [529571]}
+gateway: classified 247176
+{"flows_expired": 247203, "packets_processed": 531462, "packets_ignored": 835, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [531462]}
+gateway: classified 247235
+{"flows_expired": 247240, "packets_processed": 532659, "packets_ignored": 839, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [532659]}
+gateway: classified 247244
+{"flows_expired": 247246, "packets_processed": 532659, "packets_ignored": 839, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [532659]}
+gateway: classified 247306
+{"flows_expired": 247308, "packets_processed": 534343, "packets_ignored": 839, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [534343]}
+gateway: classified 247371
+{"flows_expired": 247376, "packets_processed": 535630, "packets_ignored": 844, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [535630]}
+gateway: classified 247400
+{"flows_expired": 247453, "packets_processed": 536878, "packets_ignored": 845, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [536878]}
+gateway: classified 247501
+{"flows_expired": 247503, "packets_processed": 537975, "packets_ignored": 851, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [537975]}
+gateway: classified 247526
+{"flows_expired": 247558, "packets_processed": 538779, "packets_ignored": 853, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [538779]}
+gateway: classified 247556
+{"flows_expired": 247571, "packets_processed": 539640, "packets_ignored": 858, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [539640]}
+gateway: classified 247573
+{"flows_expired": 247591, "packets_processed": 540590, "packets_ignored": 860, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [540590]}
+gateway: classified 247618
+{"flows_expired": 247629, "packets_processed": 541540, "packets_ignored": 866, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [541540]}
+gateway: classified 247648
+{"flows_expired": 247679, "packets_processed": 542518, "packets_ignored": 872, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [542518]}
+gateway: classified 247737
+{"flows_expired": 247789, "packets_processed": 543448, "packets_ignored": 878, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [543448]}
+gateway: classified 247804
+{"flows_expired": 247823, "packets_processed": 544491, "packets_ignored": 883, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [544491]}
+gateway: classified 247821
+{"flows_expired": 247832, "packets_processed": 545124, "packets_ignored": 885, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [545124]}
+gateway: classified 247840
+{"flows_expired": 247842, "packets_processed": 545803, "packets_ignored": 888, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [545803]}
+gateway: classified 247868
+{"flows_expired": 247870, "packets_processed": 546480, "packets_ignored": 888, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [546480]}
+gateway: classified 247930
+{"flows_expired": 247932, "packets_processed": 546880, "packets_ignored": 888, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [546880]}
+gateway: classified 247937
+{"flows_expired": 247939, "packets_processed": 547280, "packets_ignored": 888, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [547280]}
+gateway: classified 247956
+{"flows_expired": 247958, "packets_processed": 547680, "packets_ignored": 888, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [547680]}
+gateway: classified 248042
+{"flows_expired": 248044, "packets_processed": 548080, "packets_ignored": 888, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [548080]}
+gateway: classified 248106
+{"flows_expired": 248108, "packets_processed": 548480, "packets_ignored": 888, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [548480]}
+gateway: classified 248113
+{"flows_expired": 248115, "packets_processed": 548880, "packets_ignored": 888, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [548880]}
+gateway: classified 248162
+{"flows_expired": 248164, "packets_processed": 549280, "packets_ignored": 888, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [549280]}
+gateway: classified 248162
+{"flows_expired": 248218, "packets_processed": 549680, "packets_ignored": 888, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [549680]}
+gateway: classified 248216
+{"flows_expired": 248284, "packets_processed": 550080, "packets_ignored": 888, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [550080]}
+gateway: classified 248282
+{"flows_expired": 248382, "packets_processed": 550480, "packets_ignored": 888, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [550480]}
+gateway: classified 248380
+{"flows_expired": 248499, "packets_processed": 550880, "packets_ignored": 888, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [550880]}
+gateway: classified 248497
+{"flows_expired": 248624, "packets_processed": 551280, "packets_ignored": 888, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [551280]}
+gateway: classified 248622
+{"flows_expired": 248653, "packets_processed": 551680, "packets_ignored": 888, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [551680]}
+gateway: classified 248651
+{"flows_expired": 248921, "packets_processed": 552080, "packets_ignored": 888, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [552080]}
+gateway: classified 248919
+{"flows_expired": 248979, "packets_processed": 552480, "packets_ignored": 888, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [552480]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 552880, "packets_ignored": 890, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [552880]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 553266, "packets_ignored": 892, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [553266]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 553666, "packets_ignored": 892, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [553666]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 554066, "packets_ignored": 892, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [554066]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 554466, "packets_ignored": 892, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [554466]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 554866, "packets_ignored": 892, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [554866]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 554866, "packets_ignored": 892, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [554866]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 555266, "packets_ignored": 892, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [555266]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 555666, "packets_ignored": 892, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [555666]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 556066, "packets_ignored": 892, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [556066]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 556466, "packets_ignored": 892, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [556466]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 556866, "packets_ignored": 892, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [556866]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 557242, "packets_ignored": 892, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [557242]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 557642, "packets_ignored": 892, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [557642]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 558044, "packets_ignored": 892, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [558044]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 558444, "packets_ignored": 892, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [558444]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 558846, "packets_ignored": 892, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [558846]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 559246, "packets_ignored": 892, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [559246]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 559646, "packets_ignored": 892, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [559646]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 561483, "packets_ignored": 897, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [561483]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 565833, "packets_ignored": 913, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [565833]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 568675, "packets_ignored": 923, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [568675]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 572064, "packets_ignored": 942, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [572064]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 576572, "packets_ignored": 953, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [576572]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 580347, "packets_ignored": 966, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [580347]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 583848, "packets_ignored": 976, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [583848]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 587753, "packets_ignored": 993, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [587753]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 592067, "packets_ignored": 1008, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [592067]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 595343, "packets_ignored": 1021, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [595343]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 599377, "packets_ignored": 1040, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [599377]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 603559, "packets_ignored": 1061, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [603559]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 607598, "packets_ignored": 1069, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [607598]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 611211, "packets_ignored": 1079, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [611211]}
+gateway: classified 248977
+{"flows_expired": 248979, "packets_processed": 615665, "packets_ignored": 1089, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [615665]}
+gateway: classified 248978
+{"flows_expired": 248984, "packets_processed": 619481, "packets_ignored": 1098, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [619481]}
+gateway: classified 248987
+{"flows_expired": 248989, "packets_processed": 623698, "packets_ignored": 1104, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [623698]}
+gateway: classified 248988
+{"flows_expired": 248993, "packets_processed": 628177, "packets_ignored": 1114, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [628177]}
+gateway: classified 248992
+{"flows_expired": 248995, "packets_processed": 632106, "packets_ignored": 1125, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [632106]}
+gateway: classified 248997
+{"flows_expired": 249000, "packets_processed": 636016, "packets_ignored": 1136, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [636016]}
+gateway: classified 249001
+{"flows_expired": 249005, "packets_processed": 639788, "packets_ignored": 1143, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [639788]}
+gateway: classified 249002
+{"flows_expired": 249006, "packets_processed": 643265, "packets_ignored": 1156, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [643265]}
+gateway: classified 249003
+{"flows_expired": 249006, "packets_processed": 647671, "packets_ignored": 1175, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [647671]}
+gateway: classified 249003
+{"flows_expired": 249006, "packets_processed": 651489, "packets_ignored": 1187, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [651489]}
+gateway: classified 249004
+{"flows_expired": 249007, "packets_processed": 654953, "packets_ignored": 1204, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [654953]}
+gateway: classified 249006
+{"flows_expired": 249009, "packets_processed": 658412, "packets_ignored": 1220, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [658412]}
+gateway: classified 249009
+{"flows_expired": 249014, "packets_processed": 661512, "packets_ignored": 1262, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [661512]}
+gateway: classified 249011
+{"flows_expired": 249014, "packets_processed": 665634, "packets_ignored": 1277, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [665634]}
+gateway: classified 249011
+{"flows_expired": 249014, "packets_processed": 668896, "packets_ignored": 1315, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [668896]}
+gateway: classified 249012
+{"flows_expired": 249018, "packets_processed": 671130, "packets_ignored": 1328, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [671130]}
+gateway: classified 249015
+{"flows_expired": 249019, "packets_processed": 674846, "packets_ignored": 1339, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [674846]}
+gateway: classified 249017
+{"flows_expired": 249022, "packets_processed": 679902, "packets_ignored": 1344, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [679902]}
+gateway: classified 249019
+{"flows_expired": 249023, "packets_processed": 684629, "packets_ignored": 1348, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [684629]}
+gateway: classified 249019
+{"flows_expired": 249023, "packets_processed": 688987, "packets_ignored": 1365, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [688987]}
+gateway: classified 249021
+{"flows_expired": 249027, "packets_processed": 693183, "packets_ignored": 1377, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [693183]}
+gateway: classified 249023
+{"flows_expired": 249028, "packets_processed": 697940, "packets_ignored": 1391, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [697940]}
+gateway: classified 249023
+{"flows_expired": 249030, "packets_processed": 702460, "packets_ignored": 1401, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [702460]}
+gateway: classified 249026
+{"flows_expired": 249032, "packets_processed": 707012, "packets_ignored": 1419, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [707012]}
+gateway: classified 249028
+{"flows_expired": 249033, "packets_processed": 711651, "packets_ignored": 1429, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [711651]}
+gateway: classified 249029
+{"flows_expired": 249035, "packets_processed": 715719, "packets_ignored": 1441, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [715719]}
+gateway: classified 249029
+{"flows_expired": 249035, "packets_processed": 718927, "packets_ignored": 1452, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [718927]}
+gateway: classified 249032
+{"flows_expired": 249039, "packets_processed": 723304, "packets_ignored": 1478, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [723304]}
+gateway: classified 249034
+{"flows_expired": 249040, "packets_processed": 727506, "packets_ignored": 1499, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [727506]}
+gateway: classified 249035
+{"flows_expired": 249044, "packets_processed": 731980, "packets_ignored": 1515, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [731980]}
+gateway: classified 249039
+{"flows_expired": 249045, "packets_processed": 736399, "packets_ignored": 1533, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [736399]}
+gateway: classified 249039
+{"flows_expired": 249046, "packets_processed": 741277, "packets_ignored": 1551, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [741277]}
+gateway: classified 249041
+{"flows_expired": 249047, "packets_processed": 746194, "packets_ignored": 1565, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [746194]}
+gateway: classified 249043
+{"flows_expired": 249052, "packets_processed": 751321, "packets_ignored": 1574, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [751321]}
+gateway: classified 249046
+{"flows_expired": 249054, "packets_processed": 756644, "packets_ignored": 1591, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [756644]}
+gateway: classified 249050
+{"flows_expired": 249058, "packets_processed": 761397, "packets_ignored": 1607, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [761397]}
+gateway: classified 249052
+{"flows_expired": 249059, "packets_processed": 764770, "packets_ignored": 1620, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [764770]}
+gateway: classified 249052
+{"flows_expired": 249059, "packets_processed": 768588, "packets_ignored": 1637, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [768588]}
+gateway: classified 249054
+{"flows_expired": 249062, "packets_processed": 773962, "packets_ignored": 1647, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [773962]}
+gateway: classified 249057
+{"flows_expired": 249065, "packets_processed": 778847, "packets_ignored": 1659, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [778847]}
+gateway: classified 249060
+{"flows_expired": 249067, "packets_processed": 782451, "packets_ignored": 1676, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [782451]}
+gateway: classified 249060
+{"flows_expired": 249069, "packets_processed": 786607, "packets_ignored": 1686, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [786607]}
+gateway: classified 249063
+{"flows_expired": 249070, "packets_processed": 791455, "packets_ignored": 1693, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [791455]}
+gateway: classified 249064
+{"flows_expired": 249071, "packets_processed": 795758, "packets_ignored": 1706, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [795758]}
+gateway: classified 249064
+{"flows_expired": 249072, "packets_processed": 799556, "packets_ignored": 1720, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [799556]}
+gateway: classified 249065
+{"flows_expired": 249082, "packets_processed": 803858, "packets_ignored": 1735, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [803858]}
+gateway: classified 249074
+{"flows_expired": 249085, "packets_processed": 807938, "packets_ignored": 1759, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [807938]}
+gateway: classified 249078
+{"flows_expired": 249086, "packets_processed": 812634, "packets_ignored": 1772, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [812634]}
+gateway: classified 249078
+{"flows_expired": 249086, "packets_processed": 816707, "packets_ignored": 1792, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [816707]}
+gateway: classified 249081
+{"flows_expired": 249090, "packets_processed": 821087, "packets_ignored": 1807, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [821087]}
+gateway: classified 249086
+{"flows_expired": 249095, "packets_processed": 824317, "packets_ignored": 1820, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [824317]}
+gateway: classified 249090
+{"flows_expired": 249100, "packets_processed": 829137, "packets_ignored": 1839, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [829137]}
+gateway: classified 249093
+{"flows_expired": 249102, "packets_processed": 833676, "packets_ignored": 1856, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [833676]}
+gateway: classified 249095
+{"flows_expired": 249104, "packets_processed": 837038, "packets_ignored": 1870, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [837038]}
+gateway: classified 249097
+{"flows_expired": 249105, "packets_processed": 841107, "packets_ignored": 1889, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [841107]}
+gateway: classified 249099
+{"flows_expired": 249109, "packets_processed": 844080, "packets_ignored": 1912, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [844080]}
+gateway: classified 249102
+{"flows_expired": 249111, "packets_processed": 846497, "packets_ignored": 1925, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [846497]}
+gateway: classified 249105
+{"flows_expired": 249113, "packets_processed": 850345, "packets_ignored": 1942, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [850345]}
+gateway: classified 249106
+{"flows_expired": 249114, "packets_processed": 855113, "packets_ignored": 1967, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [855113]}
+gateway: classified 249108
+{"flows_expired": 249117, "packets_processed": 859182, "packets_ignored": 1988, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [859182]}
+gateway: classified 249112
+{"flows_expired": 249120, "packets_processed": 863077, "packets_ignored": 1996, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [863077]}
+gateway: classified 249113
+{"flows_expired": 249121, "packets_processed": 866576, "packets_ignored": 2006, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [866576]}
+gateway: classified 249115
+{"flows_expired": 249124, "packets_processed": 871204, "packets_ignored": 2019, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [871204]}
+gateway: classified 249119
+{"flows_expired": 249127, "packets_processed": 875802, "packets_ignored": 2029, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [875802]}
+gateway: classified 249119
+{"flows_expired": 249130, "packets_processed": 877388, "packets_ignored": 2033, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [877388]}
+gateway: classified 249122
+{"flows_expired": 249131, "packets_processed": 877788, "packets_ignored": 2033, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [877788]}
+gateway: classified 249123
+{"flows_expired": 249132, "packets_processed": 878188, "packets_ignored": 2033, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [878188]}
+gateway: classified 249124
+{"flows_expired": 249136, "packets_processed": 878588, "packets_ignored": 2033, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [878588]}
+gateway: classified 249128
+{"flows_expired": 249137, "packets_processed": 878988, "packets_ignored": 2035, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [878988]}
+gateway: classified 249129
+{"flows_expired": 249140, "packets_processed": 879388, "packets_ignored": 2035, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [879388]}
+gateway: classified 249132
+{"flows_expired": 249140, "packets_processed": 879388, "packets_ignored": 2035, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [879388]}
+gateway: classified 249139
+{"flows_expired": 249147, "packets_processed": 879790, "packets_ignored": 2035, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [879790]}
+gateway: classified 249140
+{"flows_expired": 249148, "packets_processed": 880190, "packets_ignored": 2035, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [880190]}
+gateway: classified 249140
+{"flows_expired": 249148, "packets_processed": 880592, "packets_ignored": 2035, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [880592]}
+gateway: classified 249147
+{"flows_expired": 249155, "packets_processed": 880992, "packets_ignored": 2035, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [880992]}
+gateway: classified 249153
+{"flows_expired": 249161, "packets_processed": 881392, "packets_ignored": 2035, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [881392]}
+gateway: classified 249158
+{"flows_expired": 249166, "packets_processed": 881792, "packets_ignored": 2035, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [881792]}
+gateway: classified 249167
+{"flows_expired": 249175, "packets_processed": 882192, "packets_ignored": 2035, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [882192]}
+gateway: classified 249171
+{"flows_expired": 249179, "packets_processed": 882550, "packets_ignored": 2035, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [882550]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 882950, "packets_ignored": 2035, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [882950]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 883352, "packets_ignored": 2035, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [883352]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 883752, "packets_ignored": 2035, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [883752]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 884152, "packets_ignored": 2035, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [884152]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 884532, "packets_ignored": 2035, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [884532]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 884934, "packets_ignored": 2035, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [884934]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 885334, "packets_ignored": 2035, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [885334]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 885734, "packets_ignored": 2035, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [885734]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 886534, "packets_ignored": 2035, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [886534]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 886934, "packets_ignored": 2037, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [886934]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 887334, "packets_ignored": 2037, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [887334]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 887736, "packets_ignored": 2037, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [887736]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 888136, "packets_ignored": 2037, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [888136]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 888536, "packets_ignored": 2037, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [888536]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 888928, "packets_ignored": 2037, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [888928]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 889328, "packets_ignored": 2037, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [889328]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 889730, "packets_ignored": 2037, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [889730]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 890132, "packets_ignored": 2037, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [890132]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 890532, "packets_ignored": 2037, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [890532]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 890932, "packets_ignored": 2037, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [890932]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 891332, "packets_ignored": 2037, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [891332]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 891732, "packets_ignored": 2037, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [891732]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 892132, "packets_ignored": 2037, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [892132]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 892532, "packets_ignored": 2037, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [892532]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 892932, "packets_ignored": 2037, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [892932]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 893332, "packets_ignored": 2037, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [893332]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 893732, "packets_ignored": 2037, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [893732]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 894132, "packets_ignored": 2037, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [894132]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 894532, "packets_ignored": 2037, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [894532]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 894932, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [894932]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 895332, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [895332]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 895732, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [895732]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 896132, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [896132]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 896532, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [896532]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 896904, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [896904]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 896904, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [896904]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 897304, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [897304]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 897704, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [897704]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898104, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898104]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898505, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898505]}
+gateway: wrote /mnt/d/EdgeFlow-IDS/results/live/edge50_r2/flows.csv
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 898880, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [898880]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899106, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899106]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899107, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899107]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899107, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899107]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899107, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899107]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899107, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899107]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899107, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899107]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899107, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899107]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899107, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899107]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899107, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899107]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899107, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899107]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899107, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899107]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899107, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899107]}
+gateway: classified 249180
+{"flows_expired": 249188, "packets_processed": 899107, "packets_ignored": 2041, "packets_dropped_filtered_by_kernel": 0, "meters_packets_processing_balance": [899107]}
+gateway: classified 249180

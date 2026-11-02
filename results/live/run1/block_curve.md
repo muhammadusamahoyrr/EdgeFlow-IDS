@@ -1,0 +1,18 @@
+# Blocking-policy trade-off on the live verdict stream (run1)
+
+Simulated per window from the logged verdicts; describes the trade-off only (the policy itself was chosen on validation data, results/block_policy.md).
+
+|   k | ignore MITM-ARP verdicts   |   pairs blocked |   false blocks | attacker pairs blocked   |   attack flows after block |   median time to block (s) | attacker pairs blocked by class                                                         |
+|----:|:---------------------------|----------------:|---------------:|:-------------------------|---------------------------:|---------------------------:|:----------------------------------------------------------------------------------------|
+|   1 | False                      |              83 |             64 | 19/26                    |                      0.111 |                       19   | BruteForce 1/1, DDoS-SYN 6/6, DoS-HTTP 1/1, MITM-ARP 0/7, Mirai 7/7, Recon 1/1, Web 3/3 |
+|   2 | False                      |              32 |             14 | 18/26                    |                      0.111 |                       33.8 | BruteForce 1/1, DDoS-SYN 6/6, DoS-HTTP 1/1, MITM-ARP 0/7, Mirai 6/7, Recon 1/1, Web 3/3 |
+|   3 | False                      |              15 |              2 | 13/26                    |                      0.111 |                       15.3 | BruteForce 1/1, DDoS-SYN 6/6, DoS-HTTP 1/1, MITM-ARP 0/7, Mirai 1/7, Recon 1/1, Web 3/3 |
+|   5 | False                      |              10 |              0 | 10/26                    |                      0.111 |                       15.3 | BruteForce 1/1, DDoS-SYN 6/6, DoS-HTTP 1/1, MITM-ARP 0/7, Mirai 0/7, Recon 1/1, Web 1/3 |
+|  10 | False                      |               9 |              0 | 9/26                     |                      0.111 |                       15.3 | BruteForce 1/1, DDoS-SYN 6/6, DoS-HTTP 1/1, MITM-ARP 0/7, Mirai 0/7, Recon 1/1, Web 0/3 |
+|  20 | False                      |               8 |              0 | 8/26                     |                      0.111 |                       15.3 | BruteForce 0/1, DDoS-SYN 6/6, DoS-HTTP 1/1, MITM-ARP 0/7, Mirai 0/7, Recon 1/1, Web 0/3 |
+|   1 | True                       |              56 |             37 | 19/26                    |                      0.111 |                       19   | BruteForce 1/1, DDoS-SYN 6/6, DoS-HTTP 1/1, MITM-ARP 0/7, Mirai 7/7, Recon 1/1, Web 3/3 |
+|   2 | True                       |              23 |              5 | 18/26                    |                      0.111 |                       33.8 | BruteForce 1/1, DDoS-SYN 6/6, DoS-HTTP 1/1, MITM-ARP 0/7, Mirai 6/7, Recon 1/1, Web 3/3 |
+|   3 | True                       |              14 |              1 | 13/26                    |                      0.111 |                       15.8 | BruteForce 1/1, DDoS-SYN 6/6, DoS-HTTP 1/1, MITM-ARP 0/7, Mirai 1/7, Recon 1/1, Web 3/3 |
+|   5 | True                       |              10 |              0 | 10/26                    |                      0.111 |                       15.3 | BruteForce 1/1, DDoS-SYN 6/6, DoS-HTTP 1/1, MITM-ARP 0/7, Mirai 0/7, Recon 1/1, Web 1/3 |
+|  10 | True                       |               9 |              0 | 9/26                     |                      0.111 |                       15.3 | BruteForce 1/1, DDoS-SYN 6/6, DoS-HTTP 1/1, MITM-ARP 0/7, Mirai 0/7, Recon 1/1, Web 0/3 |
+|  20 | True                       |               8 |              0 | 8/26                     |                      0.111 |                       15.3 | BruteForce 0/1, DDoS-SYN 6/6, DoS-HTTP 1/1, MITM-ARP 0/7, Mirai 0/7, Recon 1/1, Web 0/3 |

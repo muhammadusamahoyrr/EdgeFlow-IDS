@@ -1,0 +1,3 @@
+{"time_ms": 1793585002824.4048, "kind": "gateway_ip_spoof", "severity": "high", "mac": "dc:a6:32:dc:27:d5", "detail": ["192.168.137.1", "3c:18:a0:41:c3:a0"]}
+{"time_ms": 1793585002824.4048, "kind": "ip_rebound_to_new_mac", "severity": "info", "mac": "dc:a6:32:dc:27:d5", "detail": ["192.168.137.1", "3c:18:a0:41:c3:a0"]}
+{"time_ms": 1793585005424.3782, "kind": "ip_rebound_to_new_mac", "severity": "info", "mac": "3c:18:a0:41:c3:a0", "detail": ["192.168.137.1", "dc:a6:32:dc:27:d5"]}

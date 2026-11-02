@@ -1,0 +1,155 @@
+{
+  "model": "/mnt/d/EdgeFlow-IDS/results/models/decision_tree.pkl",
+  "cpu_quota": 50,
+  "speed": 1.0,
+  "windows": [
+    {
+      "window": "DDoS-SYN_Flood",
+      "offered_pps": 11830.85,
+      "offered_mbps": 5.7,
+      "offline_flows": 142724,
+      "live_flows": 160475,
+      "removed_training_connections_off_live": "66496/85146",
+      "offline_packets": 218344,
+      "live_packets": 218348,
+      "packet_ratio": 1.0,
+      "attack_flows_offline": 142554,
+      "attack_flows_live": 160297,
+      "attack_recall_offline": 1.0,
+      "attack_recall_live": 1.0,
+      "benign_fpr_live": 0.0899,
+      "median_verdict_after_flow_end_s": 97.0,
+      "first_verdict_per_attacker_pair_s": 21.9,
+      "arp_alerts": 0,
+      "cpu_percent_mean": 50.4,
+      "cpu_percent_max": 55.0,
+      "rss_mb_max": 991.6
+    },
+    {
+      "window": "DoS-HTTP_Flood",
+      "offered_pps": 678.96,
+      "offered_mbps": 3.97,
+      "offline_flows": 2398,
+      "live_flows": 2420,
+      "removed_training_connections_off_live": "891/932",
+      "offline_packets": 29361,
+      "live_packets": 29363,
+      "packet_ratio": 1.0001,
+      "attack_flows_offline": 1871,
+      "attack_flows_live": 1891,
+      "attack_recall_offline": 0.954,
+      "attack_recall_live": 0.962,
+      "benign_fpr_live": 0.0265,
+      "median_verdict_after_flow_end_s": 15.4,
+      "first_verdict_per_attacker_pair_s": 15.5,
+      "arp_alerts": 0,
+      "cpu_percent_mean": 2.7,
+      "cpu_percent_max": 6.0,
+      "rss_mb_max": 812.4
+    },
+    {
+      "window": "Mirai-udpplain",
+      "offered_pps": 3685.05,
+      "offered_mbps": 16.24,
+      "offline_flows": 173,
+      "live_flows": 171,
+      "removed_training_connections_off_live": "30/32",
+      "offline_packets": 38688,
+      "live_packets": 38683,
+      "packet_ratio": 0.9999,
+      "attack_flows_offline": 4,
+      "attack_flows_live": 4,
+      "attack_recall_offline": 0.75,
+      "attack_recall_live": 0.75,
+      "benign_fpr_live": 0.0,
+      "median_verdict_after_flow_end_s": 15.2,
+      "first_verdict_per_attacker_pair_s": 31.6,
+      "arp_alerts": 0,
+      "cpu_percent_mean": 3.8,
+      "cpu_percent_max": 9.0,
+      "rss_mb_max": 812.4
+    }
+  ],
+  "offline": {
+    "flows": 145295,
+    "macro_f1": 0.9144817485195883,
+    "macro_f1_ci95": [
+      0.7268642226084169,
+      0.9791235129830044
+    ],
+    "per_class": {
+      "Benign": {
+        "precision": 0.906,
+        "recall": 0.968,
+        "f1": 0.936,
+        "support": 866
+      },
+      "DDoS-SYN": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 142554
+      },
+      "DoS-HTTP": {
+        "precision": 0.992,
+        "recall": 0.954,
+        "f1": 0.972,
+        "support": 1871
+      },
+      "Mirai": {
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1": 0.75,
+        "support": 4
+      }
+    }
+  },
+  "live": {
+    "flows": 163066,
+    "macro_f1": 0.9172031855851897,
+    "macro_f1_ci95": [
+      0.7298622218437021,
+      0.9829238652214092
+    ],
+    "per_class": {
+      "Benign": {
+        "precision": 0.921,
+        "recall": 0.966,
+        "f1": 0.943,
+        "support": 874
+      },
+      "DDoS-SYN": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 160297
+      },
+      "DoS-HTTP": {
+        "precision": 0.99,
+        "recall": 0.962,
+        "f1": 0.976,
+        "support": 1891
+      },
+      "Mirai": {
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1": 0.75,
+        "support": 4
+      }
+    },
+    "batch_ms_p50": 0.6162,
+    "batch_ms_p95": 1.2201499999999994,
+    "batch_size_p50": 114.0,
+    "amortised_ms_per_flow": 0.006000846040018015
+  },
+  "arp_alerts": [],
+  "nfstream_counters": {
+    "flows_expired": 249188,
+    "packets_processed": 899107,
+    "packets_ignored": 2041,
+    "packets_dropped_filtered_by_kernel": 0,
+    "meters_packets_processing_balance": [
+      899107
+    ]
+  }
+}
