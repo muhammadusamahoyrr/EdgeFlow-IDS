@@ -105,8 +105,10 @@ through a Mininet gateway.
      - **Patched code:** 15.6 s and 15.5 s, with a packet ratio of 1.00 and 0.99.
    - **Status upstream:** reported as
      [nfstream/nfstream#262](https://github.com/nfstream/nfstream/issues/262), with a minimal
-     reproduction (`src/diag/nfstream_lru_repro.py`) and the one-line fix. The bug is still in
-     NFStream master and is possibly the cause of the older issue #120.
+     reproduction (`src/diag/nfstream_lru_repro.py`). The fix and a regression test are submitted as
+     pull request [nfstream/nfstream#263](https://github.com/nfstream/nfstream/pull/263) (under
+     review). The bug is still in NFStream master and is possibly the cause of the older issue
+     #120.
 
 ## Live results
 
