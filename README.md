@@ -207,8 +207,12 @@ are not reported elsewhere. Sources and caveats are in [`docs/RELATED_WORK.md`](
   ([`results/label_shares.md`](results/label_shares.md)). Each flow is then labelled from evidence
   (attacker addresses, ports, MACs, HTTP payloads, ARP). Some recent work still labels these pcaps
   by file name (Vitorino et al., FPS 2025, arXiv 2511.08345).
-- **Temporal split on CIC-IoT2023:** a per-capture time-ordered split drops macro-F1 from 0.869
-  to 0.731. We trace the drop to the brute-force target changing from SSH to RTSP.
+- **Temporal split on CIC-IoT2023:** time-ordered evaluation on CIC-IoT2023 has been used before
+  (the per-class "Time-shift" benchmark of Traffic-MoE, arXiv 2601.00357, on session byte
+  features). Our split is time-ordered within each capture, on the evidence-relabelled flows. It
+  drops macro-F1 from 0.869 to 0.731, and we trace the drop to the brute-force target changing
+  from SSH to RTSP. IoTGeM (arXiv 2401.01343) likewise found that brute-force variants
+  (telnet vs RTSP) do not generalise to each other, by design rather than through a time split.
 - **Offline vs live:** we replay the same held-out windows through a live gateway and get the same
   macro-F1, with full packet accounting and CPU limits. This holds for this one setup and these
   rates, not for live NIDS in general. In contrast, a recent paper saw benchmark performance

@@ -32,7 +32,10 @@ cause) and #193 (closed as expected).
 
 ## Appears new (to our knowledge)
 1. **Measured** background share (91–98%) in the CIC-IoT2023 web, brute-force and MITM pcaps, with per-flow labels from evidence: payloads, attacker/victim IPs, ports, ARP. Contrast: Vitorino et al., FPS 2025, arXiv 2511.08345 [V] still assume each capture contains only its named attack.
-2. A temporal-split evaluation on CIC-IoT2023 with a root cause for the drop: brute force moving from SSH to RTSP.
+2. A within-capture temporal split on evidence-relabelled CIC-IoT2023 flows, with a root cause for the drop: brute force moving from SSH to RTSP. NOT the first temporal split on CIC-IoT2023:
+   - Traffic-MoE (arXiv 2601.00357, Jan 2026, App. E.6) builds a per-class chronological "Time-shift" benchmark on CICIoT2023 (first 40% of each class's time span for training, last 40% for testing; session byte features).
+   - BRIDGE/TCH-Net (arXiv 2604.11324) uses an early/late window split on a pooled benchmark that includes CIC-IoT-2023.
+   - IoTGeM (Kostas, Just, Lones, arXiv 2401.01343) does not use CIC-IoT2023. It reports benign packets inside IoT-NID attack pcaps, and its brute-force split (telnet train, RTSP test) is related evidence that brute-force variants do not generalise.
 3. A controlled offline-vs-live test on identical held-out windows, measuring:
    - packet capture ratio
    - NFStream drop counters
