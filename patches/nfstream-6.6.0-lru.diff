@@ -1,0 +1,10 @@
+--- a/nfstream/meter.py
++++ b/nfstream/meter.py
+@@ -254,6 +254,7 @@
+                     )
+                 state = 0
+         else:
++            cache.move_to_end(flow_key)  # EdgeFlow-IDS patch: keep LRU order on update
+             state = 0
+     except KeyError:  # create flow
+         try:

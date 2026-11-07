@@ -1,0 +1,3 @@
+NXST_FLOW reply (xid=0x4):
+ cookie=0x0, duration=461.246s, table=0, n_packets=799272, n_bytes=221167848, idle_age=0, priority=10,in_port=1 actions=output:2
+ cookie=0x0, duration=461.532s, table=0, n_packets=80295, n_bytes=7867346, idle_age=0, priority=0 actions=NORMAL

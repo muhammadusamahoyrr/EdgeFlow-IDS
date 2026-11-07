@@ -3,6 +3,7 @@
   docs/figures/split_recall.png   per-class recall, temporal vs stratified split (decision tree)
   docs/figures/nsga_pareto.png    NSGA-II subsets: features vs macro-F1 (validation and test)
   docs/figures/live_delay.png     verdict delay after flow end per window: no limit, 1 core, 1/2 core
+  docs/figures/late_blocks.png    attack flows starting after their pair's block: flow-end vs export-delayed verdicts
 
 Usage: python src/make_figures.py
 """
@@ -33,8 +34,9 @@ plt.rcParams.update({"font.size": 8, "axes.labelsize": 8, "xtick.labelsize": 8,
 
 
 def split_recall():
-    t = json.loads((RESULTS / "baseline_temporal" / "metrics.json").read_text())["models"]["decision_tree"]
-    s = json.loads((RESULTS / "baseline_stratified" / "metrics.json").read_text())["models"]["decision_tree"]
+    # The deployed (edge) tree, the model the paper reports throughout.
+    t = json.loads((RESULTS / "baseline_temporal" / "metrics.json").read_text())["models"]["decision_tree_edge"]
+    s = json.loads((RESULTS / "baseline_stratified" / "metrics.json").read_text())["models"]["decision_tree_edge"]
     classes = list(t["per_class"])
     x = np.arange(len(classes))
     fig, ax = plt.subplots(figsize=(COL_W, 2.3))
@@ -98,9 +100,60 @@ def live_delay():
     fig.savefig(OUT / "live_delay.png", dpi=300)
 
 
+def read_md_table(path):
+    """Parse the first pipe table in a results markdown file into a DataFrame of strings."""
+    rows = [ln.strip().strip("|").split("|") for ln in path.read_text().splitlines()
+            if ln.strip().startswith("|")]
+    head, body = [c.strip() for c in rows[0]], rows[2:]
+    return pd.DataFrame([[c.strip() for c in r] for r in body], columns=head)
+
+
+def late_blocks():
+    """Share of attack flows that start after their host pair is blocked (k = 1, MITM-ARP verdicts
+    ignored), with each verdict stamped at flow end (as an offline evaluation does) or 15 s later
+    (the idle timeout, i.e. when a live gateway exports the flow)."""
+    w = read_md_table(RESULTS / "final" / "block_timing.md")
+    w = w[(w["k"] == "1") & (w["MITM-ARP verdicts"] == "ignored")].set_index("verdict time")
+    col = "attack flows after block (pooled)"
+    rows = [("All, 60 s live windows", float(w.loc["(a) flow end", col]),
+             float(w.loc["(b) flow end + 15 s", col]))]
+    lg = read_md_table(RESULTS / "final" / "block_timing_long.md")
+    lg = lg[(lg["k"] == "1") & (lg["MITM-ARP verdicts"] == "ignored") & (lg["horizon"] == "persistent")]
+    lg = lg.set_index("verdict time")
+    for label, c in [("All, 5.9 h test periods", "attack flows after block"), ("DDoS-SYN", "DDoS-SYN"),
+                     ("BruteForce", "BruteForce"), ("Recon", "Recon"), ("DoS-HTTP", "DoS-HTTP"), ("Web", "Web")]:
+        rows.append((label, float(lg.loc["(a) flow end", c]), float(lg.loc["(b) flow end + 15 s", c])))
+    y = np.arange(len(rows))[::-1].astype(float)
+    y[1:] -= 0.5  # gap between the live-window row and the 5.9 h rows
+    fig, ax = plt.subplots(figsize=(COL_W, 2.4))
+    for yi, (_, a, b) in zip(y, rows):
+        ax.plot([b, a], [yi, yi], color=GREY, lw=1.2, zorder=1)
+    ax.scatter([r[1] for r in rows], y, s=26, facecolors="white", edgecolors=GREY, linewidths=1.4, zorder=2,
+               label="verdict at flow end (offline)")
+    ax.scatter([r[2] for r in rows], y, s=26, color=BLUE, edgecolors="white", linewidths=0.6, zorder=3,
+               label="verdict at flow end + 15 s (live export)")
+    for yi, (_, a, b) in zip(y, rows):
+        ax.text(b, yi + 0.22, f"{100 * b:.0f}%", ha="center", va="bottom", fontsize=7, color="#374151")
+    ax.set_yticks(y, [r[0] for r in rows])
+    ax.set_xlim(0, 1.02)
+    ax.set_ylim(y.min() - 0.5, y.max() + 0.9)  # room for the value label above the top row
+    ax.set_xticks([0, 0.25, 0.5, 0.75, 1.0], ["0", "25%", "50%", "75%", "100%"])
+    ax.set_xlabel("attack flows that start after their block")
+    ax.grid(axis="x", color="#e5e7eb", lw=0.6)
+    ax.set_axisbelow(True)
+    ax.tick_params(axis="y", length=0)
+    ax.legend(loc="lower center", bbox_to_anchor=(0.4, 1.0), ncol=1, frameon=False, handletextpad=0.3,
+              borderaxespad=0.1)
+    ax.spines[["top", "right", "left"]].set_visible(False)
+    fig.tight_layout(pad=0.3)
+    fig.savefig(OUT / "late_blocks.png", dpi=300)
+    fig.savefig(OUT / "late_blocks.pdf")
+
+
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
     split_recall()
     nsga_pareto()
     live_delay()
+    late_blocks()
     print(f"figures in {OUT}")

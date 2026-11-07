@@ -1,0 +1,976 @@
+,label,pred,stratum,scenario,evidence_prereg,reason_prereg,evidence,reason
+33710,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+514457,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 84898 SYN-only flows to server in +-5 s",A,"SYN-only, 84898 SYN-only flows to server in +-5 s"
+841052,Benign,Benign,E,Recon-PortScan,B,other-payload,B,other-payload
+457893,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 94732 SYN-only flows to server in +-5 s",A,"SYN-only, 94732 SYN-only flows to server in +-5 s"
+827508,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 1163 targets in +-5 s",A,"probe, client fan-out 1163 targets in +-5 s"
+536988,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 63195 SYN-only flows to server in +-5 s",A,"SYN-only, 63195 SYN-only flows to server in +-5 s"
+486403,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 96791 SYN-only flows to server in +-5 s",A,"SYN-only, 96791 SYN-only flows to server in +-5 s"
+636732,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+426864,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 96344 SYN-only flows to server in +-5 s",A,"SYN-only, 96344 SYN-only flows to server in +-5 s"
+446443,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 97327 SYN-only flows to server in +-5 s",A,"SYN-only, 97327 SYN-only flows to server in +-5 s"
+492500,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 95129 SYN-only flows to server in +-5 s",A,"SYN-only, 95129 SYN-only flows to server in +-5 s"
+446713,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 97519 SYN-only flows to server in +-5 s",A,"SYN-only, 97519 SYN-only flows to server in +-5 s"
+830400,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 1050 targets in +-5 s",A,"probe, client fan-out 1050 targets in +-5 s"
+430314,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 99101 SYN-only flows to server in +-5 s",A,"SYN-only, 99101 SYN-only flows to server in +-5 s"
+829629,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 1004 targets in +-5 s",A,"probe, client fan-out 1004 targets in +-5 s"
+549289,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 54968 SYN-only flows to server in +-5 s",A,"SYN-only, 54968 SYN-only flows to server in +-5 s"
+532407,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 68091 SYN-only flows to server in +-5 s",A,"SYN-only, 68091 SYN-only flows to server in +-5 s"
+784477,Recon,Recon,A,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+487158,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 96716 SYN-only flows to server in +-5 s",A,"SYN-only, 96716 SYN-only flows to server in +-5 s"
+51016,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+412762,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 90779 SYN-only flows to server in +-5 s",A,"SYN-only, 90779 SYN-only flows to server in +-5 s"
+553883,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 34635 SYN-only flows to server in +-5 s",A,"SYN-only, 34635 SYN-only flows to server in +-5 s"
+507919,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 90512 SYN-only flows to server in +-5 s",A,"SYN-only, 90512 SYN-only flows to server in +-5 s"
+480369,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 95514 SYN-only flows to server in +-5 s",A,"SYN-only, 95514 SYN-only flows to server in +-5 s"
+852035,Benign,Benign,E,SqlInjection,B,other-payload,B,other-payload
+621975,Benign,Benign,E,DoS-HTTP_Flood,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+522134,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 76920 SYN-only flows to server in +-5 s",A,"SYN-only, 76920 SYN-only flows to server in +-5 s"
+620387,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,A,"HTTP, 282 connections to server in +-5 s",A,"HTTP, 282 connections to server in +-5 s"
+510493,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 88265 SYN-only flows to server in +-5 s",A,"SYN-only, 88265 SYN-only flows to server in +-5 s"
+625742,Benign,Benign,C,DoS-HTTP_Flood,A,"HTTP, 311 connections to server in +-5 s",A,"HTTP, 311 connections to server in +-5 s"
+499936,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 95588 SYN-only flows to server in +-5 s",A,"SYN-only, 95588 SYN-only flows to server in +-5 s"
+38786,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+813966,Benign,Benign,E,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+614492,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+450147,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 97795 SYN-only flows to server in +-5 s",A,"SYN-only, 97795 SYN-only flows to server in +-5 s"
+545945,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 56922 SYN-only flows to server in +-5 s",A,"SYN-only, 56922 SYN-only flows to server in +-5 s"
+414096,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 90693 SYN-only flows to server in +-5 s",A,"SYN-only, 90693 SYN-only flows to server in +-5 s"
+463247,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 94160 SYN-only flows to server in +-5 s",A,"SYN-only, 94160 SYN-only flows to server in +-5 s"
+626735,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+541765,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 59885 SYN-only flows to server in +-5 s",A,"SYN-only, 59885 SYN-only flows to server in +-5 s"
+612943,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,A,"HTTP, 433 connections to server in +-5 s",A,"HTTP, 433 connections to server in +-5 s"
+418078,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 92094 SYN-only flows to server in +-5 s",A,"SYN-only, 92094 SYN-only flows to server in +-5 s"
+449452,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 98213 SYN-only flows to server in +-5 s",A,"SYN-only, 98213 SYN-only flows to server in +-5 s"
+505847,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 91987 SYN-only flows to server in +-5 s",A,"SYN-only, 91987 SYN-only flows to server in +-5 s"
+494022,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+563622,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 9050 SYN-only flows to server in +-5 s",A,"SYN-only, 9050 SYN-only flows to server in +-5 s"
+832269,Benign,Benign,E,Recon-PortScan,B,other-payload,B,other-payload
+435011,DDoS-SYN,DDoS-SYN,A,DDoS-SYN_Flood,A,"SYN-only, 97686 SYN-only flows to server in +-5 s",A,"SYN-only, 97686 SYN-only flows to server in +-5 s"
+619823,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,A,"HTTP, 263 connections to server in +-5 s",A,"HTTP, 263 connections to server in +-5 s"
+802679,Recon,Recon,A,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+618487,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,A,"HTTP, 382 connections to server in +-5 s",A,"HTTP, 382 connections to server in +-5 s"
+822619,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 1001 targets in +-5 s",A,"probe, client fan-out 1001 targets in +-5 s"
+834907,Benign,Benign,E,Recon-PortScan,B,other-payload,B,other-payload
+812386,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 969 targets in +-5 s",A,"probe, client fan-out 969 targets in +-5 s"
+574309,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+786530,Recon,Recon,A,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+833512,Recon,Recon,A,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+33193,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+838924,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 1416 targets in +-5 s",A,"probe, client fan-out 1416 targets in +-5 s"
+818721,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 1134 targets in +-5 s",A,"probe, client fan-out 1134 targets in +-5 s"
+40898,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+810426,Benign,Benign,E,Recon-PortScan,B,http,B,http
+844580,Benign,Benign,E,Recon-PortScan,B,other-payload,B,other-payload
+850846,Benign,Benign,E,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+786154,Recon,Recon,A,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+795867,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 210 targets in +-5 s",A,"probe, client fan-out 210 targets in +-5 s"
+617598,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,A,"HTTP, 388 connections to server in +-5 s",A,"HTTP, 388 connections to server in +-5 s"
+797015,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 860 targets in +-5 s",A,"probe, client fan-out 860 targets in +-5 s"
+839057,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 1416 targets in +-5 s",A,"probe, client fan-out 1416 targets in +-5 s"
+795664,Benign,Benign,E,Recon-PortScan,B,other-payload,B,other-payload
+818264,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 1121 targets in +-5 s",A,"probe, client fan-out 1121 targets in +-5 s"
+805011,Benign,Benign,E,Recon-PortScan,B,other-payload,B,other-payload
+824710,Benign,Benign,E,Recon-PortScan,B,http,B,http
+837609,Benign,Benign,E,Recon-PortScan,B,other-payload,B,other-payload
+802037,Recon,Recon,A,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+45613,Benign,Benign,G,Benign,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+833297,Benign,Benign,E,Recon-PortScan,B,http,B,http
+33189,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+808604,Benign,Benign,E,Recon-PortScan,B,other-payload,B,other-payload
+817581,Benign,Benign,E,Recon-PortScan,B,tls,B,tls
+636188,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+625207,Benign,Benign,C,DoS-HTTP_Flood,A,"HTTP, 460 connections to server in +-5 s",A,"HTTP, 460 connections to server in +-5 s"
+809059,Recon,Recon,A,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+612537,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,A,"HTTP, 338 connections to server in +-5 s",A,"HTTP, 338 connections to server in +-5 s"
+805166,Benign,Benign,E,Recon-PortScan,B,other-payload,B,other-payload
+817963,Benign,Benign,E,Recon-PortScan,B,other-payload,B,other-payload
+834630,Benign,Benign,E,Recon-PortScan,B,http,B,http
+825672,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 1090 targets in +-5 s",A,"probe, client fan-out 1090 targets in +-5 s"
+850180,Benign,Benign,E,SqlInjection,B,http,B,http
+790889,Benign,Benign,E,Recon-PortScan,B,other-payload,B,other-payload
+786247,Recon,Recon,A,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+44759,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+798746,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 999 targets in +-5 s",A,"probe, client fan-out 999 targets in +-5 s"
+835809,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 1000 targets in +-5 s",A,"probe, client fan-out 1000 targets in +-5 s"
+41098,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+815261,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 237 targets in +-5 s",A,"probe, client fan-out 237 targets in +-5 s"
+804796,Benign,Benign,E,Recon-PortScan,B,other-payload,B,other-payload
+808834,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 102 targets in +-5 s",A,"probe, client fan-out 102 targets in +-5 s"
+823721,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 1000 targets in +-5 s",A,"probe, client fan-out 1000 targets in +-5 s"
+829682,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 1004 targets in +-5 s",A,"probe, client fan-out 1004 targets in +-5 s"
+813176,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 969 targets in +-5 s",A,"probe, client fan-out 969 targets in +-5 s"
+784389,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 712 targets in +-5 s",A,"probe, client fan-out 712 targets in +-5 s"
+796715,Benign,Benign,E,Recon-PortScan,B,other-payload,B,other-payload
+794697,Benign,Benign,E,Recon-PortScan,B,other-payload,B,other-payload
+829611,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 1004 targets in +-5 s",A,"probe, client fan-out 1004 targets in +-5 s"
+841366,Benign,Benign,E,Recon-PortScan,B,other-payload,B,other-payload
+835836,Recon,Recon,A,Recon-PortScan,A,"probe, client fan-out 1000 targets in +-5 s",A,"probe, client fan-out 1000 targets in +-5 s"
+615872,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,A,"HTTP, 415 connections to server in +-5 s",A,"HTTP, 415 connections to server in +-5 s"
+623508,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,A,"HTTP, 413 connections to server in +-5 s",A,"HTTP, 413 connections to server in +-5 s"
+625136,Benign,Benign,C,DoS-HTTP_Flood,A,"HTTP, 444 connections to server in +-5 s",A,"HTTP, 444 connections to server in +-5 s"
+837382,Benign,Benign,E,Recon-PortScan,B,other-payload,B,other-payload
+35301,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+825542,Benign,Benign,E,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+786614,Benign,Benign,E,Recon-PortScan,B,http,B,http
+610547,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,A,"HTTP, 528 connections to server in +-5 s",A,"HTTP, 528 connections to server in +-5 s"
+36743,Benign,Benign,G,Benign,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+51417,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+834478,Benign,Benign,E,Recon-PortScan,B,tls,B,tls
+825496,Benign,Benign,E,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+619688,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+618719,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,A,"HTTP, 273 connections to server in +-5 s",A,"HTTP, 273 connections to server in +-5 s"
+573559,Benign,Benign,E,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+626190,Benign,DoS-HTTP,C,DoS-HTTP_Flood,A,"HTTP, 547 connections to server in +-5 s",A,"HTTP, 547 connections to server in +-5 s"
+624421,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+635933,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+621074,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+639668,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+801115,Benign,Benign,E,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+35983,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+618969,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,A,"HTTP, 210 connections to server in +-5 s",A,"HTTP, 210 connections to server in +-5 s"
+619874,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,A,"HTTP, 288 connections to server in +-5 s",A,"HTTP, 288 connections to server in +-5 s"
+635934,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+43049,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+831674,Benign,Benign,E,Recon-PortScan,B,other-payload,B,other-payload
+615125,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,A,"HTTP, 494 connections to server in +-5 s",A,"HTTP, 494 connections to server in +-5 s"
+794681,Benign,Benign,E,Recon-PortScan,B,other-payload,B,other-payload
+622373,Benign,Benign,E,DoS-HTTP_Flood,B,http-response,B,http-response
+813488,Benign,Benign,E,Recon-PortScan,B,other-payload,B,other-payload
+574938,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+850941,Benign,Benign,E,SqlInjection,B,other-payload,B,other-payload
+622809,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,B,other-payload,U,"other-payload from the server side only, no request visible (amendment R4)"
+612233,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,A,"HTTP, 428 connections to server in +-5 s",A,"HTTP, 428 connections to server in +-5 s"
+35662,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+856468,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+856855,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+850871,Benign,Benign,E,SqlInjection,B,other-payload,B,other-payload
+617243,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+36233,Benign,Benign,G,Benign,B,tls,B,tls
+613401,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+613306,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+574306,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+33389,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+44569,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+33308,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+45243,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+38496,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+575514,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+574405,Benign,Benign,E,DictionaryBruteForce,B,tls,B,tls
+626331,Benign,Benign,C,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+615788,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,A,"HTTP, 381 connections to server in +-5 s",A,"HTTP, 381 connections to server in +-5 s"
+625644,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+35823,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+636326,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+41372,Benign,Benign,G,Benign,B,http,B,http
+34494,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+45004,Benign,Benign,G,Benign,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+616156,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+45947,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+36110,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+613712,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,A,"HTTP, 252 connections to server in +-5 s",A,"HTTP, 252 connections to server in +-5 s"
+33004,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+573972,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+36616,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+850274,Benign,Benign,E,SqlInjection,B,other-payload,B,other-payload
+637059,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+615260,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+51157,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+856900,Web,Web,A,XSS,A,DVWA XSS request,A,DVWA XSS request
+851081,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+40108,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+620216,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+855611,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+46187,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+612217,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,A,"HTTP, 446 connections to server in +-5 s",A,"HTTP, 446 connections to server in +-5 s"
+615001,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+626825,Benign,DoS-HTTP,C,DoS-HTTP_Flood,A,"HTTP, 282 connections to server in +-5 s",A,"HTTP, 282 connections to server in +-5 s"
+35607,Benign,Benign,G,Benign,B,other-payload,B,other-payload
+626611,Benign,Benign,C,DoS-HTTP_Flood,A,"HTTP, 457 connections to server in +-5 s",A,"HTTP, 457 connections to server in +-5 s"
+855874,Benign,Benign,E,XSS,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+622202,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,A,"HTTP, 280 connections to server in +-5 s",A,"HTTP, 280 connections to server in +-5 s"
+626739,Benign,Benign,C,DoS-HTTP_Flood,A,"HTTP, 396 connections to server in +-5 s",A,"HTTP, 396 connections to server in +-5 s"
+615655,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,A,"HTTP, 306 connections to server in +-5 s",A,"HTTP, 306 connections to server in +-5 s"
+554776,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+851014,Benign,Benign,E,SqlInjection,B,other-payload,B,other-payload
+626601,Benign,DoS-HTTP,C,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+851983,Benign,Benign,E,SqlInjection,B,other-payload,B,other-payload
+856500,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+574996,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+617882,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,A,"HTTP, 420 connections to server in +-5 s",A,"HTTP, 420 connections to server in +-5 s"
+856430,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+850677,Benign,Benign,E,SqlInjection,B,tls,B,tls
+574453,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+623983,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+624354,Benign,DoS-HTTP,C,DoS-HTTP_Flood,A,"HTTP, 526 connections to server in +-5 s",A,"HTTP, 526 connections to server in +-5 s"
+51511,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+625381,Benign,DoS-HTTP,C,DoS-HTTP_Flood,A,"HTTP, 355 connections to server in +-5 s",A,"HTTP, 355 connections to server in +-5 s"
+639073,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+615802,DoS-HTTP,DoS-HTTP,A,DoS-HTTP_Flood,A,"HTTP, 425 connections to server in +-5 s",A,"HTTP, 425 connections to server in +-5 s"
+638682,Benign,Benign,E,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+638552,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+636695,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+626424,Benign,DoS-HTTP,C,DoS-HTTP_Flood,A,"HTTP, 488 connections to server in +-5 s",A,"HTTP, 488 connections to server in +-5 s"
+618662,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+50996,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+572114,Benign,Benign,E,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+852084,Benign,Benign,E,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+622033,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+635990,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+638584,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+856886,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+636435,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+856891,Benign,Benign,E,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+625578,Benign,DoS-HTTP,C,DoS-HTTP_Flood,A,"HTTP, 274 connections to server in +-5 s",A,"HTTP, 274 connections to server in +-5 s"
+625825,Benign,Benign,C,DoS-HTTP_Flood,A,"HTTP, 339 connections to server in +-5 s",A,"HTTP, 339 connections to server in +-5 s"
+638701,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+573208,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+636821,Benign,Benign,E,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+612308,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+575056,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+637867,Benign,Benign,E,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+573911,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+573451,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+572491,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+856504,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+856460,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+636112,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+50862,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+615612,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+574926,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+856811,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+637353,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+573556,Benign,Benign,E,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+636865,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+856545,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+636127,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+624007,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572281,Benign,Benign,E,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+856788,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+637547,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+624283,Benign,DoS-HTTP,C,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+637324,Benign,Benign,E,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+575477,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+639035,Benign,MITM-ARP,D,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+575198,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+855951,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+638895,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+574585,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+626495,Benign,Benign,C,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+636633,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+626718,Benign,Benign,C,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+613688,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+574801,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+554695,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+804609,Benign,MITM-ARP,D,Recon-PortScan,B,tls,B,tls
+851022,Benign,Benign,E,SqlInjection,B,other-payload,B,other-payload
+850493,Benign,Benign,E,SqlInjection,B,other-payload,B,other-payload
+572786,Benign,Benign,E,DictionaryBruteForce,B,http,B,http
+573266,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+573570,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+625469,Benign,DoS-HTTP,C,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+618503,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+624649,Benign,DoS-HTTP,C,DoS-HTTP_Flood,A,"HTTP, 526 connections to server in +-5 s",A,"HTTP, 526 connections to server in +-5 s"
+575392,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+620198,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+635960,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+50214,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+638149,Benign,Benign,E,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+623440,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+637587,Benign,Benign,E,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+624717,Benign,DoS-HTTP,C,DoS-HTTP_Flood,A,"HTTP, 526 connections to server in +-5 s",A,"HTTP, 526 connections to server in +-5 s"
+626804,Benign,Benign,C,DoS-HTTP_Flood,A,"HTTP, 311 connections to server in +-5 s",A,"HTTP, 311 connections to server in +-5 s"
+635910,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+51612,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+613988,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+636869,Benign,Benign,E,MITM-ArpSpoofing,B,other-payload,B,other-payload
+849900,Benign,Benign,E,SqlInjection,B,other-payload,B,other-payload
+51645,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+614947,Benign,Benign,E,DoS-HTTP_Flood,B,http-response,B,http-response
+851593,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+857162,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+624464,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+51010,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+574036,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+572401,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+574393,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+856783,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+636037,Benign,Benign,E,MITM-ArpSpoofing,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+619256,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+851530,Benign,Benign,E,SqlInjection,B,other-payload,B,other-payload
+620921,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+850406,Benign,Benign,E,SqlInjection,B,tls,B,tls
+575080,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+572349,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+574133,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+618389,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+574249,Benign,Benign,E,DictionaryBruteForce,B,tls,B,tls
+573103,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+574555,Benign,Benign,E,DictionaryBruteForce,B,other-payload,B,other-payload
+856990,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+575110,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+850988,Benign,Benign,E,SqlInjection,B,tls,B,tls
+572292,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+575311,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+623326,Benign,Benign,E,DoS-HTTP_Flood,B,http-response,B,http-response
+574813,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+620391,Benign,Benign,E,DoS-HTTP_Flood,B,tls,B,tls
+624732,Benign,DoS-HTTP,C,DoS-HTTP_Flood,A,"HTTP, 526 connections to server in +-5 s",A,"HTTP, 526 connections to server in +-5 s"
+610918,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+850384,Benign,Benign,E,SqlInjection,B,other-payload,B,other-payload
+851751,Benign,Benign,E,SqlInjection,B,tls,B,tls
+626312,Benign,Benign,C,DoS-HTTP_Flood,A,"HTTP, 521 connections to server in +-5 s",A,"HTTP, 521 connections to server in +-5 s"
+616081,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+852110,Benign,Benign,E,SqlInjection,B,tls,B,tls
+623755,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+638111,Benign,MITM-ARP,D,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+615574,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+51713,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+626629,Benign,DoS-HTTP,C,DoS-HTTP_Flood,A,"HTTP, 446 connections to server in +-5 s",A,"HTTP, 446 connections to server in +-5 s"
+625396,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+51616,Benign,Benign,E,CommandInjection,B,tls,B,tls
+625075,Benign,Benign,C,DoS-HTTP_Flood,A,"HTTP, 430 connections to server in +-5 s",A,"HTTP, 430 connections to server in +-5 s"
+623240,Benign,Benign,E,DoS-HTTP_Flood,B,other-payload,B,other-payload
+51231,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+851918,Benign,Benign,E,SqlInjection,B,other-payload,B,other-payload
+50183,Benign,Benign,E,CommandInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+624758,Benign,DoS-HTTP,C,DoS-HTTP_Flood,A,"HTTP, 531 connections to server in +-5 s",A,"HTTP, 531 connections to server in +-5 s"
+626369,Benign,Benign,C,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+624871,Benign,DoS-HTTP,C,DoS-HTTP_Flood,A,"HTTP, 580 connections to server in +-5 s",A,"HTTP, 580 connections to server in +-5 s"
+624635,Benign,Benign,C,DoS-HTTP_Flood,A,"HTTP, 526 connections to server in +-5 s",A,"HTTP, 526 connections to server in +-5 s"
+626326,Benign,Benign,C,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+851417,Benign,Benign,E,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+794488,Benign,DoS-HTTP,D,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+857067,Benign,Benign,E,XSS,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+855900,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+572497,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+851245,Benign,Benign,E,SqlInjection,B,other-payload,B,other-payload
+51347,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+623667,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+856905,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+855665,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+51112,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+50765,Benign,Benign,E,CommandInjection,U,no packets matched,U,no packets matched
+574592,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+851757,Benign,Benign,E,SqlInjection,B,other-payload,B,other-payload
+856666,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+855992,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+856805,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+850738,Benign,Benign,E,SqlInjection,B,http,B,http
+851713,Benign,Benign,E,SqlInjection,B,other-payload,B,other-payload
+850317,Benign,Benign,E,SqlInjection,B,other-payload,B,other-payload
+639382,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+856100,Benign,Benign,E,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+850963,Benign,Benign,E,SqlInjection,B,other-payload,B,other-payload
+855936,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+574967,BruteForce,Benign,B-fn,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+553434,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+851088,Benign,Benign,E,SqlInjection,B,other-payload,B,other-payload
+609530,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+851003,Benign,Benign,E,SqlInjection,B,tls,B,tls
+850500,Benign,Benign,E,SqlInjection,B,other-payload,B,other-payload
+51372,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+51421,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+51304,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+51823,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+526244,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+831494,Benign,DoS-HTTP,D,Recon-PortScan,B,tls,B,tls
+856616,Benign,Benign,E,XSS,B,http,B,http
+51114,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+857047,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+636479,MITM-ARP,Benign,B-fn,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+639678,Benign,Benign,E,Mirai-udpplain,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+50580,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+856120,Benign,Benign,E,XSS,B,other-payload,B,other-payload
+51367,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+50673,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+51063,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+639721,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+634852,Benign,MITM-ARP,D,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+51760,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+51195,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+575495,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+856151,Benign,Benign,E,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+51402,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+50617,Benign,Benign,E,CommandInjection,B,other-payload,B,other-payload
+639622,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+575255,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+51160,Benign,Benign,E,CommandInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+620909,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+638793,Benign,Benign,C,MITM-ArpSpoofing,B,other-payload,B,other-payload
+563246,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+639380,Benign,Benign,E,Mirai-udpplain,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+575230,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+575108,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+623951,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+575154,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+617822,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+817953,Benign,MITM-ARP,D,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+782056,Benign,MITM-ARP,D,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+575309,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+575316,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+572500,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+851004,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+43731,Benign,DoS-HTTP,F,Benign,B,other-payload,U,"other-payload from the server side only, no request visible (amendment R4)"
+818150,Benign,DoS-HTTP,D,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+623931,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+574696,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+851614,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+575388,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+623391,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+575256,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+575137,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+574625,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+51116,Benign,MITM-ARP,D,CommandInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+828865,Benign,DoS-HTTP,D,Recon-PortScan,B,tls,B,tls
+575265,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+639657,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+623801,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,A,"HTTP, 223 connections to server in +-5 s",A,"HTTP, 223 connections to server in +-5 s"
+527922,Benign,Benign,E,DDoS-SYN_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+575241,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+573619,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+575099,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+822244,Benign,MITM-ARP,D,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+51758,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+43989,Benign,DoS-HTTP,F,Benign,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572538,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+553311,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+838097,Benign,MITM-ARP,D,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+574596,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+801758,Benign,DoS-HTTP,D,Recon-PortScan,B,tls,U,"tls from the server side only, no request visible (amendment R4)"
+638924,Benign,DDoS-SYN,D,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+639619,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+639712,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+851604,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+856323,Web,Web,A,XSS,A,DVWA XSS request,A,DVWA XSS request
+51354,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+844290,Benign,Benign,C,Recon-PortScan,B,other-payload,B,other-payload
+624054,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+639639,Mirai,Benign,B-fn,Mirai-udpplain,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+574738,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+851009,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+575315,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+615418,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+637615,Benign,MITM-ARP,D,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+575245,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+572555,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+499504,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+623966,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+617819,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+448446,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+855648,Benign,MITM-ARP,D,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+851069,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+574810,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+851071,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+851591,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+789723,Benign,MITM-ARP,D,Recon-PortScan,B,other-payload,B,other-payload
+639666,Benign,Benign,E,Mirai-udpplain,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+810542,Benign,Web,D,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+574601,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+575162,BruteForce,Benign,B-fn,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+574796,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+851551,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+807204,Benign,DoS-HTTP,D,Recon-PortScan,B,other-payload,B,other-payload
+793929,Benign,DoS-HTTP,D,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+541180,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+638680,Benign,MITM-ARP,D,MITM-ArpSpoofing,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+791737,Benign,Web,D,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+457506,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+624051,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+639689,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+639483,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+838253,Benign,DoS-HTTP,D,Recon-PortScan,B,other-payload,B,other-payload
+636990,MITM-ARP,MITM-ARP,A,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+816958,Benign,MITM-ARP,D,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572604,Benign,Benign,C,DictionaryBruteForce,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+574030,Benign,MITM-ARP,D,DictionaryBruteForce,B,other-payload,B,other-payload
+639746,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+801666,Benign,DoS-HTTP,D,Recon-PortScan,B,other-payload,B,other-payload
+638259,Benign,Benign,C,MITM-ArpSpoofing,B,other-payload,B,other-payload
+637938,Benign,MITM-ARP,D,MITM-ArpSpoofing,B,other-payload,U,"other-payload from the server side only, no request visible (amendment R4)"
+850228,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+38396,Benign,MITM-ARP,F,Benign,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+32994,Benign,MITM-ARP,F,Benign,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+831421,Benign,MITM-ARP,D,Recon-PortScan,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+40465,Benign,DoS-HTTP,F,Benign,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+841022,Benign,MITM-ARP,D,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+620966,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,A,"HTTP, 283 connections to server in +-5 s",A,"HTTP, 283 connections to server in +-5 s"
+850165,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+639741,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+850915,Benign,MITM-ARP,D,SqlInjection,B,other-payload,B,other-payload
+785298,Benign,DoS-HTTP,D,Recon-PortScan,B,other-payload,B,other-payload
+506336,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+32741,Benign,MITM-ARP,F,Benign,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+635647,MITM-ARP,Benign,B-fn,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+794660,Benign,MITM-ARP,D,Recon-PortScan,B,other-payload,B,other-payload
+637882,Benign,MITM-ARP,D,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+844462,Benign,MITM-ARP,D,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+549993,Benign,DoS-HTTP,D,DDoS-SYN_Flood,B,other-payload,B,other-payload
+32730,Benign,MITM-ARP,F,Benign,B,other-payload,B,other-payload
+636238,Benign,Benign,C,MITM-ArpSpoofing,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+572601,Benign,Benign,C,DictionaryBruteForce,B,other-payload,B,other-payload
+639661,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+831450,Benign,MITM-ARP,D,Recon-PortScan,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+572749,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+638187,Benign,MITM-ARP,D,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+38470,Benign,MITM-ARP,F,Benign,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+638849,Benign,Benign,C,MITM-ArpSpoofing,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+614495,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+844351,Benign,MITM-ARP,D,Recon-PortScan,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+617820,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+615182,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+520350,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+810698,Benign,MITM-ARP,D,Recon-PortScan,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+621632,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+841203,Benign,DoS-HTTP,D,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+851065,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+623957,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+574032,Benign,MITM-ARP,D,DictionaryBruteForce,B,other-payload,B,other-payload
+837728,Benign,DoS-HTTP,D,Recon-PortScan,B,tls,B,tls
+844712,Benign,Web,D,Recon-PortScan,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572165,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+851205,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+826814,Benign,MITM-ARP,D,Recon-PortScan,B,other-payload,B,other-payload
+622087,DoS-HTTP,MITM-ARP,B-x,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+856831,Benign,Benign,C,XSS,B,other-payload,B,other-payload
+618454,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+557117,Benign,Benign,E,DDoS-SYN_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+44651,Benign,MITM-ARP,F,Benign,B,other-payload,B,other-payload
+851336,Web,Web,A,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+573914,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+639708,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+428246,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+476051,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+448029,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+574360,Benign,Benign,C,DictionaryBruteForce,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+624006,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+851601,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+623670,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+639039,Benign,MITM-ARP,D,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+851596,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+851692,Web,Benign,B-fn,SqlInjection,B,http,B,http
+51509,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+639730,Benign,DoS-HTTP,D,Mirai-udpplain,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+639479,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+454892,Benign,Benign,E,DDoS-SYN_Flood,B,tls,B,tls
+639626,Mirai,Mirai,A,Mirai-udpplain,B,other-payload,A,one-way UDP flood
+50848,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+43447,Benign,MITM-ARP,F,Benign,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+574589,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+639679,Benign,Benign,E,Mirai-udpplain,B,tls,B,tls
+636983,Benign,MITM-ARP,D,MITM-ArpSpoofing,B,tls,B,tls
+851564,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+856614,Benign,Benign,C,XSS,B,other-payload,B,other-payload
+639604,Benign,MITM-ARP,D,Mirai-udpplain,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+51439,Benign,Benign,C,CommandInjection,B,other-payload,B,other-payload
+639381,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+434908,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+639618,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+572812,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+51059,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+623645,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+639598,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+490817,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+639609,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+572382,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+615186,Benign,DoS-HTTP,D,DoS-HTTP_Flood,B,tls,B,tls
+41808,Benign,DoS-HTTP,F,Benign,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+638261,Benign,MITM-ARP,C,MITM-ArpSpoofing,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+850492,Web,Benign,B-fn,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+850914,Benign,MITM-ARP,D,SqlInjection,B,other-payload,B,other-payload
+639378,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+481961,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+637026,Benign,Web,D,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+574583,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+574697,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+636996,MITM-ARP,Benign,B-fn,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+639662,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+851558,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+574795,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+618173,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572303,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+851587,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+572456,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+51795,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+468683,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+575048,Benign,Benign,C,DictionaryBruteForce,B,other-payload,B,other-payload
+639628,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+637234,Benign,DoS-HTTP,D,MITM-ArpSpoofing,B,other-payload,B,other-payload
+851127,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+563247,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+574888,Benign,Benign,C,DictionaryBruteForce,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+639642,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+572336,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+637155,Benign,MITM-ARP,D,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+639755,Benign,Benign,E,Mirai-udpplain,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+851569,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+639647,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+609525,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+850875,Web,Benign,B-fn,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+639488,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+622855,DoS-HTTP,MITM-ARP,B-x,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+638292,Benign,MITM-ARP,C,MITM-ArpSpoofing,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+639611,Benign,Benign,E,Mirai-udpplain,B,other-payload,B,other-payload
+609521,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+638632,Benign,MITM-ARP,D,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+636338,Benign,MITM-ARP,D,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+851077,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+622416,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+857046,Benign,Benign,C,XSS,B,other-payload,B,other-payload
+623655,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+637137,Benign,MITM-ARP,D,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+51709,Web,DoS-HTTP,B-x,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+574703,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+624063,DoS-HTTP,Benign,B-fn,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+850872,Benign,MITM-ARP,D,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+51454,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+33829,Benign,MITM-ARP,F,Benign,B,tls,B,tls
+636470,MITM-ARP,Benign,B-fn,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+636973,Benign,MITM-ARP,D,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+457755,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+851075,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+50401,Benign,Benign,C,CommandInjection,B,other-payload,B,other-payload
+635633,Benign,MITM-ARP,D,MITM-ArpSpoofing,B,other-payload,B,other-payload
+638972,Benign,BruteForce,D,MITM-ArpSpoofing,B,other-payload,B,other-payload
+624116,Benign,DoS-HTTP,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+851104,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+39042,Benign,DoS-HTTP,F,Benign,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+573830,Benign,Benign,C,DictionaryBruteForce,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+851126,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+851621,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+446090,Benign,MITM-ARP,D,DDoS-SYN_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+50448,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+563790,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+615181,Benign,DoS-HTTP,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+559441,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+436970,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+51630,Benign,MITM-ARP,D,CommandInjection,B,other-payload,B,other-payload
+35217,Benign,MITM-ARP,F,Benign,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+572537,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+36875,Benign,MITM-ARP,F,Benign,B,other-payload,B,other-payload
+619164,Benign,DoS-HTTP,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+638189,Benign,MITM-ARP,D,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+851619,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+554605,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+43512,Benign,DoS-HTTP,F,Benign,B,other-payload,U,"other-payload from the server side only, no request visible (amendment R4)"
+612865,Benign,DoS-HTTP,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+855681,Web,Web,A,XSS,A,DVWA XSS request,A,DVWA XSS request
+851618,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+39643,Benign,MITM-ARP,F,Benign,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+856336,Benign,Benign,C,XSS,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+851579,Web,Web,A,SqlInjection,A,DVWA SqlInjection request,A,DVWA SqlInjection request
+418961,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+856527,Web,Web,A,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+636408,MITM-ARP,Benign,B-fn,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+637029,Benign,Web,D,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572617,Benign,Benign,C,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+574797,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+41821,Benign,MITM-ARP,F,Benign,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+475818,Benign,Benign,E,DDoS-SYN_Flood,B,other-payload,B,other-payload
+36188,Benign,MITM-ARP,F,Benign,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+636236,Benign,Benign,C,MITM-ArpSpoofing,B,other-payload,B,other-payload
+851789,Web,MITM-ARP,B-x,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572552,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+572370,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+849882,Benign,MITM-ARP,D,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+637573,Benign,MITM-ARP,D,MITM-ArpSpoofing,B,other-payload,B,other-payload
+573931,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+575037,Benign,DoS-HTTP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+856260,Benign,MITM-ARP,D,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+638527,MITM-ARP,MITM-ARP,A,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+619071,Benign,DoS-HTTP,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+636772,Benign,MITM-ARP,D,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+638159,Benign,MITM-ARP,D,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+622098,DoS-HTTP,MITM-ARP,B-x,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+636281,MITM-ARP,Benign,B-fn,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+635646,MITM-ARP,MITM-ARP,A,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+635738,Benign,MITM-ARP,D,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+857198,Benign,DoS-HTTP,D,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572338,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+41183,Benign,MITM-ARP,F,Benign,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+857172,Benign,DoS-HTTP,D,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+636693,Benign,MITM-ARP,D,MITM-ArpSpoofing,B,other-payload,B,other-payload
+45903,Benign,DoS-HTTP,F,Benign,B,other-payload,U,"other-payload from the server side only, no request visible (amendment R4)"
+572325,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+637031,Benign,MITM-ARP,D,MITM-ArpSpoofing,B,tls,B,tls
+637866,Benign,MITM-ARP,D,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+574804,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+46007,Benign,DoS-HTTP,F,Benign,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+574704,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+637171,Benign,Web,D,MITM-ArpSpoofing,B,http,B,http
+574699,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+51453,Web,Benign,B-fn,CommandInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+50190,Benign,MITM-ARP,D,CommandInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572914,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+45596,Benign,DoS-HTTP,F,Benign,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+573958,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572885,Benign,Benign,C,DictionaryBruteForce,B,other-payload,B,other-payload
+32633,Benign,MITM-ARP,F,Benign,B,other-payload,B,other-payload
+615464,Benign,DoS-HTTP,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+32699,Benign,MITM-ARP,F,Benign,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+51708,Web,Web,A,CommandInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+849978,Web,DoS-HTTP,B-x,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+50917,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+855730,Web,Web,A,XSS,A,DVWA XSS request,A,DVWA XSS request
+615673,Benign,DoS-HTTP,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+574933,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+563579,Benign,Recon,D,DDoS-SYN_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+38394,Benign,DoS-HTTP,F,Benign,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+40605,Benign,DoS-HTTP,F,Benign,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+573223,Benign,Benign,C,DictionaryBruteForce,B,other-payload,B,other-payload
+50414,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+849828,Benign,MITM-ARP,D,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+573420,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572081,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+857024,Web,Web,A,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+638263,Benign,Benign,C,MITM-ArpSpoofing,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+614729,Benign,DoS-HTTP,D,DoS-HTTP_Flood,B,tls,B,tls
+856612,Benign,MITM-ARP,D,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+638854,Benign,Benign,C,MITM-ArpSpoofing,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+637480,MITM-ARP,MITM-ARP,A,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+573843,Benign,Benign,C,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+856329,Web,Web,A,XSS,A,DVWA XSS request,A,DVWA XSS request
+45448,Benign,DoS-HTTP,F,Benign,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+574429,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+573521,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+636468,MITM-ARP,Benign,B-fn,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+617103,Benign,DoS-HTTP,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+37094,Benign,DoS-HTTP,F,Benign,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+35792,Benign,DoS-HTTP,F,Benign,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+851955,Benign,MITM-ARP,D,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+851693,Web,Benign,B-fn,SqlInjection,B,http,B,http
+856679,Benign,MITM-ARP,D,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+573225,Benign,Benign,C,DictionaryBruteForce,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+572545,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+574881,Benign,Benign,C,DictionaryBruteForce,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+856049,Benign,MITM-ARP,D,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+638164,Benign,Benign,C,MITM-ArpSpoofing,B,other-payload,B,other-payload
+573504,Benign,Benign,C,DictionaryBruteForce,B,other-payload,B,other-payload
+489216,Benign,DDoS-SYN,D,DDoS-SYN_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+485462,Benign,MITM-ARP,D,DDoS-SYN_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572602,Benign,Benign,C,DictionaryBruteForce,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+572547,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+857138,Web,Web,A,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+856259,Benign,Benign,C,XSS,B,other-payload,B,other-payload
+574790,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+574885,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+636997,MITM-ARP,Benign,B-fn,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+856821,Benign,DoS-HTTP,D,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+50390,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+574871,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+451950,Benign,DDoS-SYN,D,DDoS-SYN_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+855823,Web,Web,A,XSS,A,DVWA XSS request,A,DVWA XSS request
+856632,Benign,MITM-ARP,D,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+856255,Benign,MITM-ARP,D,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+856874,Web,Benign,B-fn,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+51573,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+851355,Web,Benign,B-fn,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572571,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+575621,Benign,DoS-HTTP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+639100,MITM-ARP,Benign,B-fn,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+572548,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+617670,Benign,DoS-HTTP,D,DoS-HTTP_Flood,B,tls,B,tls
+851427,Web,Benign,B-fn,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+614949,Benign,DoS-HTTP,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+51610,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+636747,MITM-ARP,Benign,B-fn,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+636243,Benign,Benign,C,MITM-ArpSpoofing,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+572556,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+637295,Benign,Benign,C,MITM-ArpSpoofing,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+575093,BruteForce,Recon,B-x,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+574353,Benign,Benign,C,DictionaryBruteForce,B,other-payload,B,other-payload
+50847,Web,Benign,B-fn,CommandInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+613416,Benign,DoS-HTTP,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+851679,Benign,Benign,C,SqlInjection,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+851671,Benign,Benign,C,SqlInjection,B,other-payload,B,other-payload
+615013,Benign,DoS-HTTP,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+620194,Benign,DoS-HTTP,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+638860,Benign,Benign,C,MITM-ArpSpoofing,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+51109,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+856245,Benign,MITM-ARP,D,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+856528,Web,Web,A,XSS,A,DVWA XSS request,A,DVWA XSS request
+544577,Benign,DDoS-SYN,D,DDoS-SYN_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+856457,Web,Web,A,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+620027,Benign,DoS-HTTP,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+50234,Benign,MITM-ARP,D,CommandInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+636371,Benign,Benign,C,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+574031,Benign,MITM-ARP,D,DictionaryBruteForce,B,other-payload,B,other-payload
+857050,Benign,Benign,C,XSS,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+574700,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+639681,Mirai,Mirai,A,Mirai-udpplain,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+856059,Web,Web,A,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+850678,Benign,Benign,C,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+855968,Web,Web,A,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+850576,Benign,DoS-HTTP,D,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+638271,Benign,Benign,C,MITM-ArpSpoofing,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+574358,Benign,Benign,C,DictionaryBruteForce,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+51191,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+624176,Benign,DoS-HTTP,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+50317,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+572381,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+619328,DoS-HTTP,MITM-ARP,B-x,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+51486,Benign,Benign,C,CommandInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+856060,Web,Web,A,XSS,A,DVWA XSS request,A,DVWA XSS request
+636242,Benign,Benign,C,MITM-ArpSpoofing,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+51478,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+850887,Web,Benign,B-fn,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572192,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+851689,Benign,Benign,C,SqlInjection,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+619128,Benign,DoS-HTTP,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+573828,Benign,Benign,C,DictionaryBruteForce,B,other-payload,B,other-payload
+851377,Benign,MITM-ARP,D,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+636478,MITM-ARP,Benign,B-fn,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+639491,Mirai,Mirai,A,Mirai-udpplain,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+637290,Benign,Benign,C,MITM-ArpSpoofing,B,other-payload,B,other-payload
+636247,Benign,Benign,C,MITM-ArpSpoofing,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+504761,Benign,Mirai,D,DDoS-SYN_Flood,B,other-payload,B,other-payload
+637293,Benign,Benign,C,MITM-ArpSpoofing,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+636406,MITM-ARP,Benign,B-fn,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+850464,Benign,MITM-ARP,D,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+635914,Benign,Benign,C,MITM-ArpSpoofing,B,other-payload,B,other-payload
+639735,Mirai,Mirai,A,Mirai-udpplain,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+856204,Web,Web,A,XSS,A,DVWA XSS request,A,DVWA XSS request
+574582,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+616866,Benign,DoS-HTTP,D,DoS-HTTP_Flood,B,tls,B,tls
+51027,Benign,Benign,C,CommandInjection,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+615440,Benign,DoS-HTTP,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+638867,Benign,Benign,C,MITM-ArpSpoofing,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+856875,Web,Web,A,XSS,A,DVWA XSS request,A,DVWA XSS request
+574005,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+855826,Benign,Benign,C,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572916,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+575051,Benign,MITM-ARP,D,DictionaryBruteForce,B,tls,B,tls
+850386,Benign,DoS-HTTP,D,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+638841,Benign,Benign,C,MITM-ArpSpoofing,B,other-payload,B,other-payload
+620488,Benign,MITM-ARP,D,DoS-HTTP_Flood,B,other-payload,B,other-payload
+51026,Benign,Benign,C,CommandInjection,B,other-payload,B,other-payload
+857139,Web,Web,A,XSS,A,DVWA XSS request,A,DVWA XSS request
+563249,Benign,DoS-HTTP,D,DDoS-SYN_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572559,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+637317,Benign,Benign,C,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+856335,Benign,Benign,C,XSS,B,other-payload,B,other-payload
+620662,Benign,DoS-HTTP,D,DoS-HTTP_Flood,B,other-payload,B,other-payload
+51476,Benign,Benign,C,CommandInjection,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+51256,Benign,MITM-ARP,D,CommandInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+623988,Benign,MITM-ARP,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572536,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+856146,Web,Web,A,XSS,A,DVWA XSS request,A,DVWA XSS request
+574587,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+50943,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+574812,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+50846,Web,Benign,B-fn,CommandInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+573236,Benign,Benign,C,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572209,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+620470,Benign,DoS-HTTP,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+638285,Benign,Benign,C,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+622088,DoS-HTTP,MITM-ARP,B-x,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+636472,MITM-ARP,Benign,B-fn,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+623735,Benign,Web,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+637298,Benign,MITM-ARP,C,MITM-ArpSpoofing,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+557179,Benign,Recon,D,DDoS-SYN_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+574588,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+638844,Benign,MITM-ARP,C,MITM-ArpSpoofing,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+574586,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+50880,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+857076,Benign,Benign,C,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+574980,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+556300,Benign,DoS-HTTP,D,DDoS-SYN_Flood,B,tls,B,tls
+856337,Benign,Benign,C,XSS,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+51467,Benign,Benign,C,CommandInjection,B,other-payload,B,other-payload
+574698,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+573829,Benign,Benign,C,DictionaryBruteForce,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+637307,Benign,Benign,C,MITM-ArpSpoofing,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+851437,Benign,MITM-ARP,D,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+574794,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+638873,Benign,Benign,C,MITM-ArpSpoofing,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+856182,Benign,MITM-ARP,D,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572341,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+622446,Benign,DoS-HTTP,D,DoS-HTTP_Flood,B,other-payload,U,"other-payload from the server side only, no request visible (amendment R4)"
+574590,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+850496,Web,Benign,B-fn,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+574688,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+50849,Benign,Benign,C,CommandInjection,B,other-payload,B,other-payload
+857051,Benign,Benign,C,XSS,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+635707,MITM-ARP,Benign,B-fn,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+618930,Benign,DoS-HTTP,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+638268,Benign,Benign,C,MITM-ArpSpoofing,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+623099,DoS-HTTP,MITM-ARP,B-x,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+574584,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+619547,Benign,DoS-HTTP,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572546,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+575305,BruteForce,Recon,B-x,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+573421,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+574880,Benign,Benign,C,DictionaryBruteForce,B,other-payload,B,other-payload
+851694,Benign,Benign,C,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+574537,Benign,Benign,C,DictionaryBruteForce,B,other-payload,B,other-payload
+572366,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+850319,Benign,MITM-ARP,D,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+639682,Mirai,Mirai,A,Mirai-udpplain,B,other-payload,A,one-way UDP flood
+636396,MITM-ARP,Benign,B-fn,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+572496,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+574687,BruteForce,DoS-HTTP,B-x,DictionaryBruteForce,B,http,A,short connection with one RTSP DESCRIBE of a stream path (route dictionary)
+636995,MITM-ARP,Benign,B-fn,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+639099,MITM-ARP,Benign,B-fn,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+51280,Benign,MITM-ARP,D,CommandInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572384,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+572553,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+572516,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+573231,Benign,DoS-HTTP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+616121,Benign,DoS-HTTP,D,DoS-HTTP_Flood,B,other-payload,B,other-payload
+637207,Benign,Benign,C,MITM-ArpSpoofing,B,other-payload,B,other-payload
+50993,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+850649,Benign,Benign,C,SqlInjection,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+50332,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+850899,Benign,Benign,C,SqlInjection,B,other-payload,B,other-payload
+574389,Benign,Benign,C,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572326,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+51051,Benign,Benign,C,CommandInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572881,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+856946,Web,Web,A,XSS,A,DVWA XSS request,A,DVWA XSS request
+563789,Benign,DoS-HTTP,D,DDoS-SYN_Flood,B,other-payload,B,other-payload
+639101,MITM-ARP,Benign,B-fn,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+51866,Benign,MITM-ARP,D,CommandInjection,B,other-payload,B,other-payload
+429706,Benign,DoS-HTTP,D,DDoS-SYN_Flood,B,other-payload,B,other-payload
+574281,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+50450,Benign,MITM-ARP,D,CommandInjection,B,other-payload,U,"other-payload from the server side only, no request visible (amendment R4)"
+51534,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+51714,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+850643,Benign,Benign,C,SqlInjection,B,other-payload,B,other-payload
+51473,Benign,Benign,C,CommandInjection,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+635555,MITM-ARP,Benign,B-fn,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+850916,Benign,MITM-ARP,D,SqlInjection,B,other-payload,B,other-payload
+850679,Benign,Benign,C,SqlInjection,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+574908,Benign,Benign,C,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+636407,MITM-ARP,Benign,B-fn,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+639633,Mirai,Mirai,A,Mirai-udpplain,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+50107,Benign,MITM-ARP,D,CommandInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+51746,Benign,MITM-ARP,D,CommandInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+624433,Benign,MITM-ARP,D,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+50511,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+572335,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+856590,Web,Web,A,XSS,A,DVWA XSS request,A,DVWA XSS request
+574072,Benign,Benign,C,DictionaryBruteForce,B,other-payload,B,other-payload
+621858,DoS-HTTP,MITM-ARP,B-x,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+856717,Benign,MITM-ARP,D,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+572570,BruteForce,BruteForce,A,DictionaryBruteForce,A,short SSH login connection,A,short SSH login connection
+856322,Web,Web,A,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+428362,Benign,DoS-HTTP,D,DDoS-SYN_Flood,B,other-payload,B,other-payload
+617790,DoS-HTTP,Web,B-x,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+851805,Benign,Benign,C,SqlInjection,B,other-payload,B,other-payload
+855724,Benign,MITM-ARP,D,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+639738,Mirai,Mirai,A,Mirai-udpplain,B,other-payload,A,one-way UDP flood
+575619,Benign,MITM-ARP,D,DictionaryBruteForce,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+856157,Benign,MITM-ARP,D,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+855863,Web,Web,A,XSS,A,DVWA XSS request,A,DVWA XSS request
+639602,Mirai,Mirai,A,Mirai-udpplain,B,other-payload,A,one-way UDP flood
+51628,Benign,DoS-HTTP,D,CommandInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+51033,Benign,Benign,C,CommandInjection,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+856782,Web,Web,A,XSS,A,DVWA XSS request,A,DVWA XSS request
+50551,Web,Web,A,CommandInjection,A,DVWA CommandInjection request,A,DVWA CommandInjection request
+856351,Benign,Benign,C,XSS,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+622097,DoS-HTTP,MITM-ARP,B-x,DoS-HTTP_Flood,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+852067,Web,Benign,B-fn,SqlInjection,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"
+856714,Web,Web,A,XSS,A,DVWA XSS request,A,DVWA XSS request
+573224,Benign,Benign,C,DictionaryBruteForce,B,http-response,U,"http-response from the server side only, no request visible (amendment R4)"
+636477,MITM-ARP,Benign,B-fn,MITM-ArpSpoofing,A,relayed via ARP spoofer dc:a6:32:dc:27:d5,A,relayed via ARP spoofer dc:a6:32:dc:27:d5
+639693,Mirai,Mirai,A,Mirai-udpplain,U,"no payload, no signature",U,"None from the server side only, no request visible (amendment R4)"

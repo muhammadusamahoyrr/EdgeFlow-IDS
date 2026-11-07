@@ -8,6 +8,8 @@ gw-eth0. Between windows we wait --gap seconds while h1 pings h2 through the gat
 Resource use of the gateway processes (CPU %, RSS) is sampled every second from /proc.
 --cpu-quota limits the gateway with a cgroup CPU quota (systemd-run), e.g. 100 = one core,
 50 = half a core; without it the gateway shares the laptop's CPUs with tcpreplay and OVS.
+--pin puts tcpreplay, the keep-alive ping and the gateway on disjoint cores (taskset), so the
+achieved replay rate no longer depends on the gateway's load (needs >= 4 cores).
 
 Run in WSL as root (system python3, which has mininet):
   python3 topology/live_experiment.py --tag run1 [--enforce] [--speed 1.0] [--cpu-quota 100]
@@ -109,7 +111,10 @@ def parse_rate(tcpreplay_out):
     return {"offered_mbps": float(m.group(2)), "offered_pps": float(m.group(3))} if m else {}
 
 
-def main(tag, enforce, speed, gap, cpu_quota, only, model, policy):
+PIN_REPLAY, PIN_PING, PIN_GW = "0", "1", "2-5"
+
+
+def main(tag, enforce, speed, gap, cpu_quota, only, model, policy, pin=False):
     live = ROOT / "data" / "raw" / "live"
     windows = json.loads((live / "manifest.json").read_text())
     if only:
@@ -141,6 +146,8 @@ def main(tag, enforce, speed, gap, cpu_quota, only, model, policy):
                "--out", str(out_dir / "flows.csv"), "--model", str(model)]
         if enforce:
             cmd += ["--enforce", "--bridge", "s1", "--policy", policy]
+        if pin:  # NFStream meter processes inherit the affinity
+            cmd = ["taskset", "-c", PIN_GW] + cmd
         if cpu_quota:
             cmd = ["systemd-run", "--scope", "--quiet", "-p", f"CPUQuota={cpu_quota}%"] + cmd
         log = open(out_dir / "gateway.log", "w")
@@ -152,13 +159,15 @@ def main(tag, enforce, speed, gap, cpu_quota, only, model, policy):
         threading.Thread(target=sample_resources, args=(out_dir / "resources.csv", stop_event),
                          daemon=True).start()
         wait_ready(out_dir / "gateway.log", procs[0])
-        h1.cmd("ping -i 0.005 -q 10.0.2.10 > /dev/null 2>&1 &")
+        ping_pin = f"taskset -c {PIN_PING} " if pin else ""
+        replay_pin = f"taskset -c {PIN_REPLAY} " if pin else ""
+        h1.cmd(f"{ping_pin}ping -i 0.005 -q 10.0.2.10 > /dev/null 2>&1 &")
 
         record = []
         for wdw in windows:
             pcap = live / wdw["pcap"]
             t0 = time.time()
-            res = h1.cmd(f"tcpreplay -i h1-eth0 -x {speed} {shlex.quote(str(pcap))} 2>&1")
+            res = h1.cmd(f"{replay_pin}tcpreplay -i h1-eth0 -x {speed} {shlex.quote(str(pcap))} 2>&1")
             t1 = time.time()
             rate = parse_rate(res)
             if not rate:
@@ -184,7 +193,7 @@ def main(tag, enforce, speed, gap, cpu_quota, only, model, policy):
         time.sleep(IDLE_FLUSH_S)
 
         meta = {"tag": tag, "enforce": enforce, "policy": policy if enforce else None,
-                "speed": speed, "cpu_quota": cpu_quota, "model": str(model), "windows": record}
+                "speed": speed, "cpu_quota": cpu_quota, "pinned": pin, "model": str(model), "windows": record}
         (out_dir / "windows.json").write_text(json.dumps(meta, indent=2))
         dump = subprocess.run(["ovs-ofctl", "dump-flows", "s1"], capture_output=True, text=True)
         (out_dir / "ovs_flows.txt").write_text(dump.stdout)
@@ -216,6 +225,8 @@ if __name__ == "__main__":
     ap.add_argument("--model", default=str(ROOT / "results" / "models" / "decision_tree.pkl"))
     ap.add_argument("--policy", default=str(ROOT / "results" / "block_policy.json"),
                     help='blocking policy for --enforce, or "none" (block on first verdict)')
+    ap.add_argument("--pin", action="store_true",
+                    help="pin tcpreplay, ping and gateway to disjoint cores")
     a = ap.parse_args()
     setLogLevel("warning")
-    main(a.tag, a.enforce, a.speed, a.gap, a.cpu_quota, a.only, a.model, a.policy)
+    main(a.tag, a.enforce, a.speed, a.gap, a.cpu_quota, a.only, a.model, a.policy, a.pin)

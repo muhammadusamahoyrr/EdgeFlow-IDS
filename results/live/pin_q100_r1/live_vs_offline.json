@@ -1,0 +1,155 @@
+{
+  "model": "/mnt/d/EdgeFlow-IDS/results/models/decision_tree.pkl",
+  "cpu_quota": 100,
+  "speed": 1.0,
+  "windows": [
+    {
+      "window": "DDoS-SYN_Flood",
+      "offered_pps": 13964.95,
+      "offered_mbps": 6.73,
+      "offline_flows": 142724,
+      "live_flows": 142727,
+      "removed_training_connections_off_live": "66496/66501",
+      "offline_packets": 218344,
+      "live_packets": 218350,
+      "packet_ratio": 1.0,
+      "attack_flows_offline": 142554,
+      "attack_flows_live": 142554,
+      "attack_recall_offline": 1.0,
+      "attack_recall_live": 1.0,
+      "benign_fpr_live": 0.0925,
+      "median_verdict_after_flow_end_s": 22.8,
+      "first_verdict_per_attacker_pair_s": 15.3,
+      "arp_alerts": 0,
+      "cpu_percent_mean": 70.8,
+      "cpu_percent_max": 103.0,
+      "rss_mb_max": 1032.8
+    },
+    {
+      "window": "DoS-HTTP_Flood",
+      "offered_pps": 690.13,
+      "offered_mbps": 4.04,
+      "offline_flows": 2398,
+      "live_flows": 2420,
+      "removed_training_connections_off_live": "891/922",
+      "offline_packets": 29361,
+      "live_packets": 29363,
+      "packet_ratio": 1.0001,
+      "attack_flows_offline": 1871,
+      "attack_flows_live": 1891,
+      "attack_recall_offline": 0.954,
+      "attack_recall_live": 0.962,
+      "benign_fpr_live": 0.0265,
+      "median_verdict_after_flow_end_s": 15.3,
+      "first_verdict_per_attacker_pair_s": 15.5,
+      "arp_alerts": 0,
+      "cpu_percent_mean": 2.8,
+      "cpu_percent_max": 6.0,
+      "rss_mb_max": 820.8
+    },
+    {
+      "window": "Mirai-udpplain",
+      "offered_pps": 3887.92,
+      "offered_mbps": 17.13,
+      "offline_flows": 173,
+      "live_flows": 173,
+      "removed_training_connections_off_live": "30/32",
+      "offline_packets": 38688,
+      "live_packets": 38685,
+      "packet_ratio": 0.9999,
+      "attack_flows_offline": 4,
+      "attack_flows_live": 4,
+      "attack_recall_offline": 0.75,
+      "attack_recall_live": 0.75,
+      "benign_fpr_live": 0.0,
+      "median_verdict_after_flow_end_s": 15.2,
+      "first_verdict_per_attacker_pair_s": 30.9,
+      "arp_alerts": 0,
+      "cpu_percent_mean": 3.0,
+      "cpu_percent_max": 5.0,
+      "rss_mb_max": 817.8
+    }
+  ],
+  "offline": {
+    "flows": 145295,
+    "macro_f1": 0.9144817485195883,
+    "macro_f1_ci95": [
+      0.7267890108575363,
+      0.97940228914927
+    ],
+    "per_class": {
+      "Benign": {
+        "precision": 0.906,
+        "recall": 0.968,
+        "f1": 0.936,
+        "support": 866
+      },
+      "DDoS-SYN": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 142554
+      },
+      "DoS-HTTP": {
+        "precision": 0.992,
+        "recall": 0.954,
+        "f1": 0.972,
+        "support": 1871
+      },
+      "Mirai": {
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1": 0.75,
+        "support": 4
+      }
+    }
+  },
+  "live": {
+    "flows": 145320,
+    "macro_f1": 0.9171533323494555,
+    "macro_f1_ci95": [
+      0.731472050907703,
+      0.981209863675977
+    ],
+    "per_class": {
+      "Benign": {
+        "precision": 0.921,
+        "recall": 0.966,
+        "f1": 0.943,
+        "support": 871
+      },
+      "DDoS-SYN": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 142554
+      },
+      "DoS-HTTP": {
+        "precision": 0.99,
+        "recall": 0.962,
+        "f1": 0.976,
+        "support": 1891
+      },
+      "Mirai": {
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1": 0.75,
+        "support": 4
+      }
+    },
+    "batch_ms_p50": 0.46525,
+    "batch_ms_p95": 0.8523000000000003,
+    "batch_size_p50": 233.0,
+    "amortised_ms_per_flow": 0.002780859375
+  },
+  "arp_alerts": [],
+  "nfstream_counters": {
+    "flows_expired": 212784,
+    "packets_processed": 840534,
+    "packets_ignored": 2027,
+    "packets_dropped_filtered_by_kernel": 0,
+    "meters_packets_processing_balance": [
+      840534
+    ]
+  }
+}

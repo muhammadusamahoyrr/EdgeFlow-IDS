@@ -1,0 +1,53 @@
+{
+  "tag": "pin_q50_r2",
+  "enforce": false,
+  "policy": null,
+  "speed": 1.0,
+  "cpu_quota": 50,
+  "pinned": true,
+  "model": "/mnt/d/EdgeFlow-IDS/results/models/decision_tree.pkl",
+  "windows": [
+    {
+      "folder": "DDoS-SYN_Flood",
+      "source_file": "DDoS-SYN_Flood/DDoS-SYN_Flood15.pcap",
+      "pcap": "DDoS-SYN_Flood__DDoS-SYN_Flood15.pcap",
+      "start_epoch": 1669749530.878,
+      "end_epoch": 1669749590.878,
+      "packets": 388686,
+      "replay_start_ms": 1793673260310.0295,
+      "replay_end_ms": 1793673287876.1846,
+      "caught_up_after_gap_s": 55.2,
+      "offered_mbps": 6.84,
+      "offered_pps": 14189.34,
+      "tcpreplay": "\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nActual: 388686 packets (23443300 bytes) sent in 27.39 seconds\r\nRated: 855819.3 Bps, 6.84 Mbps, 14189.34 pps\r\nFlows: 216470 flows, 7902.43 fps, 388187 unique flow packets, 492 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        388686\r\n\tFailed packets:            0\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
+    },
+    {
+      "folder": "DoS-HTTP_Flood",
+      "source_file": "DoS-HTTP_Flood/DoS-HTTP_Flood1.pcap",
+      "pcap": "DoS-HTTP_Flood__DoS-HTTP_Flood1.pcap",
+      "start_epoch": 1660053853.089,
+      "end_epoch": 1660053913.089,
+      "packets": 43353,
+      "replay_start_ms": 1793673373059.666,
+      "replay_end_ms": 1793673436815.4988,
+      "caught_up_after_gap_s": 5.0,
+      "offered_mbps": 3.99,
+      "offered_pps": 681.38,
+      "tcpreplay": "net (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nActual: 43353 packets (31763229 bytes) sent in 63.62 seconds\r\nRated: 499228.6 Bps, 3.99 Mbps, 681.38 pps\r\nFlows: 4989 flows, 78.41 fps, 42918 unique flow packets, 420 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        43353\r\n\tFailed packets:            0\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
+    },
+    {
+      "folder": "Mirai-udpplain",
+      "source_file": "Mirai-udpplain/Mirai-udpplain24.pcap",
+      "pcap": "Mirai-udpplain__Mirai-udpplain24.pcap",
+      "start_epoch": 1675787181.665,
+      "end_epoch": 1675787241.665,
+      "packets": 286937,
+      "replay_start_ms": 1793673471857.4744,
+      "replay_end_ms": 1793673548810.4976,
+      "caught_up_after_gap_s": 5.0,
+      "offered_mbps": 16.47,
+      "offered_pps": 3738.62,
+      "tcpreplay": "0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nWarning in flows.c:flow_decode() line 198:\r\nUnable to process unsupported DLT type: Ethernet (0x1)\r\nActual: 286937 packets (158093887 bytes) sent in 76.74 seconds\r\nRated: 2059872.1 Bps, 16.47 Mbps, 3738.62 pps\r\nFlows: 280 flows, 3.64 fps, 285818 unique flow packets, 990 unique non-flow packets\r\nStatistics for network device: h1-eth0\r\n\tSuccessful packets:        286937\r\n\tFailed packets:            0\r\n\tTruncated packets:         0\r\n\tRetried packets (ENOBUFS): 0\r\n\tRetried packets (EAGAIN):  0"
+    }
+  ]
+}

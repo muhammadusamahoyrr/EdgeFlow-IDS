@@ -7,11 +7,22 @@ The gateway turns live traffic into network flows (NFStream), classifies every f
 small decision tree, and can block an attacking host pair with Open vSwitch drop rules. A
 separate ARP watcher covers ARP spoofing, which our flow features did not detect. Everything is
 evaluated on labelled CIC-IoT2023 traffic: offline, and live, by replaying held-out traffic
-through a Mininet gateway.
+through a Mininet gateway. The label and split checks are repeated on IoT-23 with its authors'
+Zeek labels.
+
+The accompanying paper, *What Benchmark Scores Hide: Auditing a Flow-Based IoT Intrusion Detector
+from Labels to Live Blocking*, turns this into a four-check audit: **labels** (background share
+per capture), **splits** (per-class, per-host-pair temporal gap), **live** (flow-by-flow
+live/offline match) and **response** (false blocks per host-pair window). All numbers below use
+the deployed tree and the original labels, as in the paper.
 
 **Headline results.**
-- On a time-ordered split, decision-tree macro-F1 is 0.731, against 0.869 on a random split (the
-  deployed edge tree, tuned on validation, scores 0.725).
+- **Labels.** Background traffic is 90.9–98.5% of the flows in six of the nine CIC-IoT2023 attack
+  captures. Trained on file-name labels, the tree flags 71–88% of the background in an attack
+  capture it never saw (leave one capture out), against 0.5–5.4% with evidence labels.
+- **Splits.** On a time-ordered split the deployed tree scores macro-F1 0.725 [0.568, 0.822],
+  against 0.867 [0.733, 0.875] on a random split (95% host-pair bootstrap). 78% of the gap is one
+  class: brute force moves from SSH to RTSP cameras, and its recall falls from 1.00 to 0.05.
 - Live macro-F1 matches offline (0.804 vs 0.804, overlapping CIs), with 0 kernel drops at 12k packets/s. Small
   classes make this noisy; see the CIs.
 - One CPU core handles a 12–13k packets/s replayed flood without loss, with a backlog of under a
@@ -22,9 +33,15 @@ through a Mininet gateway.
 - A blocking policy chosen on validation data gives 0 false blocks, against 60 for
   block-on-first-alert. The trade-off: it blocks 9 attacker pairs instead of 19, missing the
   7 Mirai bots and the 3 web attackers (CommandInjection, SQLi, XSS).
+- **Blocks come late.** With verdicts stamped at flow end, as an offline evaluation does, 97% of
+  attack flows in the live windows start after their pair is blocked; with the 15 s export delay
+  of a live gateway, 11%.
 
-> **Scope, stated up front.** One dataset (CIC-IoT2023, 10 pcaps, large files trimmed to their
-> first 1M packets), 8 classes, one emulated gateway on a laptop (WSL2). "Edge" results come from
+  ![Attack flows that start after their block](docs/figures/late_blocks.png)
+
+> **Scope, stated up front.** Live and blocking results use one dataset (CIC-IoT2023, 10 pcaps,
+> large files trimmed to their first 1M packets, 8 classes); the label and split checks also use 10
+> IoT-23 captures. One emulated gateway on a laptop (WSL2). "Edge" results come from
 > limiting the gateway to one core or half a core with a cgroup quota, not from a physical device.
 
 ## What is in this repository
@@ -38,7 +55,12 @@ through a Mininet gateway.
 | Live gateway: NFStream capture, micro-batched inference, OVS blocking | `src/gateway.py` |
 | ARP-spoofing watcher | `src/arp_watch.py` |
 | Live experiment: Mininet + OVS + tcpreplay, CPU quota, resource sampling | `topology/`, `src/eval_live.py`, `src/eval_enforce.py` |
-| NFStream 6.6.0 fix: idle flows stuck behind a long-lived flow | `src/patch_nfstream.py` |
+| NFStream 6.6.0 fix: idle flows stuck behind a long-lived flow | `src/patch_nfstream.py`, `patches/nfstream-6.6.0-lru.diff` |
+| Blind label audit (975 flows), label corrections, file-label vs evidence-label baselines | `src/analysis/label_audit.py`, `src/analysis/label_corrections.py`, `src/analysis/final_filelabel.py`, `results/final/` |
+| Host-pair and cluster bootstraps, gap decomposition, sign test | `src/analysis/cluster_sensitivity_cic*.py`, `src/analysis/gap_nobf_units.py`, `src/analysis/final_gap.py`, `src/analysis/final_sign_test.py` |
+| Blocking: persistent counters, late blocks, trade-off over k | `src/analysis/persistent_counters.py`, `src/analysis/block_timing*.py`, `src/analysis/block_curve.py` |
+| Live fidelity and pinned CPU-budget runs | `src/analysis/final_fidelity.py`, `src/analysis/cpu_factorial.py`, `src/run_pinned.sh` |
+| IoT-23: download, Zeek-label join, splits, file-label baseline, cluster sensitivity | `src/iot23/`, `results/iot23/` |
 
 ## Findings
 
@@ -58,10 +80,13 @@ through a Mininet gateway.
 
 3. **A random split overstates performance.**
 
-   | Split | Decision tree macro-F1 [95% CI] | Benign false-positive rate |
+   | Split | Deployed tree macro-F1 [95% host-pair CI] | Benign false-positive rate |
    |---|---|---|
-   | Stratified random 70/30 | 0.869 [0.861, 0.875] | 1.1% |
-   | Temporal 70/30 per pcap | 0.731 [0.712, 0.742] | 3.9% |
+   | Stratified random 70/30 | 0.867 [0.733, 0.875] | 1.1% |
+   | Temporal 70/30 per pcap | 0.725 [0.568, 0.822] | 3.8% |
+
+   Flows from one host pair are not independent, so the intervals resample whole host pairs. A
+   flow-level bootstrap gives [0.702, 0.741] for the temporal score, far too narrow.
 
    Most of the drop comes from brute force. Training saw SSH brute force on port 22, but the
    later test period is RTSP brute force on cameras (port 554), an attack variant the model never
@@ -70,10 +95,10 @@ through a Mininet gateway.
    ![Recall per class, random vs temporal split](docs/figures/split_recall.png)
 
 4. **A small tree is enough.**
-   - On the temporal split, the decision tree (222 KB) is within the confidence interval of a
-     random forest: 0.731 vs 0.737.
+   - On the temporal split, the deployed tree (222 KiB) scores close to a random forest: 0.725 vs
+     0.737.
    - The forest is about 94 times larger (21.3 MB vs 227 KB).
-   - The forest is about 58 times slower per single-flow call: 7.8 ms vs 0.14 ms.
+   - The forest is about 63 times slower per single-flow call: 7.8 ms vs 0.12 ms.
 
 5. **NSGA-II reduces the inputs, not the model size.** The edge subset was chosen on validation data only.
    - It uses 14 of the 54 flow statistics.
@@ -197,7 +222,7 @@ Not new, and not claimed as new:
 
 Several related things were reported before:
 - Mixing of benign traffic into attack captures: qualitatively for CIC-IoT2023 (Ramkumar et al.
-  2024, arXiv 2412.10738), and for the related CIC IoT-DIAD 2024 dataset (Fadel 2026).
+  2024, arXiv 2412.10738).
 - Evidence-based relabelling, which is established for CIC-IDS2017/2018 (Engelen et al. 2021;
   Liu et al. 2022).
 - Replay-based testing of live NIDS.
@@ -212,7 +237,7 @@ are not reported elsewhere. Sources and caveats are in [`docs/RELATED_WORK.md`](
 - **Temporal split on CIC-IoT2023:** time-ordered evaluation on CIC-IoT2023 has been used before
   (the per-class "Time-shift" benchmark of Traffic-MoE, arXiv 2601.00357, on session byte
   features). Our split is time-ordered within each capture, on the evidence-relabelled flows. It
-  drops macro-F1 from 0.869 to 0.731, and we trace the drop to the brute-force target changing
+  drops macro-F1 from 0.867 to 0.725, and we trace the drop to the brute-force target changing
   from SSH to RTSP. IoTGeM (arXiv 2401.01343) likewise found that brute-force variants
   (telnet vs RTSP) do not generalise to each other, by design rather than through a time split.
 - **Offline vs live:** we replay the same held-out windows through a live gateway and get the same
@@ -274,9 +299,11 @@ are not reported elsewhere. Sources and caveats are in [`docs/RELATED_WORK.md`](
   blocked.
 - **Memory.** The gateway needs about 1 GB at peak, which is too much for the smallest edge
   devices.
-- **One run per setting.** Each live setting was run once, so the timing figures carry run-to-run
-  noise.
-- **One dataset.** A cross-dataset test (for example IoT-23) is future work.
+- **Few runs per setting.** The enforced runs ran once; the no-limit and half-core settings were
+  repeated three times, and the CPU-budget comparison was rerun nine times with tcpreplay, ping and
+  gateway pinned to disjoint cores (`src/run_pinned.sh`, `results/final/cpu_factorial.md`).
+- **One live dataset.** IoT-23 repeats the label and split checks only; the live and blocking
+  checks are CIC-IoT2023 only, and we do not test across datasets.
 
 ## Reproduce
 
@@ -303,6 +330,13 @@ sudo /opt/edgeflow/bin/python src/label_shares.py
 sudo /opt/edgeflow/bin/python src/diag/check_split_overlap.py
 sudo /opt/edgeflow/bin/python src/eval_arp.py
 sudo /opt/edgeflow/bin/python src/make_figures.py
+# 8. paper analyses: label audit, bootstraps, blocking timing (results/final/), pinned CPU runs
+sudo bash src/run_final.sh analysis/label_audit.py analysis/gap_nobf_units.py analysis/block_timing.py analysis/block_timing_long.py
+sudo bash src/run_pinned.sh
+# 9. IoT-23 (download, Zeek-label join, splits)
+sudo /opt/edgeflow/bin/python src/iot23/download.py
+sudo /opt/edgeflow/bin/python src/iot23/extract_label.py
+sudo bash src/iot23/run_splits.sh
 ```
 
 `results/models/` is not committed (pickles); step 4 rebuilds it. The committed `enforce_k1`,
@@ -328,4 +362,3 @@ repository and is subject to its own terms.
   - Tang et al., arXiv 2609.24393.
   - Arp et al., USENIX Security 2022.
   - Engelen et al. 2021 and Liu et al. 2022, on labelling errors in CIC-IDS2017/2018.
-  - Fadel 2026, on folder labels and splits in CIC IoT-DIAD 2024.

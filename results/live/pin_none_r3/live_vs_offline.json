@@ -1,0 +1,155 @@
+{
+  "model": "/mnt/d/EdgeFlow-IDS/results/models/decision_tree.pkl",
+  "cpu_quota": null,
+  "speed": 1.0,
+  "windows": [
+    {
+      "window": "DDoS-SYN_Flood",
+      "offered_pps": 12788.71,
+      "offered_mbps": 6.17,
+      "offline_flows": 142724,
+      "live_flows": 142730,
+      "removed_training_connections_off_live": "66496/66502",
+      "offline_packets": 218344,
+      "live_packets": 218350,
+      "packet_ratio": 1.0,
+      "attack_flows_offline": 142554,
+      "attack_flows_live": 142554,
+      "attack_recall_offline": 1.0,
+      "attack_recall_live": 1.0,
+      "benign_fpr_live": 0.0966,
+      "median_verdict_after_flow_end_s": 18.6,
+      "first_verdict_per_attacker_pair_s": 15.2,
+      "arp_alerts": 0,
+      "cpu_percent_mean": 118.1,
+      "cpu_percent_max": 207.0,
+      "rss_mb_max": 1027.1
+    },
+    {
+      "window": "DoS-HTTP_Flood",
+      "offered_pps": 633.52,
+      "offered_mbps": 3.71,
+      "offline_flows": 2398,
+      "live_flows": 2472,
+      "removed_training_connections_off_live": "891/992",
+      "offline_packets": 29361,
+      "live_packets": 29363,
+      "packet_ratio": 1.0001,
+      "attack_flows_offline": 1871,
+      "attack_flows_live": 1940,
+      "attack_recall_offline": 0.954,
+      "attack_recall_live": 0.964,
+      "benign_fpr_live": 0.0282,
+      "median_verdict_after_flow_end_s": 15.4,
+      "first_verdict_per_attacker_pair_s": 15.6,
+      "arp_alerts": 0,
+      "cpu_percent_mean": 5.9,
+      "cpu_percent_max": 25.0,
+      "rss_mb_max": 812.7
+    },
+    {
+      "window": "Mirai-udpplain",
+      "offered_pps": 3535.28,
+      "offered_mbps": 15.58,
+      "offline_flows": 173,
+      "live_flows": 171,
+      "removed_training_connections_off_live": "30/32",
+      "offline_packets": 38688,
+      "live_packets": 38683,
+      "packet_ratio": 0.9999,
+      "attack_flows_offline": 4,
+      "attack_flows_live": 4,
+      "attack_recall_offline": 0.75,
+      "attack_recall_live": 0.75,
+      "benign_fpr_live": 0.0,
+      "median_verdict_after_flow_end_s": 15.1,
+      "first_verdict_per_attacker_pair_s": 32.6,
+      "arp_alerts": 0,
+      "cpu_percent_mean": 4.6,
+      "cpu_percent_max": 9.0,
+      "rss_mb_max": 811.8
+    }
+  ],
+  "offline": {
+    "flows": 145295,
+    "macro_f1": 0.9144817485195883,
+    "macro_f1_ci95": [
+      0.7268109064709326,
+      0.9782573350395385
+    ],
+    "per_class": {
+      "Benign": {
+        "precision": 0.906,
+        "recall": 0.968,
+        "f1": 0.936,
+        "support": 866
+      },
+      "DDoS-SYN": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 142554
+      },
+      "DoS-HTTP": {
+        "precision": 0.992,
+        "recall": 0.954,
+        "f1": 0.972,
+        "support": 1871
+      },
+      "Mirai": {
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1": 0.75,
+        "support": 4
+      }
+    }
+  },
+  "live": {
+    "flows": 145373,
+    "macro_f1": 0.9171443419886238,
+    "macro_f1_ci95": [
+      0.7302980951405057,
+      0.9820784544455894
+    ],
+    "per_class": {
+      "Benign": {
+        "precision": 0.922,
+        "recall": 0.963,
+        "f1": 0.942,
+        "support": 875
+      },
+      "DDoS-SYN": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 142554
+      },
+      "DoS-HTTP": {
+        "precision": 0.99,
+        "recall": 0.963,
+        "f1": 0.976,
+        "support": 1940
+      },
+      "Mirai": {
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1": 0.75,
+        "support": 4
+      }
+    },
+    "batch_ms_p50": 0.7543,
+    "batch_ms_p95": 1.2508599999999999,
+    "batch_size_p50": 243.0,
+    "amortised_ms_per_flow": 0.0037621951219512194
+  },
+  "arp_alerts": [],
+  "nfstream_counters": {
+    "flows_expired": 212910,
+    "packets_processed": 838388,
+    "packets_ignored": 2029,
+    "packets_dropped_filtered_by_kernel": 0,
+    "meters_packets_processing_balance": [
+      838388
+    ]
+  }
+}

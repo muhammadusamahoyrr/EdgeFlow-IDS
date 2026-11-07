@@ -1,0 +1,107 @@
+# Blind stratified audit of the CIC-IoT2023 evidence labels (final review M8)
+
+Script: src/analysis/label_audit.py (protocol in its docstring, fixed before the audit ran). The rater is a fixed program that sees each flow's packets, the capture's scenario and label-free rate context, never the label, the attacker list or the model's verdict. A = packets show the capture's attack; B = other identifiable behaviour; U = undetermined. Error = attack label with B, or Benign label with A.
+
+Strata: A attack label, model agrees; B-fn attack label, model says Benign; B-x attack label, another attack class; C Benign label, one end is a listed attacker; D Benign label, no attacker, model flags; E Benign label, no attacker, model says Benign; F/G Benign capture, model flags / says Benign.
+
+## Amendments to the rater after inspecting its first output
+
+The first run of the pre-registered rater flagged 57 BruteForce, 6 DoS-HTTP and 4 Mirai attack-labelled
+flows as B. Inspection of their packets showed four rater defects, fixed as follows; both verdicts are reported.
+- R1 (bug): payloads were stored truncated to 400 B before the Mirai '>= 500 B' test; the test now uses the full length.
+- R2 (bug): HTTP requests were looked for only in the flow's src->dst direction; NFStream starts a flow mid-connection
+  when a connection outlives a timeout, so its src can be the server. Requests are now looked for in both directions.
+- R3 (criterion): the RTSP traffic of DictionaryBruteForce is a dictionary of camera stream paths (DESCRIBE
+  rtsp://host/video.cgi, /live/ch00_1, /CAM_ID.password.mp2, ...; answered 551 Invalid Method or 200 OK), not
+  password guessing. A short connection (<= 10 client packets) carrying an RTSP DESCRIBE now counts as the attack.
+  This is a post-hoc criterion; the pre-registered rater calls these flows B (column on the right).
+- R4 (bug): a flow whose only payload is a response or comes from the server side, with no request visible (a
+  mid-connection piece), was rated B (benign behaviour); a response alone does not show what was requested, so it
+  is now U.
+
+## (a) Per stratum (up to 30 flows each, seed 0), amended rater
+
+| capture              | stratum   |   population |   sampled |   A |   B |   U | label errors   |   error rate | 95% Wilson     | pre-registered rater: errors/decided   |
+|:---------------------|:----------|-------------:|----------:|----:|----:|----:|:---------------|-------------:|:---------------|:---------------------------------------|
+| Benign               | F         |          133 |        30 |   0 |   5 |  25 | 0/5            |            0 | [0.000, 0.434] | 0/12                                   |
+| Benign               | G         |        13736 |        30 |   0 |  27 |   3 | 0/27           |            0 | [0.000, 0.125] | 0/27                                   |
+| CommandInjection     | A         |           27 |        27 |  26 |   0 |   1 | 0/26           |            0 | [0.000, 0.129] | 0/26                                   |
+| CommandInjection     | B-fn      |            3 |         3 |   0 |   0 |   3 | 0/0            |          nan | -              | 0/0                                    |
+| CommandInjection     | B-x       |            1 |         1 |   1 |   0 |   0 | 0/1            |            0 | [0.000, 0.793] | 0/1                                    |
+| CommandInjection     | C         |           11 |        11 |   0 |   5 |   6 | 0/5            |            0 | [0.000, 0.434] | 0/9                                    |
+| CommandInjection     | D         |           11 |        11 |   0 |   2 |   9 | 0/2            |            0 | [0.000, 0.658] | 0/3                                    |
+| CommandInjection     | E         |         1638 |        30 |   0 |  27 |   3 | 0/27           |            0 | [0.000, 0.125] | 0/27                                   |
+| DDoS-SYN_Flood       | A         |       153402 |        30 |  29 |   0 |   1 | 0/29           |            0 | [0.000, 0.117] | 0/29                                   |
+| DDoS-SYN_Flood       | D         |           14 |        14 |   0 |   6 |   8 | 0/6            |            0 | [0.000, 0.390] | 0/6                                    |
+| DDoS-SYN_Flood       | E         |          164 |        30 |   0 |  28 |   2 | 0/28           |            0 | [0.000, 0.121] | 0/28                                   |
+| DictionaryBruteForce | A         |           32 |        30 |  30 |   0 |   0 | 0/30           |            0 | [0.000, 0.114] | 0/30                                   |
+| DictionaryBruteForce | B-fn      |          537 |        30 |  29 |   0 |   1 | 0/29           |            0 | [0.000, 0.117] | 29/29                                  |
+| DictionaryBruteForce | B-x       |           36 |        30 |  28 |   0 |   2 | 0/28           |            0 | [0.000, 0.121] | 28/28                                  |
+| DictionaryBruteForce | C         |           25 |        25 |   0 |  10 |  15 | 0/10           |            0 | [0.000, 0.278] | 0/20                                   |
+| DictionaryBruteForce | D         |           30 |        30 |   0 |   4 |  26 | 0/4            |            0 | [0.000, 0.490] | 0/4                                    |
+| DictionaryBruteForce | E         |         2887 |        30 |   0 |  26 |   4 | 0/26           |            0 | [0.000, 0.129] | 0/26                                   |
+| DoS-HTTP_Flood       | A         |         9958 |        30 |  21 |   0 |   9 | 0/21           |            0 | [0.000, 0.155] | 6/27                                   |
+| DoS-HTTP_Flood       | B-fn      |          143 |        30 |   2 |   0 |  28 | 0/2            |            0 | [0.000, 0.658] | 0/2                                    |
+| DoS-HTTP_Flood       | B-x       |            9 |         9 |   0 |   0 |   9 | 0/0            |          nan | -              | 0/0                                    |
+| DoS-HTTP_Flood       | C         |         2290 |        30 |  22 |   0 |   8 | 22/22          |            1 | [0.851, 1.000] | 22/22                                  |
+| DoS-HTTP_Flood       | D         |           36 |        30 |   0 |   7 |  23 | 0/7            |            0 | [0.000, 0.354] | 0/8                                    |
+| DoS-HTTP_Flood       | E         |         2946 |        30 |   0 |  29 |   1 | 0/29           |            0 | [0.000, 0.117] | 0/30                                   |
+| MITM-ArpSpoofing     | A         |            4 |         4 |   4 |   0 |   0 | 0/4            |            0 | [0.000, 0.490] | 0/4                                    |
+| MITM-ArpSpoofing     | B-fn      |           21 |        21 |  21 |   0 |   0 | 0/21           |            0 | [0.000, 0.155] | 0/21                                   |
+| MITM-ArpSpoofing     | C         |           35 |        30 |   0 |   8 |  22 | 0/8            |            0 | [0.000, 0.324] | 0/26                                   |
+| MITM-ArpSpoofing     | D         |          117 |        30 |   0 |   8 |  22 | 0/8            |            0 | [0.000, 0.324] | 0/10                                   |
+| MITM-ArpSpoofing     | E         |         3485 |        30 |   0 |  23 |   7 | 0/23           |            0 | [0.000, 0.143] | 0/24                                   |
+| Mirai-udpplain       | A         |            9 |         9 |   4 |   0 |   5 | 0/4            |            0 | [0.000, 0.490] | 4/4                                    |
+| Mirai-udpplain       | B-fn      |            1 |         1 |   0 |   0 |   1 | 0/0            |          nan | -              | 0/0                                    |
+| Mirai-udpplain       | D         |            2 |         2 |   0 |   0 |   2 | 0/0            |          nan | -              | 0/0                                    |
+| Mirai-udpplain       | E         |          183 |        30 |   0 |  26 |   4 | 0/26           |            0 | [0.000, 0.129] | 0/26                                   |
+| Recon-PortScan       | A         |        39819 |        30 |  22 |   0 |   8 | 0/22           |            0 | [0.000, 0.149] | 0/22                                   |
+| Recon-PortScan       | C         |            1 |         1 |   0 |   1 |   0 | 0/1            |            0 | [0.000, 0.793] | 0/1                                    |
+| Recon-PortScan       | D         |          277 |        30 |   0 |  11 |  19 | 0/11           |            0 | [0.000, 0.259] | 0/16                                   |
+| Recon-PortScan       | E         |        21422 |        30 |   0 |  26 |   4 | 0/26           |            0 | [0.000, 0.129] | 0/26                                   |
+| SqlInjection         | A         |          125 |        30 |  29 |   0 |   1 | 0/29           |            0 | [0.000, 0.117] | 0/29                                   |
+| SqlInjection         | B-fn      |            9 |         9 |   0 |   2 |   7 | 2/2            |            1 | [0.342, 1.000] | 2/2                                    |
+| SqlInjection         | B-x       |            2 |         2 |   0 |   0 |   2 | 0/0            |          nan | -              | 0/0                                    |
+| SqlInjection         | C         |           10 |        10 |   0 |   4 |   6 | 0/4            |            0 | [0.000, 0.490] | 0/8                                    |
+| SqlInjection         | D         |           13 |        13 |   0 |   3 |  10 | 0/3            |            0 | [0.000, 0.562] | 0/3                                    |
+| SqlInjection         | E         |         2055 |        30 |   0 |  27 |   3 | 0/27           |            0 | [0.000, 0.125] | 0/27                                   |
+| XSS                  | A         |           24 |        24 |  17 |   0 |   7 | 0/17           |            0 | [0.000, 0.184] | 0/17                                   |
+| XSS                  | B-fn      |            1 |         1 |   0 |   0 |   1 | 0/0            |          nan | -              | 0/0                                    |
+| XSS                  | C         |           12 |        12 |   0 |   5 |   7 | 0/5            |            0 | [0.000, 0.434] | 0/9                                    |
+| XSS                  | D         |           15 |        15 |   0 |   0 |  15 | 0/0            |          nan | -              | 0/0                                    |
+| XSS                  | E         |         1445 |        30 |   0 |  25 |   5 | 0/25           |            0 | [0.000, 0.133] | 0/27                                   |
+
+## (a) Per capture, weighted by stratum size
+
+| capture              |   test flows |   weighted label-error rate | 95% stratified bootstrap   | undetermined in sample   |
+|:---------------------|-------------:|----------------------------:|:---------------------------|:-------------------------|
+| Benign               |        13869 |                      0      | [0.0000, 0.0000]           | 28/60                    |
+| CommandInjection     |         1691 |                      0      | [0.0000, 0.0000]           | 22/83                    |
+| DDoS-SYN_Flood       |       153580 |                      0      | [0.0000, 0.0000]           | 11/74                    |
+| DictionaryBruteForce |         3547 |                      0      | [0.0000, 0.0000]           | 48/175                   |
+| DoS-HTTP_Flood       |        15382 |                      0.149  | [0.1490, 0.1490]           | 78/159                   |
+| MITM-ArpSpoofing     |         3662 |                      0      | [0.0000, 0.0000]           | 51/115                   |
+| Mirai-udpplain       |          195 |                      0      | [0.0000, 0.0000]           | 12/42                    |
+| Recon-PortScan       |        61519 |                      0      | [0.0000, 0.0000]           | 31/91                    |
+| SqlInjection         |         2214 |                      0.0041 | [0.0041, 0.0041]           | 29/94                    |
+| XSS                  |         1497 |                      0      | [0.0000, 0.0000]           | 35/82                    |
+
+## (b) False negatives (attack label, model says Benign)
+
+| scenario             |   FN flows in test |   A |   B |   U |
+|:---------------------|-------------------:|----:|----:|----:|
+| CommandInjection     |                  3 |   0 |   0 |   3 |
+| DictionaryBruteForce |                537 |  29 |   0 |   1 |
+| DoS-HTTP_Flood       |                143 |   2 |   0 |  28 |
+| MITM-ArpSpoofing     |                 21 |  21 |   0 |   0 |
+| Mirai-udpplain       |                  1 |   0 |   0 |   1 |
+| SqlInjection         |                  9 |   0 |   2 |   7 |
+| XSS                  |                  1 |   0 |   0 |   1 |
+
+## (c) Macro-F1 without MITM-ARP (deployed model, temporal test, evidence labels)
+
+- All 8 classes: 0.7249
+- 7 classes, MITM-ARP dropped from the average (its flows kept): 0.8259
+- 7 classes, MITM-ARP flows removed too: 0.8260
+
+Blind sample with packet evidence: results/final/label_audit_sample.csv (no labels or predictions). Key: results/final/label_audit_key.csv.
