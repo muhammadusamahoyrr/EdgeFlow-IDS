@@ -1,0 +1,37 @@
+\section{Step 4: Response}\label{sec:response}
+
+\emph{What a per-flow FPR hides.} A per-flow Benign FPR of 3.8\% looks modest in a table; at a gateway that blocks host pairs, it means blocked innocent hosts. A few false positives can have strong consequences once detections drive IP blocking~\cite{garcia2023labeling,akbari2020atmos}. We therefore score response in false blocks, counted per \emph{host-pair window}, a host pair within one 60\,s test window. A block is false if the blocked pair carries no attack flow in that window; the pairs seen in a window without an attack flow are the eligible benign host-pair windows.
+
+\emph{ARP watcher.} For the attack that flow features cannot see (Section~\ref{sec:splits}), a small watcher raises a high alert when a MAC other than the known one announces the router IP (.1), the classic arpwatch idea~\cite{arpwatch}. In the MITM-ARP window it raised one high alert 1.7\,s into the window, and none in the other nine windows. This shows that the rule works here, not a false-alarm rate.
+
+\emph{Policies.} With enforcement on, the gateway blocks a host pair (OVS drop rules for both directions) once the pair has collected $k$ attack verdicts; the harness resets these counters after each window. Optionally, it ignores MITM-ARP flow verdicts, which the ARP watcher covers. Requiring $k$ verdicts is our design choice. We meant to select the policy on validation data, as the one with the fewest false blocks among the ten policies ($k\in\{1,2,3,5,10\}$, MITM-ARP verdicts ignored or not) within 0.005 of the best share of attack flows that start after their pair is blocked. The rule was degenerate: all ten policies lie within 0.0012 of the best share, so it reduced to the fewest false blocks and picked the largest $k$ in the grid ($k=10$, MITM-ARP ignored; 1 false block on validation, against 128 for $k=1$). The result is therefore the trade-off over $k$ (Table~\ref{tab:kcurve}); the enforced policy is one point on it.
+
+\begin{table}[t]
+\centering
+\caption{Trade-off over $k$, simulated per 60\,s window on the verdicts logged in run~1. Ign.: MITM-ARP verdicts ignored. False: false blocks in the ten 60\,s windows. Class columns: attacker pairs blocked, of the number in parentheses (BF BruteForce, DS DDoS-SYN, DH DoS-HTTP, MA MITM-ARP, Mi Mirai, Re Recon); Att.: their sum. Time: median time from a blocked attacker pair's first flow to its block.}
+\label{tab:kcurve}
+\footnotesize
+\setlength{\tabcolsep}{2.4pt}
+\begin{tabular}{rcrcccccccrr}
+\hline
+ & & & BF & DS & DH & MA & Mi & Re & Web & Att. & Time \\
+$k$ & Ign. & False & (1) & (6) & (1) & (7) & (7) & (1) & (3) & (26) & (s) \\
+\hline
+1  & no  & 64 & 1 & 6 & 1 & 0 & 7 & 1 & 3 & 19 & 19.0 \\
+1  & yes & 37 & 1 & 6 & 1 & 0 & 7 & 1 & 3 & 19 & 19.0 \\
+2  & yes &  5 & 1 & 6 & 1 & 0 & 6 & 1 & 3 & 18 & 33.8 \\
+3  & yes &  1 & 1 & 6 & 1 & 0 & 1 & 1 & 3 & 13 & 15.8 \\
+5  & yes &  0 & 1 & 6 & 1 & 0 & 0 & 1 & 1 & 10 & 15.3 \\
+10 & yes &  0 & 1 & 6 & 1 & 0 & 0 & 1 & 0 &  9 & 15.3 \\
+20 & yes &  0 & 0 & 6 & 1 & 0 & 0 & 1 & 0 &  8 & 15.3 \\
+\hline
+\end{tabular}
+\end{table}
+
+\emph{The trade-off.} Table~\ref{tab:kcurve} is simulated on a run without enforcement, so its $k=1$ counts differ slightly from the enforced run. Counting MITM-ARP verdicts, false blocks fall from 64 at $k=1$ to 14, 2 and 0 at $k=2$, 3 and 5 (rows not shown); ignoring them alone cuts the $k=1$ count to 37. The DDoS-SYN, DoS-HTTP and Recon attackers are blocked at every $k$, so $k$ trades false blocks against the low-rate attackers. Most Mirai bots are lost at $k=3$ (1 of 7 blocked) and all from $k=5$; the web attackers drop to 1 of 3 at $k=5$ and to none from $k=10$; the brute-force attacker is lost at $k=20$. No MITM-ARP pair is blocked at any $k$.
+
+\emph{Persistent counters.} To separate these losses from the harness's per-window reset, we replayed the blocking rule on the deployed tree's verdicts over each capture's whole temporal test period (5.9\,h; 55 attacker and 3,410 benign-only host pairs), with counters reset every 60\,s, kept over a sliding horizon (60--900\,s), or never cleared. The Mirai loss belongs to the detector: with persistent counters 1 of 6 bot pairs is blocked at $k=3$ and none from $k=5$, because each bot's flood forms only one or two long flows (10 Mirai-labelled test flows on 6 pairs), and a rule that counts flow verdicts never reaches $k$. The web loss belongs to the harness: at $k=5$, persistent counters block 7 of 8 web attacker pairs, against 3 of 8 with the 60\,s reset (2 against 1 at $k=10$). The reset also hid false blocks: at $k=5$ they rise from 1 to 7 (0.2 to 1.2 per hour), at $k=3$ from 3 to 22. A deployed policy therefore needs persistent counters and a criterion that does not count flows alone.
+
+\emph{Enforced runs.} We ran both ends of the curve live over the ten windows (blocks cleared per window). Blocking on the first verdict blocked 79 pairs, 19 of the 26 attacker pairs, and dropped 326,268 packets. It blocked all 7 Mirai bots (about 100k packets, 35\% of the window, dropped) but also 60 of 1,674 eligible benign host-pair windows (3.6\%), i.e.\ 360 false blocks per hour of capture time, involving 90 distinct IPs, in 9 of the 10 windows. Most fell in the DDoS-SYN and DoS-HTTP windows; 21 were triggered by MITM-ARP verdicts. The $k=10$ policy (MITM-ARP ignored) blocked 9 pairs and dropped 163,546 packets: all six DDoS attackers (133k packets dropped), the DoS-HTTP attacker (30k), the brute-force attacker (217) and the port scanner (0; the scan had ended), with no false blocks, and missed the 7 Mirai bots and the 3 web attackers. In the $k=1$ run the DDoS-SYN window was replayed at only 52\% of the original rate; since slower replay splits flows (Section~\ref{sec:fidelity}), its flow and block counts in that window may be inflated.
+
+\emph{Late blocks.} In the run-1 simulation only 11.1\% of the attack flows start after their pair is blocked, at every $k$: a block needs a verdict, and a verdict needs a flow to end. Blocks still cut the later packets of long attack flows (34--71\% of the DDoS-SYN and DoS-HTTP windows' packets). The validation share (0.995), which ignores the export delay, is far too optimistic.

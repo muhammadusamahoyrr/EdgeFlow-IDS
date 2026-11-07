@@ -1,0 +1,37 @@
+\section{Check 4: Response}\label{sec:response}
+
+\emph{What a per-flow FPR hides.} A per-flow Benign FPR of a few percent looks modest in a table, but at a gateway that blocks host pairs it means blocked innocent hosts. False alarms already dominate security analysts' work~\cite{alahmadi2022falsepositives}, and a few false positives can have strong consequences once detections drive IP blocking~\cite{garcia2023labeling,akbari2020atmos}. We therefore count false blocks per \emph{host-pair window}, a host pair within one 60\,s test window: a block is false if the pair carries no attack flow in that window, and the pairs without an attack flow are the eligible benign host-pair windows.
+
+\emph{Policies.} With enforcement on, the gateway installs OVS drop rules for both directions of a host pair once the pair has $k$ attack verdicts, optionally ignoring MITM-ARP verdicts, which an ARP watcher covers (below); the harness resets the counts after each window. On validation we meant to choose among ten policies ($k\in\{1,2,3,5,10\}$, MITM-ARP verdicts ignored or not) the one with the fewest false blocks among those within 0.005 of the best share of attack flows that start after their pair is blocked. This rule was degenerate: all ten lie within 0.0012 of the best share, so it picked the largest $k$ ($k=10$, MITM-ARP ignored; 1 false block on validation, against 128 at $k=1$). We therefore report the trade-off over $k$ (Table~\ref{tab:kcurve}).
+
+\begin{table}[t]
+\centering
+\caption{Trade-off over $k$, simulated per 60\,s window on the verdicts logged in run~1 (the enforced $k=1$ run, a separate replay, gave 60 false blocks). Ign.: MITM-ARP verdicts ignored. False: false blocks in the ten 60\,s windows. Class columns: attacker pairs blocked, of the number in parentheses (BF BruteForce, DS DDoS-SYN, DH DoS-HTTP, MA MITM-ARP, Mi Mirai, Re Recon); Att.: their sum. Time: median, over the attacker pairs blocked at that $k$, of the time from the pair's first flow to its block.}
+\label{tab:kcurve}
+\footnotesize
+\setlength{\tabcolsep}{2.4pt}
+\begin{tabular}{rcrcccccccrr}
+\hline
+ & & & BF & DS & DH & MA & Mi & Re & Web & Att. & Time \\
+$k$ & Ign. & False & (1) & (6) & (1) & (7) & (7) & (1) & (3) & (26) & (s) \\
+\hline
+1  & no  & 64 & 1 & 6 & 1 & 0 & 7 & 1 & 3 & 19 & 19.0 \\
+1  & yes & 37 & 1 & 6 & 1 & 0 & 7 & 1 & 3 & 19 & 19.0 \\
+2  & yes &  5 & 1 & 6 & 1 & 0 & 6 & 1 & 3 & 18 & 33.8 \\
+3  & yes &  1 & 1 & 6 & 1 & 0 & 1 & 1 & 3 & 13 & 15.8 \\
+5  & yes &  0 & 1 & 6 & 1 & 0 & 0 & 1 & 1 & 10 & 15.3 \\
+10 & yes &  0 & 1 & 6 & 1 & 0 & 0 & 1 & 0 &  9 & 15.3 \\
+20 & yes &  0 & 0 & 6 & 1 & 0 & 0 & 1 & 0 &  8 & 15.3 \\
+\hline
+\end{tabular}
+\end{table}
+
+\emph{The trade-off.} Counting MITM-ARP verdicts, false blocks fall from 64 at $k=1$ to 14, 2 and 0 at $k=2$, 3 and 5 (rows not shown). The DDoS-SYN, DoS-HTTP and Recon attackers are blocked at every $k$, so $k$ trades false blocks against the low-rate attackers: most Mirai bots are lost at $k=3$ and all from $k=5$, the web attackers drop to 1 of 3 at $k=5$ and to none from $k=10$, and the brute-force attacker is lost at $k=20$.
+
+\emph{Enforced runs.} We ran both ends of the curve live over the ten windows (blocks cleared per window); no live window contains the .174 flood, so the audit's corrections do not affect these counts. Blocking on the first verdict blocked 79 pairs, 19 of the 26 attacker pairs, and dropped 326,268 packets. It blocked all 7 Mirai bots (about 100,000 packets dropped), but also 60 of 1,674 eligible benign host-pair windows (3.6\%) in 9 of the 10 windows. Of these 60 false blocks, involving 90 distinct IPs, 56 hit pairs of uninvolved hosts, 2 an attacker host's other traffic and 2 a victim's; 21 were triggered by MITM-ARP verdicts. The $k=10$ policy (MITM-ARP ignored) blocked 9 pairs and dropped 163,546 packets: the six DDoS attackers (about 133,000 packets), the DoS-HTTP attacker (about 30,000), the brute-force attacker (217) and the port scanner (0; the scan had ended), with no false blocks; it missed the 7 Mirai bots and the 3 web attackers. In the $k=1$ run the DDoS-SYN window was replayed at only 52\% of the original rate, so flow splitting (Section~\ref{sec:fidelity}) may inflate its counts there.
+
+\emph{Persistent counters.} To separate these losses from the per-window reset, we replayed the rule on the deployed tree's verdicts over each capture's whole temporal test period (5.9\,h; 55 attacker and 3,410 benign-only host pairs; audit-corrected labels), with counters reset every 60\,s or never cleared. The Mirai loss belongs to the flow-count rule, not to the classifier (at $k=1$ all 7 bots were blocked live) or the reset: each bot's flood forms only one or two long flows (10 Mirai test flows on 6 pairs), so even persistent counters block 1 bot pair at $k=3$ and none from $k=5$. The web loss at $k=5$ belongs to the harness: persistent counters block all 7 web attacker pairs, the reset only 3 (at $k=10$: 2 and 1). The reset also hid false blocks: at $k=3$, 5 and 10, persistent counters cause 21, 6 and 2, the reset 2, 0 and 0; with the original labels each count is one higher, and at $k\ge5$ the extra block is the .174 flood pair the audit found. At $k=1$ with MITM-ARP verdicts ignored, the replay falsely blocks 123 of the 3,410 benign-only pairs (3.6\%; 7.0\% when MITM-ARP verdicts count), 21 per hour. These rates are not comparable with the live counts, which use 60\,s host-pair windows and attack-dense traffic. A deployed policy therefore needs persistent counters and a criterion that does not count flows alone.
+
+\emph{ARP watcher.} For MITM-ARP, which flow features cannot see (Section~\ref{sec:splits}), a watcher in the style of arpwatch~\cite{arpwatch} alerts when a MAC other than the known one announces the router IP (.1). It alerted once, 1.7\,s into the MITM-ARP window, and in none of the other nine: a functional check, not a false-alarm rate.
+
+\emph{Late blocks.} Offline policy scores overstate prevention. On validation, over whole capture periods with each verdict stamped at flow end, 99.5\% of attack flows start after their pair is blocked. To separate window length from export delay, we replayed the rule on the same run-1 windows with three verdict times: at flow end, 97.1--97.2\% of attack flows start after their block (for $k\in\{1,3,10\}$); at flow end plus the 15\,s idle timeout, 11.3\%; at the logged live verdict time, 11.1\%. The export delay, not the window, causes the drop. Its size depends on the attack's time profile: in the DDoS-SYN window the first verdict arrives 15.2\,s in, when 82\% of the attack flows have already started, so a longer attack would lose a smaller share. Blocks still cut the later packets of long attack flows (34--71\% of the DDoS-SYN and DoS-HTTP windows' packets).

@@ -1,0 +1,30 @@
+\section{Introduction}\label{sec:intro}
+
+Machine-learning network intrusion detection systems (NIDS) are mostly evaluated on public benchmarks, where reported scores are often near the maximum. Such scores say little about an IoT gateway, which has a few CPU cores, sees traffic in time order, builds flows itself and must act on its verdicts; operators, too, act on aggregated reports, not on single samples a classifier flagged~\cite{apruzzese2026reshaping}. The gap between benchmark and operation is long known~\cite{sommer2010outside} and well documented for security machine learning~\cite{arp2022dos,apruzzese2023sok}; a recent study reports a random forest with hold-out F1 0.97 on UNSW-NB15 that detected 1 of 105 attacks (recall 0.0095) in operational validation on a small labelled laboratory capture~\cite{tang2026hybrid}.
+
+Each source of this gap is known on its own: label errors in benchmarks~\cite{engelen2021troubleshooting,liu2022error,lanvin2023errors,flood2024smells}, splits that ignore time~\cite{pendlebury2019tesseract,arp2022dos,andresini2021insomnia}, exporters and timeouts that change the flows~\cite{velan2020impact,pinto2025flowexporter}, and detectors that fall short once traffic arrives as a stream~\cite{pekar2025early,zhao2026gidseval}. We do not claim a new failure mode, and we propose no new detection method. Instead we follow one ordinary detector along the whole path: a decision tree over 54 NFStream~\cite{aouini2022nfstream} flow statistics, trained on ten captures of CIC-IoT2023~\cite{neto2023ciciot2023}, with the label and split stages repeated on ten IoT-23 captures~\cite{garcia2020iot23}. At each of four stages (labels, splits, live gateway, response) we ask what a standard evaluation would hide and which check reveals it. The checks share one move: each replaces an aggregate score with the unit at which the problem shows, namely the capture (labels), the host pair (splits), the individual flow (live) and the host-pair window (response). The contributions are:
+\begin{itemize}
+\item \emph{A four-check audit} (Table~\ref{tab:checklist}), released as scripts. Checks~1 and~2 apply known pitfalls~\cite{arp2022dos,flood2024smells} per capture and host pair; Checks~3 (live/offline flow fidelity) and~4 (false blocks) go beyond offline evaluation.
+\item \emph{Labels} (Section~\ref{sec:labels}): to our knowledge the first per-capture background share for CIC-IoT2023 (90.9--98.5\% in six of the nine attack captures), and its cost on captures the model never saw, on two datasets, one of them with the dataset authors' labels.
+\item \emph{Splits} (Section~\ref{sec:splits}): a decomposition showing that 78\% of a $+0.14$ random--temporal macro-F1 gap on CIC-IoT2023 is one class changing its attack target on three host pairs, while on IoT-23 the gap comes from classes missing from one half of the split; flow-level confidence intervals are several times too narrow.
+\item \emph{Live fidelity} (Section~\ref{sec:live}): a flow-by-flow live/offline match that exposed a previously undiagnosed cause of late flow export in NFStream, invisible offline (nfstream\#262~\cite{nfstream262}; fix submitted as PR~\#263~\cite{nfstream263}), and flow splitting that macro-F1 did not show.
+\item \emph{Response} (Section~\ref{sec:response}): false blocks per host-pair window over the number $k$ of verdicts required per host pair, and the gap between prevention estimated offline and achieved with live verdict timing: on validation 99.5\% of attack flows start after their pair is blocked, with live timing only 11.1\%.
+\end{itemize}
+
+\begin{table}[t]
+\centering
+\caption{The four-check audit and what it caught. Checks~1--2 were run on CIC-IoT2023 and IoT-23, Checks~3--4 on CIC-IoT2023. FPR: Benign false-positive rate; host pair: unordered address pair within one capture.}
+\label{tab:checklist}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\raggedright\arraybackslash}p{1.55cm}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{3.25cm}}
+\hline
+Check & Measure & Caught here \\
+\hline
+1 Labels & Background share per capture; FPR of a file-label tree on captures it never saw & 71--88\% of unseen CIC-IoT2023 background flagged (0.5--5.4\% with evidence labels); released CSVs allow only file-name labels \\
+2 Splits & Per-class temporal recall with host-pair counts; class presence in both halves; cluster-unit sensitivity; boundary-spanning share & Brute-force target change on 3 host pairs (CIC-IoT2023); gap from missing classes, not robust to the cluster unit (IoT-23) \\
+3 Live & Flow-by-flow match on every run; packet accounting; replay rate; delay vs.\ CPU budget & Forwarding pitfall, idle meters, export-ordering defect; flows split at slow replay \\
+4 Response & False blocks per host-pair window; trade-off over $k$ per class and counter horizon & 60 false blocks in 10\,min at $k=1$, none live at $k=10$ (3 in 5.9\,h with persistent counters); Mirai missed by the flow-count rule, web at $k=5$ by the counter reset; 11\% of attack flows start after their block, not 99.5\% as on validation \\
+\hline
+\end{tabular}
+\end{table}

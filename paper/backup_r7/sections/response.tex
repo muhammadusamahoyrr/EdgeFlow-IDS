@@ -1,0 +1,51 @@
+\section{Step 4: Response}\label{sec:response}
+
+A per-flow Benign FPR of 3.8\% looks modest in a table; at a gateway that blocks host pairs, it means blocked innocent hosts. Garcia and Valeros note that a few false positives can have strong consequences once detections drive IP blocking (Sec.~6.3)~\cite{garcia2023labeling}, and Akbari et al.\ that, because detectors are prone to false positives, simply dropping suspected traffic can have severe consequences~\cite{akbari2020atmos}. We therefore score response in false blocks, counted per host-pair window: a block is false if the blocked host pair carries no attack flow in that window.
+
+\emph{ARP watcher.} For the attack that flow features cannot see (Section~\ref{sec:splits}), a small watcher raises a high alert when a MAC other than the known one announces the router IP (.1), the classic arpwatch idea~\cite{arpwatch}. In the MITM window it raised one high alert 1.7\,s into the window, and none in the other nine windows. This shows that the rule works here, not a false-alarm rate.
+
+\emph{Policies.} With enforcement on, the gateway blocks a host pair (OVS drop rules for both directions) once the pair has collected $k$ attack verdicts; optionally, it ignores MITM-ARP flow verdicts, which the ARP watcher covers. We chose the policy on validation data by simulating the verdict stream: among policies within 0.005 of the best share of attack flows that start after their pair is blocked, we took the one with the fewest false blocks. DDoS-SYN flows dominate this criterion, but DDoS-SYN, DoS-HTTP and Recon pairs are blocked at every $k$ (Table~\ref{tab:kcurve}), so the choice of $k$ trades Mirai, web and brute-force coverage against false blocks. On validation, $k=1$ gave 128 false blocks, and $k=10$ with MITM-ARP verdicts ignored gave 1, while still covering 0.995 of attack flows (0.996 for $k=1$).
+
+\begin{table}[t]
+\centering
+\caption{Live blocking over the ten test windows (final harness, blocks cleared per window). Attackers: attacker pairs blocked; False: false blocks over eligible benign host-pair windows (pairs seen in a window with no attack flow there, summed over windows; the replays differ by ICMPv6 packets from per-run link-local addresses). Scoring by the triggering flow gives the same counts.}
+\label{tab:blocking}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrr}
+\hline
+Policy & Blocked & Attackers & False & Pkts dropped \\
+\hline
+Block on first verdict & 79 & 19/26 & 60/1,674 & 326,268 \\
+$k=10$, MITM-ARP ign. & 9 & 9/26 & 0/1,675 & 163,546 \\
+\hline
+\end{tabular}
+\end{table}
+
+\emph{Live results.} In Table~\ref{tab:blocking}, blocking on the first verdict blocked all 7 Mirai bots (about 100k packets, 35\% of the window, dropped) but also 60 of 1,674 eligible benign host-pair windows (3.6\%), most in the DDoS-SYN (12.5\%) and DoS-HTTP (6.8\%) windows. The triggering verdicts were DoS-HTTP 32, MITM-ARP 21, DDoS-SYN 5, Mirai 1 and Recon 1; of the 21 MITM-ARP-triggered ones, only 7 fell in the MITM window, 14 in eight others. In 56 false blocks both hosts were uninvolved, in 2 the pair was the attacker host's other traffic, and in 2 the DDoS victim's other traffic. The false blocks dropped only 132 packets, but each cuts a benign pair off for the rest of the window. The validation-chosen policy blocked all six DDoS attackers (133k packets dropped), the DoS-HTTP attacker (30k), the brute-force attacker (217) and the port scanner (0; the scan had ended), with no false blocks. It missed the 7 Mirai bots and the 3 web attackers, whose pairs produce too few flows to reach 10 verdicts. In the block-on-first-verdict run the DDoS-SYN window was replayed at only 9,045 packets/s (52\%); since slower replay splits flows (Section~\ref{sec:fidelity}), that run's DDoS-window flow and block counts may be inflated.
+
+\begin{table}[t]
+\centering
+\caption{Trade-off over $k$, simulated per window on the run-1 verdict stream. Class columns (BruteForce, DDoS-SYN, DoS-HTTP, MITM-ARP, Mirai, Recon, Web): attacker pairs blocked, of the number in the header; they sum to Att. Ign.: MITM-ARP verdicts ignored. False: false blocks (host-pair windows). Time: median time from a blocked attacker pair's first flow to its block.}
+\label{tab:kcurve}
+\footnotesize
+\setlength{\tabcolsep}{2.4pt}
+\begin{tabular}{rcrrcccccccrr}
+\hline
+ & & & & BF & DS & DH & MA & Mi & Re & Web & Att. & Time \\
+$k$ & Ign. & Blk. & False & (1) & (6) & (1) & (7) & (7) & (1) & (3) & (26) & (s) \\
+\hline
+1  & no  & 83 & 64 & 1 & 6 & 1 & 0 & 7 & 1 & 3 & 19 & 19.0 \\
+1  & yes & 56 & 37 & 1 & 6 & 1 & 0 & 7 & 1 & 3 & 19 & 19.0 \\
+2  & yes & 23 &  5 & 1 & 6 & 1 & 0 & 6 & 1 & 3 & 18 & 33.8 \\
+3  & yes & 14 &  1 & 1 & 6 & 1 & 0 & 1 & 1 & 3 & 13 & 15.8 \\
+5  & yes & 10 &  0 & 1 & 6 & 1 & 0 & 0 & 1 & 1 & 10 & 15.3 \\
+10 & yes &  9 &  0 & 1 & 6 & 1 & 0 & 0 & 1 & 0 &  9 & 15.3 \\
+20 & yes &  8 &  0 & 0 & 6 & 1 & 0 & 0 & 1 & 0 &  8 & 15.3 \\
+\hline
+\end{tabular}
+\end{table}
+
+\emph{The full trade-off.} Table~\ref{tab:kcurve} replays the policy on the verdicts logged in run~1 (not enforcing), so its $k=1$ counts differ slightly from the enforced run. Ignoring MITM-ARP verdicts alone cuts false blocks at $k=1$ from 64 to 37. False blocks vanish from $k=5$ on, but Mirai is lost from $k=3$, the web attackers from $k=5$ and the brute-force attacker at $k=20$. No MITM-ARP pair is blocked at any $k$.
+
+\emph{Late blocks.} In the run-1 simulation only 11.1\% of the attack flows start after their pair is blocked, at every $k$: a block needs a verdict, and a verdict needs a flow to end. It barely moves with $k$ because DDoS-SYN, 98.1\% of the attack flows, has its six pairs blocked at every $k$; its flows after block (10.5\%) give 10.3 of the 11.1 points (DoS-HTTP 0.8). Blocks still cut the later packets of long attack flows: the enforced runs dropped 0.503 ($k=1$) and 0.342 (policy) of the DDoS-SYN window's packets and 0.707 and 0.698 of the DoS-HTTP window's. The validation share (0.995) is thus far too optimistic, as validation ignores the export delay; the false-block counts, which decided the choice, do not depend on timing.

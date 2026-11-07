@@ -16,3 +16,12 @@ results/logs/
 results/live/*/arp_watch.log
 results/attackers_large.log
 results/live/test_*/
+
+# LaTeX build intermediates (paper/main.pdf is kept)
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.bbl
+paper/*.blg
+paper/build.out
+paper/bibtex.out

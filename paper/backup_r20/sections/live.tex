@@ -1,0 +1,53 @@
+\section{Check 3: Live Gateway}\label{sec:live}
+
+\emph{What an offline score hides.} A gateway classifies flows exported while packets still arrive, not flows from a finished file. Equal scores do not show that both see the same flows, so we check fidelity flow by flow.
+
+\subsection{Testbed}\label{sec:testbed}
+
+The testbed runs Mininet~2.3.0~\cite{lantz2010mininet} with Open vSwitch~\cite{pfaff2015ovs} under WSL2 Ubuntu~24.04 on a laptop (i5-8350U, no GPU). In the topology h1--s1--gw--s2--h2, h1 replays traffic with tcpreplay at $\times1.0$ timing, and the gateway gw captures on its s1-facing interface. The gateway runs NFStream~6.6.0 in live mode with the offline settings, a single meter and a 64\,MB capture buffer. Exported flows are classified in micro-batches (256 flows or 50\,ms) by the deployed tree; each flow receives one \emph{verdict}, its predicted class.
+
+\emph{Windows and harness.} For each capture we cut one 60\,s window that starts 1\,s after the last training flow started, so all replayed traffic comes from the test period. Boundary-spanning connections are removed on both the offline and the live side; the offline reference is NFStream run on the same window file. After each window the harness waits until the gateway is idle and clears OVS blocks, per-pair verdict counts and ARP state, since the sessions reuse addresses. The first no-limit run (run~1) and the one-core run used an earlier harness without the quiet wait and the reset. A cgroup quota (\texttt{systemd-run}) sets the gateway's CPU budget: no limit, one core or half a core.
+
+\emph{Achieved replay rates.} tcpreplay could not reach the original rate of the heaviest windows: DDoS-SYN (17,424 packets per second, pps) and Mirai (4,782\,pps) were replayed at 46--81\% of it.
+
+\subsection{Fidelity Check}\label{sec:fidelity}
+
+\emph{Flow-by-flow match.} We match live to offline flows by 5-tuple and order of appearance within the 5-tuple, on every run. In run~1, 148,756 of 148,779 offline flows match. Over all sixteen repeat and CPU-budget runs without enforcement (flow-weighted per run), at least 99.98\% of the offline flows match and at least 99.97\% of the matched flows receive the same verdict. Macro-F1 over run~1's windows (not comparable to the test-set score) is 0.804 both offline and live.
+
+\emph{Packets and delay.} The packet ratio (packets in live over offline flows, per window) lies between 0.9919 and 1.0064, with zero kernel drops. Inference takes 0.44\,ms per batch (medians; 209 flows per batch). Delay comes from flow export, as expected for flow-based detection~\cite{hofstede2013realtime}: the median verdict arrives about 15\,s (the idle timeout) after a flow's last packet, and the first verdict for an attacker pair 15--35\,s after its first packet.
+
+\begin{table}[t]
+\centering
+\caption{Live runs, DDoS-SYN window (offline: 142,724 flows). Replay: achieved rate and its share of the original 17,424\,pps. Same pkts: share of matched flows with identical packet counts. Delay: median verdict after flow end. Macro-F1: live, over the three windows tested at every CPU budget (offline 0.914).}
+\label{tab:repeats}
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{lrrrccc}
+\hline
+ & \multicolumn{2}{c}{Replay} & Live & Same & Delay & Macro- \\
+Run & pps & \% & flows & pkts & (s) & F1 \\
+\hline
+No limit 1  & 12,271 & 70.4 & 142,752 & 1.000 & 17.8 & 0.9171 \\
+No limit 2  & 11,611 & 66.6 & 160,242 & 0.877 & 30.9 & 0.9155 \\
+No limit 3  & 10,936 & 62.8 & 184,483 & 0.708 & 34.0 & 0.9175 \\
+One core    & 13,434 & 77.1 & 142,725 & 1.000 & 21.5 & 0.9284 \\
+Half core 1 & 12,088 & 69.4 & 142,730 & 1.000 & 75.9 & 0.9175 \\
+Half core 2 & 11,831 & 67.9 & 160,475 & 0.876 & 97.0 & 0.9172 \\
+Half core 3 & 12,401 & 71.2 & 142,729 & 1.000 & 60.3 & 0.9173 \\
+\hline
+\end{tabular}
+\end{table}
+
+\emph{Repeats: macro-F1 hides flow splitting.} We ran the no-limit and half-core settings three times each and the one-core setting once (Table~\ref{tab:repeats}). Every run captured every packet, but flow construction followed the replay rate. At 69\% or more of the original DDoS-SYN rate the live flow count matched offline within 0.02\%; in these runs, at 63--68\% it was 12--29\% higher, and the share of matched flows with identical packet counts fell to 0.71--0.88, because slower replay stretches inter-packet gaps past the idle timeout and splits connections. Macro-F1 did not move: 0.9155--0.9175 on the three common windows in every run but the one-core one (0.9284), and 0.8038--0.8043 over all ten windows of the no-limit runs. This is Check~3 applied to our own runs: only the flow-by-flow match shows the loss of fidelity. It matters downstream, because a rule that counts verdicts per host pair counts the pieces of a split flow separately (Section~\ref{sec:response}).
+
+\emph{CPU budget, without the confounds.} Table~\ref{tab:repeats} confounds the budget with replay rate (tcpreplay shared the CPU), harness version and window set, so we ran the three windows nine more times with one harness, budgets interleaved, and tcpreplay, ping and gateway pinned to disjoint cores. Only the DDoS-SYN window responded materially, with median delays of 17.5--18.6\,s (no limit), 22.3--37.5\,s (one core) and 38.8--89.1\,s (half a core); the three budgets do not overlap (exact Kruskal--Wallis permutation $p=0.004$), and the other two windows differ by at most 0.1\,s. Regressing delay on budget and replay rate (9 runs, 5 degrees of freedom) puts the half-core effect at $+43$\,s (s.e.\ 7.5; unpinned runs: $+60$\,s); the one-core effect, $+16$\,s (s.e.\ 7.7, $p\approx0.09$), is not significant. Pinning did not fix the DDoS-SYN replay rate (11,848--14,189\,pps); slower replay went with longer delay (about 15\,s per 1,000\,pps less, driven mostly by one run), and the one pinned run below 69\% of the original rate split flows again. With half a core the gateway needed up to 174\,s to clear its backlog, and in the unpinned one-core run the backlog spilled into the next window; no run dropped a packet, so CPU pressure caused lag, not loss, for floods that did not fill the 64\,MB buffer. Peak memory stayed below 1,040\,MB (NFStream and Python, not the tree).
+
+\subsection{Failure Modes the Check Exposed}\label{sec:defect}
+
+The fidelity numbers above hold only after three problems were fixed. None changed an offline score, since at end of file every remaining flow is flushed.
+
+\emph{A forwarding pitfall.} Replayed frames carry the source MACs of many capture devices. A MAC-learning switch maps all of them to h1's port and never forwards frames addressed to them, so part of the traffic silently never reaches the detector. Packet accounting reveals this; one OVS rule that forwards everything from h1 to gw fixes it.
+
+\emph{Idle meters.} NFStream checks a meter's timeouts only when that meter receives a packet, so idle flows can wait in a meter that receives none. We use one meter and run a 200\,pps keep-alive ping between h1 and h2 on a management subnet that is never scored or blocked.
+
+\emph{An export-ordering defect.} Unpatched NFStream~6.6.0 delivered verdicts tens of seconds after the idle timeout. \texttt{NFCache}, a least-recently-used (LRU) \texttt{OrderedDict}, moves a key to the most-recently-used end only in \texttt{\_\_setitem\_\_}, but \texttt{consume()} updates an existing flow in place, so the cache stays in creation order. \texttt{meter\_scan()} expires flows from the head and stops at the first non-idle flow. One long-lived active flow, such as the keep-alive ping, therefore blocks the idle expiry of every flow behind it until its 120\,s active timeout. A one-line fix, \texttt{cache.move\_to\_end(flow\_key)} in the update branch, restores LRU order without changing flow boundaries or features, so offline comparisons cannot see the defect. It cut the per-window median delay after flow end from 82.5\,s to 15.6\,s (SQLi window) and from 49.2\,s to 15.5\,s (XSS). In the unpatched XSS run only 118 of 224 flows (64.5\% of the packets) had been exported when the run stopped; on a continuously running gateway they would be exported late, not lost. Pekar and Jozsa leave ``the specific mechanisms employed for updating and terminating flows'' out of scope~\cite{pekar2024integrity}. Late idle export has another, already diagnosed cause: a capture loop that blocks while no packet arrives, so expiry never runs (nfstream\#215, 2024~\cite{nfstream215}). Our keep-alive ping rules that cause out, and to our knowledge the LRU-ordering cause was previously undiagnosed. Any exporter whose expiry path differs from its end-of-file flush can hide such defects from offline evaluation. We reported it as nfstream\#262~\cite{nfstream262} and submitted the fix with a regression test as PR~\#263~\cite{nfstream263}.\footnote{The symptom was also reported without a cause in nfstream\#106 (2022)~\cite{nfstream106}, \#120 (2022)~\cite{nfstream120} and \#193 (2024)~\cite{nfstream193}.}

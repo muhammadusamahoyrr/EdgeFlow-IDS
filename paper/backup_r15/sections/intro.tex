@@ -1,0 +1,30 @@
+\section{Introduction}\label{sec:intro}
+
+Machine-learning network intrusion detectors are mostly evaluated on public benchmarks, where many report macro-F1 close to the maximum. Such scores say little about an IoT gateway, which has a few CPU cores, sees traffic in time order, builds flows itself and must act on its verdicts. The gap between benchmark and operation is long known~\cite{sommer2010outside} and well documented for security machine learning~\cite{arp2022dos,apruzzese2023sok}; a recent study reports a random forest with hold-out F1 0.97 whose attack recall fell to 0.0095 in operational validation on a labelled laboratory capture~\cite{tang2026hybrid}.
+
+Each source of this gap is known on its own: label errors in benchmarks~\cite{engelen2021troubleshooting,liu2022error,lanvin2023errors,flood2024smells}, splits that ignore time~\cite{pendlebury2019tesseract,arp2022dos,andresini2021insomnia}, exporters and timeouts that change the flows~\cite{velan2020impact,pinto2025flowexporter}, and detectors that fall short once traffic arrives as a stream~\cite{pekar2025early,zhao2026gidseval}. We do not claim a new failure mode, and we propose no new detection method. Instead we follow one ordinary detector along the whole path: a decision tree over 54 NFStream~\cite{aouini2022nfstream} flow statistics, trained on ten captures of CIC-IoT2023~\cite{neto2023ciciot2023}, with the label and split steps repeated on ten IoT-23 captures~\cite{garcia2020iot23}. At each of four steps (labels, splits, live gateway, response) we ask what a standard evaluation would hide and which check reveals it. The contributions are:
+\begin{itemize}
+\item \emph{A four-check audit} (Table~\ref{tab:checklist}), implemented as scripts; Checks~1--2 were run on both datasets, Checks~3--4 on CIC-IoT2023. Checks~1 and~2 apply known pitfalls~\cite{arp2022dos,flood2024smells} per capture and host pair; Checks~3 (live/offline flow fidelity) and~4 (false blocks) go past the offline evaluation.
+\item \emph{The cost of file-name labels on unseen traffic} (Section~\ref{sec:labels}): to our knowledge the first per-capture background share for CIC-IoT2023, and a leave-one-capture-out test on two datasets.
+\item \emph{A split check that finds a change of target, not drift} (Section~\ref{sec:splits}), and does not find a general gap.
+\item \emph{A live-fidelity check} (Section~\ref{sec:live}) that exposed an NFStream export-ordering defect, to our knowledge previously undiagnosed (nfstream\#262~\cite{nfstream262}; fix submitted as PR~\#263~\cite{nfstream263}), and flow splitting in our own runs that macro-F1 did not show.
+\item \emph{Response scored in false blocks} (Section~\ref{sec:response}), over the number $k$ of verdicts required per host pair.
+\end{itemize}
+
+\begin{table}[t]
+\centering
+\caption{The four-check audit and what it caught. Checks~1--2 were run on CIC-IoT2023 and IoT-23, Checks~3--4 on CIC-IoT2023.}
+\label{tab:checklist}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{3.4cm}>{\raggedright\arraybackslash}p{3.5cm}}
+\hline
+Check & Measure & Caught here \\
+\hline
+1 Labels & Background share per capture; FPR of a file-label model on captures it never saw & 71--88\% of unseen CIC-IoT2023 background flagged (0.5--5.4\% with evidence labels); released CSVs allow only file labels \\
+2 Splits & Per-class temporal recall with host-pair counts; class presence in both halves; cluster-unit sensitivity; boundary-spanning share & Brute-force target change on 3 host pairs (CIC-IoT2023); gap from missing classes, not robust to the cluster unit (IoT-23) \\
+3 Live & Flow-by-flow match on every run; packet accounting; replay rate; delay vs.\ CPU budget & Forwarding pitfall, idle meters, export-ordering defect; flows split at slow replay \\
+4 Response & False blocks per host-pair window; trade-off over $k$ per class and counter horizon & 60 false blocks in 10\,min at $k=1$, none live at $k=10$ (2 in 5.9\,h with persistent counters); Mirai missed by the flow-count rule, web at $k=5$ by the counter reset \\
+\hline
+\end{tabular}
+\end{table}

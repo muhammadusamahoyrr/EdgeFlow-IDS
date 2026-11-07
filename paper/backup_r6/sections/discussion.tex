@@ -1,0 +1,41 @@
+\section{Discussion}\label{sec:discussion}
+
+\subsection{An Audit Checklist}\label{sec:checklist}
+
+Table~\ref{tab:checklist} condenses the audit into four checks that others can run, each a script in the repository (\nolinkurl{src/analysis/}, \nolinkurl{src/iot23/}); Checks~1 and~2 were run on both datasets.
+
+\begin{table}[t]
+\centering
+\caption{The four-check audit and what it caught here.}
+\label{tab:checklist}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{1.0cm}p{3.5cm}p{3.6cm}}
+\hline
+Check & Measure & Caught here \\
+\hline
+1 Labels & Background share per capture; true score and Benign FPR of a file-label model & Most background flows called attacks, on both datasets; released CSVs allow only file labels \\
+2 Splits & Time-ordered split within captures; class presence in both halves; per-class F1 with host-pair CIs; boundary-spanning share & Brute-force target change (CIC-IoT2023); gap from missing classes, spanning flows inflating stratified C\&C (IoT-23) \\
+3 Live & Flow-by-flow match; packet accounting; replay rate; delay vs.\ CPU budget & Forwarding pitfall, idle meters, exporter defect \\
+4 Response & False blocks per host pair; trade-off over $k$ per class & Benign pairs blocked at $k=1$; Mirai and web attackers lost at high $k$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Threats to Validity}\label{sec:threats}
+
+\emph{Internal.} On CIC-IoT2023 the same author identified the attackers, wrote the labelling rule and made all design choices. The labels were revised once after error analysis (the sixth DDoS source), towards the model's predictions; we re-checked every flood victim over the whole file and release the evidence. Our CIC-IoT2023 results are scored against our own labels; IoT-23 supports the cost of file labels with the authors' labels but does not validate ours, and its file labels depend on our family mapping. Timing comes from WSL2 on a laptop, where tcpreplay shares the CPU with the gateway, and two live runs used an earlier harness.
+
+\emph{Construct.} Macro-F1 weighs tiny classes (Mirai, MITM-ARP) like large ones and, on IoT-23, missing classes; we report per-class F1 with support and host-pair intervals.
+
+\emph{External.} Labels and splits were audited on two datasets, but the live and response steps only on CIC-IoT2023, with one capture session per attack class, so they measure generalisation within a session, not across networks. We do not test across datasets, where results are known to be asymmetric~\cite{ali2026siamxbert}. Large CIC-IoT2023 captures were trimmed, so a temporal split covers only their start. The testbed is an emulated network on a laptop, not an edge device; live results hold only at the achieved replay rates and for floods that did not fill the capture buffer. Replay is open-loop, so ``packets dropped'' is counterfactual: drops cause no retransmissions, and attackers do not adapt.
+
+\emph{Conclusion.} The no-limit and half-core settings ran three times, the one-core and blocking settings once; macro-F1 and drops were stable, flow counts and delay varied with the replay rate. The CIC-IoT2023 gap is above zero but of uncertain size, and the SSH-to-RTSP change rests on three host pairs; ``no packets were lost'' refers only to these runs.
+
+\subsection{Conclusion}
+
+Each step of the audit exposed a problem that the previous one hid: file-name labels that turn background traffic into attacks; a random split that hides a change of brute-force target; live export problems that offline scores cannot show; and a per-flow false-positive rate that becomes dozens of wrongly blocked host pairs. The four checks that caught them are the reusable result. Future work includes choosing $k$ by a per-class or attack-class-averaged criterion instead of the DDoS-dominated flow share, longer live runs, a second live dataset, early classification and physical edge hardware.
+
+\subsection{Artifact Availability}
+
+Code, attacker evidence, configuration, result files and the scripts that reproduce every number are available at \url{https://github.com/muhammadusamahoyrr/EdgeFlow-IDS} (MIT licence). The CIC-IoT2023 and IoT-23 data are available from their authors~\cite{neto2023ciciot2023,garcia2020iot23}.

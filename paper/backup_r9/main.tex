@@ -1,0 +1,48 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\graphicspath{{../docs/figures/}}
+% Visible marker for anything still to be checked; must be empty before submission.
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+
+\begin{document}
+
+\title{What Benchmark Scores Hide: Auditing a Flow-Based IoT Intrusion Detector from Labels to Live Blocking}
+
+\author{\IEEEauthorblockN{Muhammad Usama}
+\IEEEauthorblockA{Department of Computer Science, COMSATS University Islamabad, Pakistan\\
+muhammadusamahoyrr@gmail.com}}
+
+\maketitle
+
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+
+\begin{IEEEkeywords}
+intrusion detection, Internet of Things, evaluation methodology, dataset labelling, flow export, CIC-IoT2023
+\end{IEEEkeywords}
+
+\input{sections/intro}
+\input{sections/related}
+\input{sections/setup}
+\input{sections/labels}
+\input{sections/splits}
+\input{sections/live}
+\input{sections/response}
+\input{sections/discussion}
+
+\section*{Acknowledgment}
+AI assistants (Anthropic Claude) were used to help write the experiment code and to draft and
+edit this text. The author directed the work, checked the experiments and their outputs, and takes
+full responsibility for the content.
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\end{document}
