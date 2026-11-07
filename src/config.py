@@ -1,4 +1,5 @@
 """Settings shared by offline extraction and the live gateway, so features match."""
+import ipaddress
 from pathlib import Path
 
 import pandas as pd
@@ -54,8 +55,20 @@ if _tuned.exists():
     import json as _json
     EDGE_TREE = _json.loads(_tuned.read_text())
 
-# Management subnet of the emulated testbed (ping ticker): never scored or blocked.
-MGMT_PREFIX = "10.0."
+# Management subnets of the emulated testbed (topology/edge_topo.py: h1 and gw on 10.0.1.0/24,
+# h2 on 10.0.2.0/24; the keep-alive ping runs between them): never scored or blocked.
+# (Up to tag v1.0-paper this was the string prefix "10.0.", i.e. all of 10.0.0.0/16; the replayed
+# CIC-IoT2023 traffic is 192.168.137.0/24, so no reported result depends on the difference.)
+MGMT_NETS = (ipaddress.ip_network("10.0.1.0/24"), ipaddress.ip_network("10.0.2.0/24"))
+
+
+def is_mgmt(ip):
+    """True if ip (a string) is in a testbed management subnet."""
+    try:
+        addr = ipaddress.ip_address(ip)
+    except ValueError:
+        return False
+    return any(addr in net for net in MGMT_NETS)
 
 
 def feature_columns(df):

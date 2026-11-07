@@ -1,5 +1,7 @@
 # EdgeFlow-IDS
 
+[![tests](https://github.com/muhammadusamahoyrr/EdgeFlow-IDS/actions/workflows/tests.yml/badge.svg)](https://github.com/muhammadusamahoyrr/EdgeFlow-IDS/actions/workflows/tests.yml)
+
 A lightweight intrusion-detection gateway for IoT networks, built and measured in an emulated
 network.
 
@@ -14,7 +16,9 @@ The accompanying paper, *What Benchmark Scores Hide: Auditing a Flow-Based IoT I
 from Labels to Live Blocking*, turns this into a four-check audit: **labels** (background share
 per capture), **splits** (per-class, per-host-pair temporal gap), **live** (flow-by-flow
 live/offline match) and **response** (false blocks per host-pair window). All numbers below use
-the deployed tree and the original labels, as in the paper.
+the deployed tree and the original labels, as in the paper. The exact code and results behind the
+paper are tagged [`v1.0-paper`](https://github.com/muhammadusamahoyrr/EdgeFlow-IDS/tree/v1.0-paper);
+later commits may change the tools (see "Changes since the paper" below).
 
 **Headline results.**
 - **Labels.** Background traffic is 90.9–98.5% of the flows in six of the nine CIC-IoT2023 attack
@@ -304,6 +308,20 @@ are not reported elsewhere. Sources and caveats are in [`docs/RELATED_WORK.md`](
   gateway pinned to disjoint cores (`src/run_pinned.sh`, `results/final/cpu_factorial.md`).
 - **One live dataset.** IoT-23 repeats the label and split checks only; the live and blocking
   checks are CIC-IoT2023 only, and we do not test across datasets.
+
+## Changes since the paper
+
+- **ARP watcher reads requests too.** `src/arp_watch.py` now also checks the sender of ARP
+  requests (gratuitous or forged requests poison caches as well), and takes the protected
+  router binding as `--protect IP=MAC` instead of the hard-coded CIC-IoT2023 router. On the ten
+  live windows it raises the same single high alert (MITM window, 1.7 s) and no other high alert.
+  `--replies-only` restores the paper's rule.
+- **Management filter is an exact subnet check.** The gateway skipped every `10.0.x.x` address;
+  it now skips only the testbed's 10.0.1.0/24 and 10.0.2.0/24 (`config.is_mgmt`). The replayed
+  CIC-IoT2023 traffic is 192.168.137.0/24, so no reported number changes.
+- **Unit tests** (`tests/`, run in CI): blocking votes, ARP rules, the subnet filter and the
+  NFStream patch script. They need only numpy, pandas and pytest:
+  `python -m pytest tests`.
 
 ## Reproduce
 

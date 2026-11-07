@@ -7,7 +7,7 @@ Runs inside the Mininet gateway's network namespace.
 - Per flow the CSV stores identifiers, packet/byte counts, the prediction, recv_ms (flow handed
   over by NFStream), verdict_ms (prediction done), batch_ms (whole-batch predict time) and the
   batch size. Feature values are not written (keeps the hot path short).
-- Flows of the testbed's management subnet (config.MGMT_PREFIX, the ping ticker) are never scored
+- Flows of the testbed's management subnet (config.MGMT_NETS, the ping ticker) are never scored
   or blocked.
 - With --enforce, a host pair is blocked (OVS drop rules for both directions on the access switch,
   so later packets of that pair never reach the gateway) once it has collected k attack verdicts.
@@ -32,7 +32,7 @@ import time
 import numpy as np
 from nfstream import NFStreamer
 
-from config import MGMT_PREFIX, RESULTS, STREAMER_KW
+from config import RESULTS, STREAMER_KW, is_mgmt
 
 ID_FIELDS = ["src_ip", "dst_ip", "src_port", "dst_port", "protocol", "src_mac", "dst_mac",
              "bidirectional_first_seen_ms", "bidirectional_last_seen_ms",
@@ -161,7 +161,7 @@ def main(iface, out, enforce, bridge, model_path, batch_size, max_wait_ms, socke
     print("gateway: ready", flush=True)
     try:
         for flow in streamer:
-            if flow.src_ip.startswith(MGMT_PREFIX) or flow.dst_ip.startswith(MGMT_PREFIX):
+            if is_mgmt(flow.src_ip) or is_mgmt(flow.dst_ip):
                 continue
             clf.add(flow)
     finally:
