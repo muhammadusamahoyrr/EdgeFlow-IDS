@@ -1,6 +1,13 @@
 \section{Check 2: Splits}\label{sec:splits}
 
-\emph{What a random split hides.} Table~\ref{tab:perclass} gives per-class results on CIC-IoT2023. Macro-F1 is 0.867 under the random split (host-pair CI [0.733, 0.875]) and 0.725 ([0.568, 0.822]) under the temporal split. The paired bootstrap puts the difference (random minus temporal) at +0.142 [0.025, 0.287], but almost all of it is one class: BruteForce contributes 78\% of the summed per-class F1 difference. These intervals score a class missing from a resample as F1 = 0, which happens in 41\% of the temporal host-pair resamples (DoS-HTTP has one temporal pair); averaging over the classes present instead gives [0.650, 0.827] for the temporal score and $+0.142$ [0.026, 0.212] for the difference. Without BruteForce the difference is $+0.036$ ([0.008, 0.105] over the classes present; [0.007, 0.199] with missing classes scored 0), and over the six classes with at least five host pairs in both test sets it is +0.030 [0.004, 0.098]. At coarser cluster units, 76--97\% of the resamples miss a class, so zero-convention intervals there are dominated by that artifact (the capture-level interval of the temporal score, [0.360, 0.719], excludes its own point estimate); over the classes present, the total difference is [0.007, 0.221] by capture and [$-0.003$, 0.225] by attacker device, and the difference without BruteForce is [0.003, 0.095] by attacker host, [$-0.003$, 0.099] by attacker device and [$-0.007$, 0.064] by capture. Compared capture by capture instead (macro-F1 over the classes present in both splits' test flows of that capture), the random split scores higher in 6 of the 9 captures where the scores differ (two-sided sign test $p=0.51$, permutation test $p=0.18$). The claim for CIC-IoT2023 is therefore narrow: a random split hides a change of target in one class; beyond it, the gap ($+0.03$ to $+0.04$) excludes zero by host pair and attacker host but not by attacker device or capture, units with little power (nine captures, mostly one attack class each).
+\emph{What a random split hides.} Table~\ref{tab:perclass} gives per-class results on CIC-IoT2023. Macro-F1 is 0.867 under the random split and 0.725 under the temporal split. A paired bootstrap puts the difference at $+0.142$ [0.025, 0.287], and almost all of it is one class: BruteForce contributes 78\% of the summed per-class F1 difference. Without BruteForce the difference is $+0.036$. How certain these differences are depends on the unit that is resampled (Fig.~\ref{fig:gapunits}): flows of one host pair are not independent, and coarser units (attacker host, attacker device, capture) are fewer. The full gap excludes zero at every unit but attacker device; the gap without BruteForce excludes zero by host pair and attacker host but not by attacker device or capture. Compared capture by capture, the random split scores higher in 6 of the 9 captures where the scores differ, which is not significant (sign test $p=0.51$). The claim for CIC-IoT2023 is therefore narrow: a random split hides a change of target in one class; beyond it, the gap is small and not robust at the coarser units, which have little power (nine captures, mostly one attack class each).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{gap_units.pdf}
+\caption{Random minus temporal macro-F1 on CIC-IoT2023 (deployed tree), with 95\% paired bootstrap CIs when whole host pairs, attacker hosts, attacker devices or captures are resampled. Macro-F1 is averaged over the classes present in each resample, since coarse resamples often miss a class.}
+\label{fig:gapunits}
+\end{figure}
 
 \begin{table}[t]
 \centering
@@ -9,10 +16,11 @@
 \footnotesize
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{lrrcccl}
-\hline
+\toprule
  & & & \multicolumn{2}{c}{F1} & \multicolumn{2}{c}{Temporal recall} \\
-Class & $n$ & Pairs & random & temp. & & host-pair CI \\
-\hline
+\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+Class & $n$ & Pairs & random & temp. & value & host-pair CI \\
+\midrule
 Benign     &  52,993 & 3,424 & 0.992 & 0.974 & 0.962 & [0.901, 0.990] \\
 BruteForce &     605 &     3 & 0.988 & 0.100 & 0.053 & [0.000, 0.842] \\
 DDoS-SYN   & 153,402 &     6 & 1.000 & 1.000 & 1.000 & every pair 1.000 \\
@@ -21,15 +29,15 @@ MITM-ARP   &      25 &    13 & 0.101 & 0.018 & 0.160 & [0.000, 0.375] \\
 Mirai      &      10 &     6 & 1.000 & 0.900 & 0.900 & [0.571, 1.000] \\
 Recon      &  39,819 &    18 & 1.000 & 1.000 & 1.000 & every pair 1.000 \\
 Web        &     192 &     8 & 0.865 & 0.889 & 0.917 & [0.804, 0.941] \\
-\hline
+\midrule
 Macro-F1   & 257,156 &       & 0.867 & 0.725 & & \\
-\hline
+\bottomrule
 \end{tabular}
 \end{table}
 
-\emph{A change of attack target.} The brute-force capture shows what the gap is. Training holds 475 SSH flows from the attacker (.65) to .67:22. The test period holds the last 38 SSH flows of that pair and 567 RTSP flows to two cameras, .11 and .140 on port 554, whose pairs never appear in training. The RTSP flows guess stream paths, not passwords: each short connection sends one \texttt{DESCRIBE} of a path from a dictionary (\texttt{/video.cgi}, \texttt{/live/ch00\_1}, \ldots). The deployed tree detects 32 of the 38 SSH flows and none of the 567 RTSP flows: its recall of 0.053 comes entirely from the SSH tail. A random split puts RTSP flows into training and hides that the model learned one service and method, not ``brute force''. This is a change of target and method within one capture session, not drift, and it rests on three host pairs; we treat it as a case study.
+\emph{A change of attack target.} The brute-force capture shows what the gap is. Training holds only SSH flows from the attacker (.65) to one server on port 22. The test period holds the last 38 SSH flows of that pair and 567 RTSP flows to two cameras on port 554, whose pairs never appear in training. The RTSP flows guess stream paths, not passwords: each short connection sends one \texttt{DESCRIBE} of a path from a dictionary (\texttt{/video.cgi}, \texttt{/live/ch00\_1}, \ldots). The deployed tree detects 32 of the 38 SSH flows and none of the RTSP flows: its recall of 0.053 comes entirely from the SSH tail. A random split puts RTSP flows into training and hides that the model learned one service and method, not ``brute force''. This is a change of target and method within one capture session, not drift, and it rests on three host pairs; we treat it as a case study.
 
-\emph{Boundary-spanning connections.} A temporal cut by flow start does not cut connections: a long connection yields several flows (active timeout 120\,s). Of the temporal test flows, 36.1\% (92,766 of 257,156) share a 5-tuple with a training flow of the same capture, i.e.\ continue a connection that started in training; we call these connections boundary-spanning. Removing them lowers macro-F1 from 0.725 to 0.604, mostly because Mirai is then left without test flows; over the seven classes that keep test flows the change is 0.700 to 0.690, concentrated in DoS-HTTP (F1 0.919 to 0.851). All 10 Mirai test flows are such continuations, so the Mirai test score is not evidence of generalization.
+\emph{Boundary-spanning connections.} A temporal cut by flow start does not cut connections: a long connection yields several flows (active timeout 120\,s). 36\% of the temporal test flows share a 5-tuple with a training flow of the same capture, i.e.\ continue a connection that started in training; we call these connections boundary-spanning. Removing them lowers macro-F1 from 0.725 to 0.604, mostly because Mirai is then left without test flows; over the other classes the change is small (0.700 to 0.690). All 10 Mirai test flows are such continuations, so the Mirai test score is not evidence of generalization.
 
 \emph{What flow features cannot see.} MITM-ARP reaches precision 0.01 and recall 0.16 on the temporal split. An ARP-spoofing flow is a victim's ordinary traffic relayed through the attacker, and the MAC address, the only distinguishing field, is not a model input.
 
@@ -40,13 +48,13 @@ Macro-F1   & 257,156 &       & 0.867 & 0.725 & & \\
 \footnotesize
 \setlength{\tabcolsep}{2.5pt}
 \begin{tabular}{lccccc}
-\hline
+\toprule
 Split & Macro-F1 & Flow CI & Host-pair CI & Common & Spanning \\
-\hline
+\midrule
 Temporal & 0.649 & [0.648, 0.650] & [0.613, 0.655] & 0.973 & 4.1\% \\
 Random   & 0.863 & [0.764, 0.923] & [0.638, 0.939] & 0.956 & 5.8\% \\
-\hline
+\bottomrule
 \end{tabular}
 \end{table}
 
-\emph{IoT-23: the gap does not replicate.} On IoT-23 the temporal macro-F1 is again lower than the random one (Table~\ref{tab:iot23split}), but because of missing classes: under the temporal split DDoS has no training flows and FileDownload no test flows, so both score 0 by construction. On the four classes present in both halves the temporal split scores slightly higher (paired random minus temporal $-0.017$ [$-0.039$, $-0.009$]), but host pairs are near-singletons here (91.5\% of the temporal test flows; CIC-IoT2023: 0.4\%), and with clusters by originating host or by capture the paired interval includes zero ([$-0.130$, 0.114] and [$-0.078$, 0.005]). Boundary-spanning flows concentrate in C\&C (36.5\% of its temporal and 68\% of its random test flows); removing them leaves the temporal score unchanged but lowers the random common-class macro-F1 from 0.956 to 0.918, through C\&C (F1 0.885 to 0.733). We therefore do not claim that the CIC-IoT2023 gap replicates. What carries over is Check~2 (Table~\ref{tab:checklist}): class presence in both halves, per-class recall with host-pair counts, cluster-unit sensitivity and the boundary-spanning share.
+\emph{IoT-23: the gap does not replicate.} On IoT-23 the temporal macro-F1 is again lower than the random one (Table~\ref{tab:iot23split}), but because of missing classes: under the temporal split DDoS has no training flows and FileDownload no test flows, so both score 0 by construction. On the four classes present in both halves the temporal split scores slightly higher, but host pairs are near-singletons here, and with clusters by originating host or by capture the paired interval of the difference includes zero. Boundary-spanning flows concentrate in C\&C; removing them leaves the temporal score unchanged but lowers the random common-class macro-F1 from 0.956 to 0.918. We therefore do not claim that the CIC-IoT2023 gap replicates. What carries over is Check~2 (Table~\ref{tab:checklist}): class presence in both halves, per-class recall with host-pair counts, cluster-unit sensitivity and the boundary-spanning share.

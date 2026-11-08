@@ -4,10 +4,22 @@
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{array}
+\usepackage{booktabs}
 \usepackage{xcolor}
 \usepackage{url}
 \usepackage[hidelinks]{hyperref}
 \graphicspath{{../docs/figures/}}
+% Tighter, less stretchable space between floats and text (IEEEtran default is 1.7\baselineskip).
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\dbltextfloatsep}{10pt plus 2pt minus 2pt}
+% Bold section headings (IEEEtran conference default, plus \bfseries).
+\makeatletter
+\def\section{\@startsection{section}{1}{\z@}{1.5ex plus 1.5ex minus 0.5ex}%
+{0.7ex plus 1ex minus 0ex}{\normalfont\normalsize\centering\scshape\bfseries}}%
+\makeatother
+% Leave spare space at the column foot instead of stretching it between paragraphs.
+\raggedbottom
 % Visible marker for anything still to be checked; must be empty before submission.
 \newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
 
@@ -16,9 +28,17 @@
 \title{What Benchmark Scores Hide: Auditing a Flow-Based IoT Intrusion Detector from Labels to Live Blocking}
 
 \author{\IEEEauthorblockN{Muhammad Usama}
-\IEEEauthorblockA{Department of Computer Science, COMSATS University Islamabad, Pakistan\\
-muhammadusamahoyrr@gmail.com}}
+\IEEEauthorblockA{Department of Computer Science\\
+COMSATS University Islamabad, Pakistan\\
+sp23-bcs-069@isbstudent.comsats.edu.pk}
+\and
+\IEEEauthorblockN{Ahmad Kamran Malik}
+\IEEEauthorblockA{Department of Computer Science\\
+COMSATS University Islamabad, Pakistan\\
+ahmad.kamran@comsats.edu.pk}}
 
+% Trim IEEEtran's default gap between the author block and the abstract.
+\IEEEaftertitletext{\vspace{-1.5\baselineskip}}
 \maketitle
 
 \begin{abstract}
@@ -38,10 +58,11 @@ intrusion detection, Internet of Things, evaluation methodology, dataset labelin
 \input{sections/response}
 \input{sections/discussion}
 
-\section*{Acknowledgment}
-AI assistants (Anthropic Claude) were used to help write the experiment code and to draft and
-edit this text. The author directed the work, checked the experiments and their outputs, and takes
-full responsibility for the content.
+\section*{Declaration of Generative AI and AI-Assisted Technologies in the Manuscript Preparation Process}
+During the preparation of this work the authors used Anthropic Claude in order to help write the
+experiment code and to draft and edit the text. After using this tool, the authors reviewed and
+edited the content as needed; the first author directed the work and checked the experiments and
+their outputs. Both authors take full responsibility for the content of the published article.
 
 \bibliographystyle{IEEEtran}
 \bibliography{refs}

@@ -1,0 +1,62 @@
+\section{Check 1: Labels}\label{sec:labels}
+
+\emph{What the benchmark hides.} Each CIC-IoT2023 capture is named after one attack, and all its flows are commonly labeled with that name; but the captures were recorded on a network of active IoT devices, so the attack is only part of the traffic. We call the Benign flows inside an attack capture \emph{background}. Garcia and Valeros predict that models trained with one label per PCAP ``may learn to detect operating system benign traffic as malicious'' (Sec.~3.2)~\cite{garcia2023labeling}; we measure this on traffic the model never saw.
+
+\emph{Evidence labels.} We identified the attackers and victims in every attack capture from the packets themselves (Table~\ref{tab:background}): HTTP payloads against the DVWA (Damn Vulnerable Web Application) test site for the web attacks, destination ports and their timing for brute force, top talkers for the floods, Mirai and the port scan, and ARP replies for MITM-ARP. A flow is labeled as an attack only if (i) one endpoint is a confirmed attacker and the other a victim, on the attack's port where known, or (ii) for ARP spoofing, its first packet was sent from or to the attacker's MAC address and the attacker's own IP is not an endpoint, i.e.\ it is a victim's traffic relayed through the attacker. Every other flow is Benign.
+
+\begin{table}[t]
+\centering
+\caption{Background share (Benign flows under evidence labels) of each attack capture, and the evidence that confirmed the attacker. Addresses are last octets in 192.168.137.0/24.}
+\label{tab:background}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrr>{\raggedright\arraybackslash}p{3.85cm}}
+\hline
+Capture & Flows & Backgr. & Attacker evidence \\
+\hline
+XSS          &   4,992 & 98.5\% & \texttt{<script>} from .147 \\
+CmdInj       &   5,639 & 98.3\% & DVWA \texttt{exec} page from .147 \\
+MITM-ARP     &  12,208 & 97.6\% & MAC \ldots:27:d5 claims .1 and .65 \\
+SQLi         &   7,383 & 94.8\% & \texttt{SLEEP(5)}, \texttt{UNION SELECT} \\
+Mirai        &     653 & 93.7\% & 7 bots to .191 (UDP) \\
+BruteForce   &  11,824 & 90.9\% & .65 to SSH :22, then RTSP :554 \\
+Recon        & 205,065 & 30.2\% & .178: 1,001 ports on 58 hosts \\
+DoS-HTTP     &  51,275 & 23.0\% & .66 to .71/.141:80 \\
+DDoS-SYN     & 511,936 &  0.1\% & 6 sources to .245:4070 \\
+\hline
+\end{tabular}
+\end{table}
+
+\emph{Background share.} Background makes up 90.9--98.5\% of the flows in six of the nine attack captures (web, brute force, MITM-ARP, Mirai) (Table~\ref{tab:background}); overall, file-name and evidence labels differ for 13.4\% of the 857,206 flows.
+
+\emph{The cost of file-name labels on unseen traffic.} We trained the same tree on file-name labels and on evidence labels and measured the Benign FPR. Within a split this is partly circular: the file-label tree is tested on the later background of captures whose earlier background it learned under the capture's name. We therefore also train on nine captures and test on the tenth (leave one capture out, LOCO; Table~\ref{tab:filelabel}). On a held-out attack capture, the file-label tree flags 71--88\% of the background flows, against 0.5--5.4\% for the tree trained on evidence labels, and more in each of the nine captures. (Holding out the single Benign capture leaves the file-label tree no Benign training flow.) Within the temporal split, most of its false positives (89\%) are background inside attack captures. Scored against file-name labels, the two trees swap places, because correct Benign verdicts in attack captures then count as misses. The random split gives the same pattern.
+
+\begin{table}[t]
+\centering
+\caption{The tree trained on file-name labels (file) or on evidence (CIC-IoT2023) or Zeek (IoT-23) labels. Macro-F1 scored against file-name labels (as a file-label study would report) or against evidence/Zeek labels. Benign FPR on background in attack captures and on the benign capture(s). LOCO: range over held-out captures. CIC: CIC-IoT2023. --: not computed. Original labels (corrected values in the text). The two IoT-23 values 0.649 are 0.6486 (file) and 0.6487 (Zeek).}
+\label{tab:filelabel}
+\footnotesize
+\setlength{\tabcolsep}{2.6pt}
+\begin{tabular}{lllcccc}
+\hline
+ & & Trained & \multicolumn{2}{c}{Macro-F1 vs.} & \multicolumn{2}{c}{Benign FPR} \\
+Data & Test & on & file & evid./Zeek & backgr. & benign capt. \\
+\hline
+CIC & temporal & file  & 0.537 & 0.396 & 86.1\% & 31.4\% \\
+            & temporal & evid. & 0.409 & 0.725 & 4.8\% & 1.0\% \\
+            & LOCO     & file  & --    & --    & 71.4--87.8\% & (100\%) \\
+            & LOCO     & evid. & --    & --    & 0.5--5.4\% & 1.5\% \\
+\hline
+IoT-23      & temporal & file  & 0.649 & 0.169 & 99.97\% & 4.7\% \\
+            & temporal & Zeek  & 0.157 & 0.649 & 3.4\% & 0.18\% \\
+            & LOCO     & file  & --    & --    & 9.4--99.95\% & 23.4--46.7\% \\
+            & LOCO     & Zeek  & --    & --    & 0--49.1\% & 0--17.5\% \\
+\hline
+\end{tabular}
+\end{table}
+
+\emph{Label audit.} Our first DDoS-SYN labeling missed a sixth source (.36) that joins after the first 300,000 packets; error analysis found it as 65,525 ``Benign'' flows predicted as DDoS-SYN, and we re-checked every flood victim over the whole trimmed file. Because this revision moved labels towards the model, we then audited the labels blind and in both directions. A fixed program rated 975 test flows, sampled per capture, label and model agreement, from their own packets, without seeing the label, the attacker list or the verdict; defects of the rater found in its first run were fixed (Section~\ref{sec:threats}). Of the 630 flows it could decide, 2 of 265 attack labels were wrong (UPnP requests of the SQLi attacker to a non-victim) and 22 of 365 Benign labels, all from the DoS-HTTP attacker flooding a third server (.174) missing from our victim list. Weighted by stratum size, this puts 4.3\% of the Benign-labeled test flows (the whole flood) and almost none of the attack-labeled ones in error. With at most 30 flows per stratum, a stratum without a found error can still hold up to 11--13\% errors, and the undecided flows, mostly short or without payload, lie mainly where label and model disagree; errors there cannot be ruled out. MITM-ARP is rated by the MAC relay that defines its label, so for it the audit checks only consistency. The abstract and tables keep the original labels, which understate the evidence-label tree: with both errors corrected, its Benign FPR is 1.3\% instead of 3.8\% and its macro-F1 0.729 instead of 0.725; file-label numbers move by at most 1.3 points.
+
+\emph{Robustness test on IoT-23.} IoT-23 tests the result against labels that are not ours (the authors' Zeek labels). For file-name labels we map each malware family to its main behavior, e.g.\ Hide\&Seek to PortScan, Torii to C\&C and Mirai to DDoS; this mapping is our choice. The background share (Zeek label Benign) of the malware captures ranges from 5.5\% to 99.9\%. The benign-device captures are the out-of-capture test (Table~\ref{tab:filelabel}): under LOCO the file-label tree flags more of a held-out benign device's flows than the Zeek-label tree in each of the three captures. Generalization to an unseen capture is hard regardless of labels: the Zeek-label tree also flags 42--49\% of the background in two held-out malware captures. In-capture, the file-label tree flags nearly all background in every malware capture, which mainly shows that it learned each capture's name.
+
+\emph{The benchmark as distributed.} Every study that uses the released CSVs inherits file-name labels. The CSVs (mirror \texttt{bencorn/CIC-IoT-2023}) hold 39 packet-window features without address or timestamp, labeled only by the file name, with rows shuffled, so they cannot be relabeled from evidence. Even scored against file-name labels on a random split, a decision tree and a random forest on these CSVs reach macro-F1 0.75--0.80 but recall below 0.45 on BruteForce and Web, so the weak low-rate classes are not an artifact of our NFStream flows.

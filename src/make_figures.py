@@ -4,6 +4,7 @@
   docs/figures/nsga_pareto.png    NSGA-II subsets: features vs macro-F1 (validation and test)
   docs/figures/live_delay.png     verdict delay after flow end per window: no limit, 1 core, 1/2 core
   docs/figures/late_blocks.png    attack flows starting after their pair's block: flow-end vs export-delayed verdicts
+  docs/figures/gap_units.png      random-minus-temporal macro-F1 gap with 95% CI per bootstrap cluster unit
 
 Usage: python src/make_figures.py
 """
@@ -29,8 +30,13 @@ SHORT = {"Benign": "Benign", "BruteForce": "BruteF", "DDoS-SYN": "DDoS", "DoS-HT
          "Mirai-udpplain": "Mirai", "Recon-PortScan": "Recon", "SqlInjection": "SQLi", "XSS": "XSS"}
 # Paper figures are placed at \columnwidth (about 3.5 in), so sizes below are true print sizes.
 COL_W = 3.5
-plt.rcParams.update({"font.size": 8, "axes.labelsize": 8, "xtick.labelsize": 8,
-                     "ytick.labelsize": 8, "legend.fontsize": 8})
+# Times-like serif at 8 pt with thin strokes, so the figures match the IEEEtran body and tables.
+plt.rcParams.update({"font.family": "serif", "font.serif": ["Times New Roman", "STIXGeneral", "DejaVu Serif"],
+                     "mathtext.fontset": "stix", "pdf.fonttype": 42, "ps.fonttype": 42,
+                     "font.size": 8, "axes.labelsize": 8, "xtick.labelsize": 8,
+                     "ytick.labelsize": 8, "legend.fontsize": 8,
+                     "axes.linewidth": 0.5, "xtick.major.width": 0.5, "ytick.major.width": 0.5,
+                     "xtick.major.size": 2.5, "ytick.major.size": 2.5})
 
 
 def split_recall():
@@ -127,10 +133,10 @@ def late_blocks():
     y[1:] -= 0.5  # gap between the live-window row and the 5.9 h rows
     fig, ax = plt.subplots(figsize=(COL_W, 2.4))
     for yi, (_, a, b) in zip(y, rows):
-        ax.plot([b, a], [yi, yi], color=GREY, lw=1.2, zorder=1)
-    ax.scatter([r[1] for r in rows], y, s=26, facecolors="white", edgecolors=GREY, linewidths=1.4, zorder=2,
+        ax.plot([b, a], [yi, yi], color=GREY, lw=0.7, zorder=1)
+    ax.scatter([r[1] for r in rows], y, s=16, facecolors="white", edgecolors=GREY, linewidths=0.8, zorder=2,
                label="verdict at flow end (offline)")
-    ax.scatter([r[2] for r in rows], y, s=26, color=BLUE, edgecolors="white", linewidths=0.6, zorder=3,
+    ax.scatter([r[2] for r in rows], y, s=16, color=BLUE, edgecolors="white", linewidths=0.4, zorder=3,
                label="verdict at flow end + 15 s (live export)")
     for yi, (_, a, b) in zip(y, rows):
         ax.text(b, yi + 0.22, f"{100 * b:.0f}%", ha="center", va="bottom", fontsize=7, color="#374151")
@@ -150,10 +156,46 @@ def late_blocks():
     fig.savefig(OUT / "late_blocks.pdf")
 
 
+def ci(text):
+    lo, hi = text.strip("[]").split(",")
+    return float(lo), float(hi)
+
+
+def gap_units():
+    """Paired bootstrap of random minus temporal macro-F1 (deployed tree; classes present in the
+    resample), all classes and without BruteForce, for each cluster unit."""
+    t = read_md_table(RESULTS / "final" / "gap_nobf_units.md")
+    units = ["host pair", "attacker host", "attacker device", "capture"]
+    series = [("all 8 classes", "all classes", BLUE, "o", 0.17),
+              ("without BruteForce (7)", "without BruteForce", ORANGE, "s", -0.17)]
+    fig, ax = plt.subplots(figsize=(COL_W, 1.85))
+    y = np.arange(len(units))[::-1].astype(float)
+    for key, label, color, marker, dy in series:
+        rows = t[t["classes"] == key].set_index("clusters").loc[units]
+        diff = rows["difference"].astype(float).to_numpy()
+        lo, hi = zip(*[ci(c) for c in rows["paired CI, present"]])
+        ax.errorbar(diff, y + dy, xerr=[diff - np.array(lo), np.array(hi) - diff], fmt=marker,
+                    color=color, ms=3.2, elinewidth=0.8, capthick=0.8, capsize=2, label=label)
+    ax.axvline(0, color="black", lw=0.5, ls="--")
+    ax.set_yticks(y, units)
+    ax.set_ylim(y.min() - 0.6, y.max() + 0.6)
+    ax.set_xlabel("random minus temporal macro-F1 (95% CI)")
+    ax.grid(axis="x", color="#e5e7eb", lw=0.6)
+    ax.set_axisbelow(True)
+    ax.tick_params(axis="y", length=0)
+    ax.legend(loc="lower center", bbox_to_anchor=(0.45, 1.0), ncol=2, frameon=False,
+              handletextpad=0.3, columnspacing=1.2, borderaxespad=0.1)
+    ax.spines[["top", "right", "left"]].set_visible(False)
+    fig.tight_layout(pad=0.3)
+    fig.savefig(OUT / "gap_units.png", dpi=300)
+    fig.savefig(OUT / "gap_units.pdf")
+
+
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
     split_recall()
     nsga_pareto()
     live_delay()
     late_blocks()
+    gap_units()
     print(f"figures in {OUT}")

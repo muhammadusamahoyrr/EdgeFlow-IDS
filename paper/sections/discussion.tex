@@ -6,7 +6,7 @@
 
 \emph{External.} Labels and splits were audited on two datasets, but the live and response checks only on CIC-IoT2023, with one capture session per attack class, so they measure generalization within a session, not across networks. We do not test across datasets, where results are known to be asymmetric~\cite{ali2026siamxbert}. We audit one model: a random forest and gradient boosting score similarly on the temporal split (Section~\ref{sec:setup}), but we did not repeat the label and response checks with them. Large CIC-IoT2023 captures were trimmed, so a temporal split covers only their start. Live results hold only at the achieved replay rates, on one laptop under WSL2, and for floods that did not fill the capture buffer. Replay is open-loop, so ``packets dropped'' is counterfactual: drops cause no retransmissions, and attackers do not adapt.
 
-\emph{Statistical conclusion.} The enforced settings ran once, and each pinned CPU budget three times. The SSH-to-RTSP change rests on three host pairs. Beyond it, the CIC-IoT2023 gap ($+0.03$ to $+0.04$) excludes zero by host pair and attacker host but not by attacker device or capture, units with little power. Per-class intervals over at most six host pairs are indicative only.
+\emph{Statistical conclusion.} The enforced settings ran once, and each pinned CPU budget three times. The SSH-to-RTSP change rests on three host pairs. Beyond it, the CIC-IoT2023 gap is small and not robust to the cluster unit (Fig.~\ref{fig:gapunits}). Per-class intervals over at most six host pairs are indicative only.
 
 \section{Conclusion}\label{sec:conclusion}
 
